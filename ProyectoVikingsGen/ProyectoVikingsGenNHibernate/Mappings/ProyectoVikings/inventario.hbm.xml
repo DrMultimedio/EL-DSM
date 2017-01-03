@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+		<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+		                   assembly="ProyectoVikingsGenNHibernate"
+		                   namespace="ProyectoVikingsGenNHibernate.EN.ProyectoVikings">
+		    
+		    
+			
+				<class name="InventarioEN" table="Inventario"> 
+				  	
+						<id name="Id" column="idInventario" type="integer"> 
+							<generator class="hilo"/>
+						</id>
+			
+					
+					<property name="InvMax" type="integer"> 
+						<column name="InvMax"  not-null="true"/>
+					</property>
+			
+			
+			
+			
+		  			
+					
+							   <one-to-one name="Jugador" class="ProyectoVikingsGenNHibernate.EN.ProyectoVikings.JugadorEN" property-ref="Inventario" />							
+					 
+						
+			
+		  			
+						<bag name="Objeto" table="[objeto_inventario]" inverse="true" >
+							<key>
+								
+									<column name="FK_idInventario_idInventario"/> 
+							</key>
+      						<many-to-many class="ProyectoVikingsGenNHibernate.EN.ProyectoVikings.ObjetoEN">
+									<column name="FK_idObjeto_idObjeto"/> 
+      						</many-to-many>
+    					</bag>
+					
+					
+					
+					
+		
+		 </class>	
+		  
+		  <query name="InventarioENReadAllHQL">from InventarioEN</query>
+		</hibernate-mapping>
+	

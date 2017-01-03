@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+		<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+		                   assembly="ProyectoVikingsGenNHibernate"
+		                   namespace="ProyectoVikingsGenNHibernate.EN.ProyectoVikings">
+		    
+		    
+			
+				
+<joined-subclass name="AdminEN" extends="ProyectoVikingsGenNHibernate.EN.ProyectoVikings.JugadorEN" table="Admin"> 
+	<key>
+    	
+				<column name="idJugador"/>
+		
+    	
+   	</key>
+
+			
+					
+			
+		
+ 	  
+		 </joined-subclass>
+		  
+		  <query name="AdminENReadAllHQL">from AdminEN</query>
+		</hibernate-mapping>
+	

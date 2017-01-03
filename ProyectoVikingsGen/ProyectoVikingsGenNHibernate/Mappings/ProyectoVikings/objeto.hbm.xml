@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+		<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+		                   assembly="ProyectoVikingsGenNHibernate"
+		                   namespace="ProyectoVikingsGenNHibernate.EN.ProyectoVikings">
+		    
+		    
+			
+				<class name="ObjetoEN" table="Objeto"> 
+				  	
+						<id name="Id" column="idObjeto" type="integer"> 
+							<generator class="hilo"/>
+						</id>
+			
+					
+					<property name="Nombre" type="string"> 
+						<column name="Nombre"  not-null="true"/>
+					</property>
+			
+			
+			
+			
+		  			
+						<bag name="Inventario" table="[objeto_inventario]"  >
+							<key>
+								
+									<column name="FK_idObjeto_idObjeto"/> 
+							</key>
+      						<many-to-many class="ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEN">
+									<column name="FK_idInventario_idInventario"/> 
+      						</many-to-many>
+    					</bag>
+			
+		  			
+						<bag name="InventarioEquipado" table="[objeto_0_inventarioEquipado]"  >
+							<key>
+								
+									<column name="FK_idObjeto_idObjeto_0"/> 
+							</key>
+      						<many-to-many class="ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEquipadoEN">
+									<column name="FK_idInventario_idInventarioEquipado"/> 
+      						</many-to-many>
+    					</bag>
+					
+					
+					
+					
+		
+		 </class>	
+		  
+		  <query name="ObjetoENReadAllHQL">from ObjetoEN</query>
+		</hibernate-mapping>
+	

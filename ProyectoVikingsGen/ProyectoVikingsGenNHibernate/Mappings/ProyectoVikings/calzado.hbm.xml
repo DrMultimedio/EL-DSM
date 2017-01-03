@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+		<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+		                   assembly="ProyectoVikingsGenNHibernate"
+		                   namespace="ProyectoVikingsGenNHibernate.EN.ProyectoVikings">
+		    
+		    
+			
+				
+<joined-subclass name="CalzadoEN" extends="ProyectoVikingsGenNHibernate.EN.ProyectoVikings.ObjetoEN" table="Calzado"> 
+	<key>
+    	
+				<column name="idObjeto"/>
+		
+    	
+   	</key>
+
+			
+					
+					<property name="Vida" type="integer"> 
+						<column name="Vida"  not-null="true"/>
+					</property>
+					<property name="Defensa" type="integer"> 
+						<column name="Defensa"  not-null="true"/>
+					</property>
+			
+			
+			
+					
+					
+		
+ 	  
+		 </joined-subclass>
+		  
+		  <query name="CalzadoENReadAllHQL">from CalzadoEN</query>
+		</hibernate-mapping>
+	

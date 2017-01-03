@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+		<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+		                   assembly="ProyectoVikingsGenNHibernate"
+		                   namespace="ProyectoVikingsGenNHibernate.EN.ProyectoVikings">
+		    
+		    
+			
+				<class name="Batalla_PVEEN" table="Batalla_PVE"> 
+				  	
+						<id name="Id" column="idBatalla_PVE" type="integer"> 
+							<generator class="hilo"/>
+						</id>
+			
+					
+					<property name="Recompensa" type="integer"> 
+						<column name="Recompensa"  not-null="true"/>
+					</property>
+					<property name="TipoGanador" > 
+						<column name="tipoGanador"  not-null="true"/>
+					</property>
+			
+			
+			
+		  			
+					
+							   <one-to-one name="Monstruo" class="ProyectoVikingsGenNHibernate.EN.ProyectoVikings.MonstruoEN" property-ref="Batalla_PVE" />							
+					 
+						
+			
+		  			
+					
+							<many-to-one name="Jugador" class="ProyectoVikingsGenNHibernate.EN.ProyectoVikings.JugadorEN" >
+								<column name="FK_idJugador_idJugador"/> 
+        					</many-to-one>
+					 
+						
+			
+			
+					
+					
+					
+					
+					
+		
+		 </class>	
+		  
+		  <query name="Batalla_PVEENReadAllHQL">from Batalla_PVEEN</query>
+		</hibernate-mapping>
+	

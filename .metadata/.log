@@ -1,0 +1,33 @@
+!SESSION 2017-01-03 20:07:26.438 -----------------------------------------------
+eclipse.buildId=4.3.0.I20130530-1430
+java.version=1.8.0_60
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=es_ES
+Framework arguments:  -perspective es.ua.dlsi.ooh.core.perspective -product org.eclipse.epp.package.modeling.product
+Command-line arguments:  -os win32 -ws win32 -arch x86 -perspective es.ua.dlsi.ooh.core.perspective -product org.eclipse.epp.package.modeling.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2017-01-03 20:08:53.077
+!MESSAGE Warning: EGit couldn't detect the installation path "gitPrefix" of native Git. Hence EGit can't respect system level
+Git settings which might be configured in ${gitPrefix}/etc/gitconfig under the native Git installation directory.
+The most important of these settings is core.autocrlf. Git for Windows by default sets this parameter to true in
+this system level configuration. The Git installation location can be configured on the
+Team > Git > Configuration preference page's 'System Settings' tab.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.egit.ui 2 0 2017-01-03 20:08:53.078
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\OIDEWin7'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.osgi 2 1 2017-01-03 20:09:12.924
+!MESSAGE NLS unused message: ConceptualViewCreationWizard_DomainModelFilePageTitle in: messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-01-03 20:09:12.928
+!MESSAGE NLS unused message: ConceptualViewCreationWizard_DomainModelFilePageDescription in: messages
+
+!ENTRY org.eclipse.core.resources 2 2 2017-01-03 20:26:59.601
+!MESSAGE Save operation warnings.
+!SUBENTRY 1 org.eclipse.core.resources 2 234 2017-01-03 20:26:59.601
+!MESSAGE The project description file (.project) for 'ProyectoVikingsGen' was missing.  This file contains important information about the project.  A new project description file has been created, but some information about the project may have been lost.

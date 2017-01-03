@@ -1,0 +1,15 @@
+C:\OOH4RIA\workspace\ProyectoVikingsGen\ProyectoVikingsGenNHibernate\bin\Debug\hibernate.cfg.xml
+C:\OOH4RIA\workspace\ProyectoVikingsGen\ProyectoVikingsGenNHibernate\bin\Debug\ProyectoVikingsGenNHibernate.dll.config
+C:\OOH4RIA\workspace\ProyectoVikingsGen\ProyectoVikingsGenNHibernate\bin\Debug\ProyectoVikingsGenNHibernate.dll
+C:\OOH4RIA\workspace\ProyectoVikingsGen\ProyectoVikingsGenNHibernate\bin\Debug\ProyectoVikingsGenNHibernate.pdb
+C:\OOH4RIA\workspace\ProyectoVikingsGen\ProyectoVikingsGenNHibernate\bin\Debug\Castle.DynamicProxy2.dll
+C:\OOH4RIA\workspace\ProyectoVikingsGen\ProyectoVikingsGenNHibernate\bin\Debug\LinFu.DynamicProxy.dll
+C:\OOH4RIA\workspace\ProyectoVikingsGen\ProyectoVikingsGenNHibernate\bin\Debug\NHibernate.ByteCode.Castle.dll
+C:\OOH4RIA\workspace\ProyectoVikingsGen\ProyectoVikingsGenNHibernate\bin\Debug\NHibernate.ByteCode.LinFu.dll
+C:\OOH4RIA\workspace\ProyectoVikingsGen\ProyectoVikingsGenNHibernate\bin\Debug\NHibernate.dll
+C:\OOH4RIA\workspace\ProyectoVikingsGen\ProyectoVikingsGenNHibernate\bin\Debug\Iesi.Collections.dll
+C:\OOH4RIA\workspace\ProyectoVikingsGen\ProyectoVikingsGenNHibernate\bin\Debug\Antlr3.Runtime.dll
+C:\OOH4RIA\workspace\ProyectoVikingsGen\ProyectoVikingsGenNHibernate\bin\Debug\log4net.dll
+C:\OOH4RIA\workspace\ProyectoVikingsGen\ProyectoVikingsGenNHibernate\obj\Debug\ProyectoVikingsGenNHibernate.csprojResolveAssemblyReference.cache
+C:\OOH4RIA\workspace\ProyectoVikingsGen\ProyectoVikingsGenNHibernate\obj\Debug\ProyectoVikingsGenNHibernate.dll
+C:\OOH4RIA\workspace\ProyectoVikingsGen\ProyectoVikingsGenNHibernate\obj\Debug\ProyectoVikingsGenNHibernate.pdb

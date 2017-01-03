@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" ?>
+		<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+		                   assembly="ProyectoVikingsGenNHibernate"
+		                   namespace="ProyectoVikingsGenNHibernate.EN.ProyectoVikings">
+		    
+		    
+			
+				<class name="JugadorEN" table="Jugador"> 
+				  	
+						<id name="Id" column="idJugador" type="integer"> 
+							<generator class="hilo"/>
+						</id>
+			
+					
+					<property name="Nombre" type="string"> 
+						<column name="Nombre"  not-null="true"/>
+					</property>
+					<property name="Email" type="string"> 
+						<column name="Email"  not-null="true"/>
+					</property>
+					<property name="Cumple" type="date"> 
+						<column name="Cumple"  not-null="true"/>
+					</property>
+					<property name="Genero" type="string"> 
+						<column name="Genero"  not-null="true"/>
+					</property>
+					<property name="Vidamax" type="integer"> 
+						<column name="Vidamax"  not-null="true"/>
+					</property>
+					<property name="VidaAct" type="integer"> 
+						<column name="VidaAct"  not-null="true"/>
+					</property>
+					<property name="Ataque" type="integer"> 
+						<column name="Ataque"  not-null="true"/>
+					</property>
+					<property name="Defensa" type="integer"> 
+						<column name="Defensa"  not-null="true"/>
+					</property>
+					<property name="Oro" type="integer"> 
+						<column name="Oro"  not-null="true"/>
+					</property>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		  			
+					
+							<many-to-one name="Inventario" class="ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEN" >
+								<column name="FK_idInventario_idInventario"/> 
+        					</many-to-one>
+					 
+						
+			
+		  			
+					
+							   <one-to-one name="Batalla_PVE" class="ProyectoVikingsGenNHibernate.EN.ProyectoVikings.Batalla_PVEEN" property-ref="Jugador" />							
+					 
+						
+			
+		  			
+					
+							   <one-to-one name="Batalla_PVP" class="ProyectoVikingsGenNHibernate.EN.ProyectoVikings.Batalla_PVPEN" property-ref="Jugador" />							
+					 
+						
+			
+		  			
+					
+							   <one-to-one name="Batalla_PVP_0" class="ProyectoVikingsGenNHibernate.EN.ProyectoVikings.Batalla_PVPEN" property-ref="Jugador_0" />							
+					 
+						
+			
+		  			
+					
+							   <one-to-one name="InventarioEquipado" class="ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEquipadoEN" property-ref="Jugador_0" />							
+					 
+						
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+		
+		 </class>	
+		  
+		  <query name="JugadorENReadAllHQL">from JugadorEN</query>
+		</hibernate-mapping>
+	

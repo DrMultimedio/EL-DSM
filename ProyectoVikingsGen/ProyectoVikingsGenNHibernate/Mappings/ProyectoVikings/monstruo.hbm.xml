@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+		<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+		                   assembly="ProyectoVikingsGenNHibernate"
+		                   namespace="ProyectoVikingsGenNHibernate.EN.ProyectoVikings">
+		    
+		    
+			
+				<class name="MonstruoEN" table="Monstruo"> 
+				  	
+						<id name="Id" column="idMonstruo" type="integer"> 
+							<generator class="hilo"/>
+						</id>
+			
+					
+					<property name="Nombre" type="string"> 
+						<column name="Nombre"  not-null="true"/>
+					</property>
+					<property name="Vida" type="integer"> 
+						<column name="Vida"  not-null="true"/>
+					</property>
+					<property name="Ataque" type="integer"> 
+						<column name="Ataque"  not-null="true"/>
+					</property>
+					<property name="Defensa" type="integer"> 
+						<column name="Defensa"  not-null="true"/>
+					</property>
+			
+			
+			
+			
+			
+			
+			
+		  			
+					
+							<many-to-one name="Batalla_PVE" class="ProyectoVikingsGenNHibernate.EN.ProyectoVikings.Batalla_PVEEN" >
+								<column name="FK_idBatalla_PVE_idBatalla_PVE"/> 
+        					</many-to-one>
+					 
+						
+					
+					
+					
+					
+					
+					
+		
+		 </class>	
+		  
+		  <query name="MonstruoENReadAllHQL">from MonstruoEN</query>
+		</hibernate-mapping>
+	
