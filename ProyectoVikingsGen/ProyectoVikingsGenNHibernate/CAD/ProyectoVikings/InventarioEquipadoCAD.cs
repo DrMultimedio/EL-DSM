@@ -240,5 +240,35 @@ public void Equipar (int p_InventarioEquipado_OID, System.Collections.Generic.IL
                 SessionClose ();
         }
 }
+
+public System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEquipadoEN> DameInventarioPorJugadorEquipado ()
+{
+        System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEquipadoEN> result;
+        try
+        {
+                SessionInitializeTransaction ();
+                //String sql = @"FROM InventarioEquipadoEN self where FROM InventarioEquipadoEN";
+                //IQuery query = session.CreateQuery(sql);
+                IQuery query = (IQuery)session.GetNamedQuery ("InventarioEquipadoENdameInventarioPorJugadorEquipadoHQL");
+
+                result = query.List<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEquipadoEN>();
+                SessionCommit ();
+        }
+
+        catch (Exception ex) {
+                SessionRollBack ();
+                if (ex is ProyectoVikingsGenNHibernate.Exceptions.ModelException)
+                        throw ex;
+                throw new ProyectoVikingsGenNHibernate.Exceptions.DataLayerException ("Error in InventarioEquipadoCAD.", ex);
+        }
+
+
+        finally
+        {
+                SessionClose ();
+        }
+
+        return result;
+}
 }
 }

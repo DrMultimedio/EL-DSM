@@ -117,6 +117,8 @@
 			
 			
 			
+			<Compile Include="CEN\ProyectoVikings\JugadorCEN_CalcularDefensa.cs" />
+			
 	<Compile Include="EN\ProyectoVikings\AdminEN.cs" />
 	<Compile Include="CEN\ProyectoVikings\AdminCEN.cs" />
 	<Compile Include="CAD\ProyectoVikings\IAdminCAD.cs" />
@@ -137,7 +139,6 @@
 			
 			
 			
-			<Compile Include="CEN\ProyectoVikings\InventarioCEN_DameInventarioPorJugador.cs" />
 			
 	<Compile Include="EN\ProyectoVikings\MonstruoEN.cs" />
 	<Compile Include="CEN\ProyectoVikings\MonstruoCEN.cs" />
@@ -222,6 +223,7 @@
 			<Compile Include="CP\ProyectoVikings\InventarioEquipadoCP_Equipar.cs" />
 			
 			<Compile Include="CEN\ProyectoVikings\InventarioEquipadoCEN_Desequipar.cs" />
+			
 			
 	<Compile Include="Enumerated\ProyectoVikings\TipoGanadorEnum.cs" />
 	

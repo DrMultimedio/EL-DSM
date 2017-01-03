@@ -79,5 +79,10 @@ public void Destroy (int id
 {
         _IInventarioCAD.Destroy (id);
 }
+
+public System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEN> DameInventarioPorJugador (int ? oid_jugador)
+{
+        return _IInventarioCAD.DameInventarioPorJugador (oid_jugador);
+}
 }
 }

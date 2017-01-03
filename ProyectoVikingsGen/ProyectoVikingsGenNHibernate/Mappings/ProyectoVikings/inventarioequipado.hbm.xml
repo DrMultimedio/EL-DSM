@@ -43,5 +43,6 @@
 		 </joined-subclass>
 		  
 		  <query name="InventarioEquipadoENReadAllHQL">from InventarioEquipadoEN</query>
+		  <query name="InventarioEquipadoENdameInventarioPorJugadorEquipadoHQL"><![CDATA[FROM InventarioEquipadoEN]]></query>
 		</hibernate-mapping>
 	

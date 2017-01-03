@@ -20,5 +20,8 @@ void Modify (InventarioEN inventario);
 
 void Destroy (int id
               );
+
+
+System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEN> DameInventarioPorJugador (int ? oid_jugador);
 }
 }
