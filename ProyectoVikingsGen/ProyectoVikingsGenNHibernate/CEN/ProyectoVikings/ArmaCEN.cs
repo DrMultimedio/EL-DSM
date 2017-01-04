@@ -38,7 +38,7 @@ public IArmaCAD get_IArmaCAD ()
         return this._IArmaCAD;
 }
 
-public int New_ (string p_Nombre, int p_Ataque)
+public int New_ (string p_Nombre, int p_Precio, int p_Ataque)
 {
         ArmaEN armaEN = null;
         int oid;
@@ -46,6 +46,8 @@ public int New_ (string p_Nombre, int p_Ataque)
         //Initialized ArmaEN
         armaEN = new ArmaEN ();
         armaEN.Nombre = p_Nombre;
+
+        armaEN.Precio = p_Precio;
 
         armaEN.Ataque = p_Ataque;
 
@@ -55,7 +57,7 @@ public int New_ (string p_Nombre, int p_Ataque)
         return oid;
 }
 
-public void Modify (int p_Arma_OID, string p_Nombre, int p_Ataque)
+public void Modify (int p_Arma_OID, string p_Nombre, int p_Precio, int p_Ataque)
 {
         ArmaEN armaEN = null;
 
@@ -63,6 +65,7 @@ public void Modify (int p_Arma_OID, string p_Nombre, int p_Ataque)
         armaEN = new ArmaEN ();
         armaEN.Id = p_Arma_OID;
         armaEN.Nombre = p_Nombre;
+        armaEN.Precio = p_Precio;
         armaEN.Ataque = p_Ataque;
         //Call to ArmaCAD
 

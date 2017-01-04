@@ -48,5 +48,6 @@
 		 </class>	
 		  
 		  <query name="MonstruoENReadAllHQL">from MonstruoEN</query>
+		  <query name="MonstruoENdameMonstruosBatallaHQL"><![CDATA[FROM MonstruoEN]]></query>
 		</hibernate-mapping>
 	

@@ -37,6 +37,7 @@
       <operations xmi:type="es.ua.dlsi.ooh:Operation" xmi:id="_-rAy8LevEeah9Lq-N2iSiA" name="readOID" operationType="ReadOID" type="Object" typeObject="_sXa28KgxEeaQUvK_f_ac_w">
         <arguments xmi:type="es.ua.dlsi.ooh:Argument" xmi:id="_-rAy8bevEeah9Lq-N2iSiA" name="p_Jugador_OID" type="OID" typeObject="_sXa28KgxEeaQUvK_f_ac_w"/>
       </operations>
+      <operations xmi:type="es.ua.dlsi.ooh:Operation" xmi:id="_-rAy8revEeah9Lq-N2iSiA" name="readAll" operationType="ReadAll" type="Object" collectionType="List" typeObject="_sXa28KgxEeaQUvK_f_ac_w"/>
       <operations xmi:type="es.ua.dlsi.ooh:Operation" xmi:id="_OIimQNHuEeaev8q_6c2U0A" name="CalcularDefensa" type="Integer">
         <arguments xmi:type="es.ua.dlsi.ooh:Argument" xmi:id="_OJCVgNHuEeaev8q_6c2U0A" name="p_oid" type="OID" typeObject="_sXa28KgxEeaQUvK_f_ac_w"/>
       </operations>
@@ -446,6 +447,13 @@
           <styles xmi:type="notation:FontStyle" xmi:id="_ZOE3otHrEeaev8q_6c2U0A" fontName="Segoe UI"/>
           <styles xmi:type="notation:FillStyle" xmi:id="_ZOE3o9HrEeaev8q_6c2U0A"/>
           <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ZOE3pNHrEeaev8q_6c2U0A"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_ZOGFwdHrEeaev8q_6c2U0A" type="3004" element="_-rAy8revEeah9Lq-N2iSiA">
+          <children xmi:type="notation:DecorationNode" xmi:id="_ZOGFxtHrEeaev8q_6c2U0A" type="5004"/>
+          <styles xmi:type="notation:DescriptionStyle" xmi:id="_ZOGFwtHrEeaev8q_6c2U0A"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_ZOGFw9HrEeaev8q_6c2U0A" fontName="Segoe UI"/>
+          <styles xmi:type="notation:FillStyle" xmi:id="_ZOGFxNHrEeaev8q_6c2U0A"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ZOGFxdHrEeaev8q_6c2U0A"/>
         </children>
         <children xmi:type="notation:Node" xmi:id="_OJXssNHuEeaev8q_6c2U0A" type="3004" element="_OIimQNHuEeaev8q_6c2U0A">
           <children xmi:type="notation:DecorationNode" xmi:id="_OJYTwNHuEeaev8q_6c2U0A" type="5004"/>

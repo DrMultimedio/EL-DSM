@@ -272,7 +272,36 @@ public JugadorEN ReadOID (int id
         return jugadorEN;
 }
 
-public System.Collections.Generic.IList<JugadorEN> ReadAll (int first, int size)
+public System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.JugadorEN> DameJugadoresBatalla ()
+{
+        System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.JugadorEN> result;
+        try
+        {
+                SessionInitializeTransaction ();
+                //String sql = @"FROM JugadorEN self where FROM JugadorEN";
+                //IQuery query = session.CreateQuery(sql);
+                IQuery query = (IQuery)session.GetNamedQuery ("JugadorENdameJugadoresBatallaHQL");
+
+                result = query.List<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.JugadorEN>();
+                SessionCommit ();
+        }
+
+        catch (Exception ex) {
+                SessionRollBack ();
+                if (ex is ProyectoVikingsGenNHibernate.Exceptions.ModelException)
+                        throw ex;
+                throw new ProyectoVikingsGenNHibernate.Exceptions.DataLayerException ("Error in JugadorCAD.", ex);
+        }
+
+
+        finally
+        {
+                SessionClose ();
+        }
+
+        return result;
+}
+public System.Collections.Generic.IList<JugadorEN> DameJugadores (int first, int size)
 {
         System.Collections.Generic.IList<JugadorEN> result = null;
         try

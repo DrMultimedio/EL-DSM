@@ -38,7 +38,7 @@ public IArmaduraCAD get_IArmaduraCAD ()
         return this._IArmaduraCAD;
 }
 
-public int New_ (string p_Nombre, int p_Defensa, int p_Vida)
+public int New_ (string p_Nombre, int p_Precio, int p_Defensa, int p_Vida)
 {
         ArmaduraEN armaduraEN = null;
         int oid;
@@ -46,6 +46,8 @@ public int New_ (string p_Nombre, int p_Defensa, int p_Vida)
         //Initialized ArmaduraEN
         armaduraEN = new ArmaduraEN ();
         armaduraEN.Nombre = p_Nombre;
+
+        armaduraEN.Precio = p_Precio;
 
         armaduraEN.Defensa = p_Defensa;
 
@@ -57,7 +59,7 @@ public int New_ (string p_Nombre, int p_Defensa, int p_Vida)
         return oid;
 }
 
-public void Modify (int p_Armadura_OID, string p_Nombre, int p_Defensa, int p_Vida)
+public void Modify (int p_Armadura_OID, string p_Nombre, int p_Precio, int p_Defensa, int p_Vida)
 {
         ArmaduraEN armaduraEN = null;
 
@@ -65,6 +67,7 @@ public void Modify (int p_Armadura_OID, string p_Nombre, int p_Defensa, int p_Vi
         armaduraEN = new ArmaduraEN ();
         armaduraEN.Id = p_Armadura_OID;
         armaduraEN.Nombre = p_Nombre;
+        armaduraEN.Precio = p_Precio;
         armaduraEN.Defensa = p_Defensa;
         armaduraEN.Vida = p_Vida;
         //Call to ArmaduraCAD

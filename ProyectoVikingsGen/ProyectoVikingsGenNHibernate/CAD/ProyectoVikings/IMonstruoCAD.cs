@@ -20,5 +20,8 @@ void Modify (MonstruoEN monstruo);
 
 void Destroy (int id
               );
+
+
+System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.MonstruoEN> DameMonstruosBatalla ();
 }
 }

@@ -148,6 +148,9 @@ public void Modify (ArmaEN arma)
                 armaEN.Nombre = arma.Nombre;
 
 
+                armaEN.Precio = arma.Precio;
+
+
                 armaEN.Ataque = arma.Ataque;
 
                 session.Update (armaEN);

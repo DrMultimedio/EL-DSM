@@ -99,18 +99,27 @@ public static void InitializeData ()
                 int jugador2 = jugadorCEN.New_ ("Jose", "jose@gmail.com", new DateTime (1957, 12, 19), "Pato", 20, 20, 1, 1, 0);
 
                 // Objetos
-                int armadura1 = armaduraCEN.New_ ("Grebas del abismo 2.0", 12, 10);
-                int armadura2 = armaduraCEN.New_ ("Armadura de carton", 3, 4);
-                int calzado1 = calzadoCEN.New_ ("Botas del abismo 2.0", 12, 10);
-                int calzado2 = calzadoCEN.New_ ("Zapatos de carton", 3, 4);
-                int casco1 = cascoCEN.New_ ("Casco del abismo 2.0", 12, 10);
-                int casco2 = cascoCEN.New_ ("Casco de carton", 3, 4);
-                int arma1 = armaCEN.New_ ("Espada del abismo 2.0", 12);
-                int arma2 = armaCEN.New_ ("Espada de carton", 3);
+                int armadura1 = armaduraCEN.New_ ("Grebas del abismo 2.0", 12, 10, 3);
+                int armadura2 = armaduraCEN.New_ ("Armadura de carton", 3, 4, 3);
+                int calzado1 = calzadoCEN.New_ ("Botas del abismo 2.0", 12, 10, 3);
+                int calzado2 = calzadoCEN.New_ ("Zapatos de carton", 3, 4, 3);
+                int casco1 = cascoCEN.New_ ("Casco del abismo 2.0", 12, 10, 3);
+                int casco2 = cascoCEN.New_ ("Casco de carton", 3, 4, 3);
+                int arma1 = armaCEN.New_ ("Espada del abismo 2.0", 12, 3);
+                int arma2 = armaCEN.New_ ("Espada de carton", 3, 3);
 
                 //Monstruos
                 int monstruo1 = monstruoCEN.New_ ("Mariano", 30, 2, 2);
                 int monstruo2 = monstruoCEN.New_ ("Joutn", 30, 2, 2);
+
+                //inventario
+
+                //le prueba del algodon
+                IList<JugadorEN> jugadores = jugadorCEN.DameJugadores (0, 14);
+
+                foreach (JugadorEN j in jugadores) {
+                        System.Console.WriteLine (j.Nombre);
+                }
 
                 //inventario
 

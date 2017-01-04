@@ -95,6 +95,9 @@ public void ModifyDefault (ObjetoEN objeto)
 
 
 
+
+                objetoEN.Precio = objeto.Precio;
+
                 session.Update (objetoEN);
                 SessionCommit ();
         }
@@ -148,6 +151,9 @@ public void Modify (ObjetoEN objeto)
                 ObjetoEN objetoEN = (ObjetoEN)session.Load (typeof(ObjetoEN), objeto.Id);
 
                 objetoEN.Nombre = objeto.Nombre;
+
+
+                objetoEN.Precio = objeto.Precio;
 
                 session.Update (objetoEN);
                 SessionCommit ();

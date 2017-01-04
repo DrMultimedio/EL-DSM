@@ -38,7 +38,7 @@ public ICascoCAD get_ICascoCAD ()
         return this._ICascoCAD;
 }
 
-public int New_ (string p_Nombre, int p_Vida, int p_Defensa)
+public int New_ (string p_Nombre, int p_Precio, int p_Vida, int p_Defensa)
 {
         CascoEN cascoEN = null;
         int oid;
@@ -46,6 +46,8 @@ public int New_ (string p_Nombre, int p_Vida, int p_Defensa)
         //Initialized CascoEN
         cascoEN = new CascoEN ();
         cascoEN.Nombre = p_Nombre;
+
+        cascoEN.Precio = p_Precio;
 
         cascoEN.Vida = p_Vida;
 
@@ -57,7 +59,7 @@ public int New_ (string p_Nombre, int p_Vida, int p_Defensa)
         return oid;
 }
 
-public void Modify (int p_Casco_OID, string p_Nombre, int p_Vida, int p_Defensa)
+public void Modify (int p_Casco_OID, string p_Nombre, int p_Precio, int p_Vida, int p_Defensa)
 {
         CascoEN cascoEN = null;
 
@@ -65,6 +67,7 @@ public void Modify (int p_Casco_OID, string p_Nombre, int p_Vida, int p_Defensa)
         cascoEN = new CascoEN ();
         cascoEN.Id = p_Casco_OID;
         cascoEN.Nombre = p_Nombre;
+        cascoEN.Precio = p_Precio;
         cascoEN.Vida = p_Vida;
         cascoEN.Defensa = p_Defensa;
         //Call to CascoCAD

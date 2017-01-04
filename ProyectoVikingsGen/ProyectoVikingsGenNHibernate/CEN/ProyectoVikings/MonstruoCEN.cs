@@ -80,5 +80,10 @@ public void Destroy (int id
 {
         _IMonstruoCAD.Destroy (id);
 }
+
+public System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.MonstruoEN> DameMonstruosBatalla ()
+{
+        return _IMonstruoCAD.DameMonstruosBatalla ();
+}
 }
 }

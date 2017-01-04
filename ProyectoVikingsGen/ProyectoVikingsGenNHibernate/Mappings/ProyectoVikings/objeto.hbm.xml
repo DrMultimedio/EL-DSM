@@ -15,6 +15,9 @@
 					<property name="Nombre" type="string"> 
 						<column name="Nombre"  not-null="true"/>
 					</property>
+					<property name="Precio" type="integer"> 
+						<column name="Precio"  not-null="true"/>
+					</property>
 			
 			
 			
@@ -40,6 +43,8 @@
 									<column name="FK_idInventario_idInventarioEquipado"/> 
       						</many-to-many>
     					</bag>
+			
+					
 					
 					
 					

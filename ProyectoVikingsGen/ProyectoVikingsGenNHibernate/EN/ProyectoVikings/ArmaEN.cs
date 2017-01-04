@@ -32,20 +32,20 @@ public ArmaEN() : base ()
 
 
 public ArmaEN(int id, int ataque
-              , string nombre, System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEN> inventario, System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEquipadoEN> inventarioEquipado
+              , string nombre, System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEN> inventario, System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEquipadoEN> inventarioEquipado, int precio
               )
 {
-        this.init (Id, ataque, nombre, inventario, inventarioEquipado);
+        this.init (Id, ataque, nombre, inventario, inventarioEquipado, precio);
 }
 
 
 public ArmaEN(ArmaEN arma)
 {
-        this.init (Id, arma.Ataque, arma.Nombre, arma.Inventario, arma.InventarioEquipado);
+        this.init (Id, arma.Ataque, arma.Nombre, arma.Inventario, arma.InventarioEquipado, arma.Precio);
 }
 
 private void init (int id
-                   , int ataque, string nombre, System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEN> inventario, System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEquipadoEN> inventarioEquipado)
+                   , int ataque, string nombre, System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEN> inventario, System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEquipadoEN> inventarioEquipado, int precio)
 {
         this.Id = id;
 
@@ -57,6 +57,8 @@ private void init (int id
         this.Inventario = inventario;
 
         this.InventarioEquipado = inventarioEquipado;
+
+        this.Precio = precio;
 }
 
 public override bool Equals (object obj)

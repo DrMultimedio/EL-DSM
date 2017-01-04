@@ -151,6 +151,9 @@ public void Modify (CascoEN casco)
                 cascoEN.Nombre = casco.Nombre;
 
 
+                cascoEN.Precio = casco.Precio;
+
+
                 cascoEN.Vida = casco.Vida;
 
 

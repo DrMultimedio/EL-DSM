@@ -207,5 +207,35 @@ public void Destroy (int id
                 SessionClose ();
         }
 }
+
+public System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.MonstruoEN> DameMonstruosBatalla ()
+{
+        System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.MonstruoEN> result;
+        try
+        {
+                SessionInitializeTransaction ();
+                //String sql = @"FROM MonstruoEN self where FROM MonstruoEN";
+                //IQuery query = session.CreateQuery(sql);
+                IQuery query = (IQuery)session.GetNamedQuery ("MonstruoENdameMonstruosBatallaHQL");
+
+                result = query.List<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.MonstruoEN>();
+                SessionCommit ();
+        }
+
+        catch (Exception ex) {
+                SessionRollBack ();
+                if (ex is ProyectoVikingsGenNHibernate.Exceptions.ModelException)
+                        throw ex;
+                throw new ProyectoVikingsGenNHibernate.Exceptions.DataLayerException ("Error in MonstruoCAD.", ex);
+        }
+
+
+        finally
+        {
+                SessionClose ();
+        }
+
+        return result;
+}
 }
 }

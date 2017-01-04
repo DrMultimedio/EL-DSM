@@ -28,6 +28,10 @@ JugadorEN ReadOID (int id
                    );
 
 
-System.Collections.Generic.IList<JugadorEN> ReadAll (int first, int size);
+
+System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.JugadorEN> DameJugadoresBatalla ();
+
+
+System.Collections.Generic.IList<JugadorEN> DameJugadores (int first, int size);
 }
 }

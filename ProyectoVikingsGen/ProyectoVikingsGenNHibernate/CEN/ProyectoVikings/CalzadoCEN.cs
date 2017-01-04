@@ -38,7 +38,7 @@ public ICalzadoCAD get_ICalzadoCAD ()
         return this._ICalzadoCAD;
 }
 
-public int New_ (string p_Nombre, int p_Vida, int p_Defensa)
+public int New_ (string p_Nombre, int p_Precio, int p_Vida, int p_Defensa)
 {
         CalzadoEN calzadoEN = null;
         int oid;
@@ -46,6 +46,8 @@ public int New_ (string p_Nombre, int p_Vida, int p_Defensa)
         //Initialized CalzadoEN
         calzadoEN = new CalzadoEN ();
         calzadoEN.Nombre = p_Nombre;
+
+        calzadoEN.Precio = p_Precio;
 
         calzadoEN.Vida = p_Vida;
 
@@ -57,7 +59,7 @@ public int New_ (string p_Nombre, int p_Vida, int p_Defensa)
         return oid;
 }
 
-public void Modify (int p_Calzado_OID, string p_Nombre, int p_Vida, int p_Defensa)
+public void Modify (int p_Calzado_OID, string p_Nombre, int p_Precio, int p_Vida, int p_Defensa)
 {
         CalzadoEN calzadoEN = null;
 
@@ -65,6 +67,7 @@ public void Modify (int p_Calzado_OID, string p_Nombre, int p_Vida, int p_Defens
         calzadoEN = new CalzadoEN ();
         calzadoEN.Id = p_Calzado_OID;
         calzadoEN.Nombre = p_Nombre;
+        calzadoEN.Precio = p_Precio;
         calzadoEN.Vida = p_Vida;
         calzadoEN.Defensa = p_Defensa;
         //Call to CalzadoCAD

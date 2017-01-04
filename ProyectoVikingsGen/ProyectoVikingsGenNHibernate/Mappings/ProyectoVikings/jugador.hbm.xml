@@ -101,5 +101,6 @@
 		 </class>	
 		  
 		  <query name="JugadorENReadAllHQL">from JugadorEN</query>
+		  <query name="JugadorENdameJugadoresBatallaHQL"><![CDATA[FROM JugadorEN]]></query>
 		</hibernate-mapping>
 	

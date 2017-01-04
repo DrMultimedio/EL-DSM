@@ -116,8 +116,9 @@
 			<Compile Include="CEN\ProyectoVikings\JugadorCEN_CalcularDanyo.cs" />
 			
 			
-			
 			<Compile Include="CEN\ProyectoVikings\JugadorCEN_CalcularDefensa.cs" />
+			
+			
 			
 	<Compile Include="EN\ProyectoVikings\AdminEN.cs" />
 	<Compile Include="CEN\ProyectoVikings\AdminCEN.cs" />
@@ -147,6 +148,9 @@
 	<Compile Include="CP\ProyectoVikings\MonstruoCP.cs" />
 			
 			
+			
+			
+			<Compile Include="CEN\ProyectoVikings\MonstruoCEN_DameMonstruos.cs" />
 			
 	<Compile Include="EN\ProyectoVikings\Batalla_PVEEN.cs" />
 	<Compile Include="CEN\ProyectoVikings\Batalla_PVECEN.cs" />

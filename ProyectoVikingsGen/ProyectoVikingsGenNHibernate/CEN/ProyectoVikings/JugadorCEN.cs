@@ -105,11 +105,15 @@ public JugadorEN ReadOID (int id
         return jugadorEN;
 }
 
-public System.Collections.Generic.IList<JugadorEN> ReadAll (int first, int size)
+public System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.JugadorEN> DameJugadoresBatalla ()
+{
+        return _IJugadorCAD.DameJugadoresBatalla ();
+}
+public System.Collections.Generic.IList<JugadorEN> DameJugadores (int first, int size)
 {
         System.Collections.Generic.IList<JugadorEN> list = null;
 
-        list = _IJugadorCAD.ReadAll (first, size);
+        list = _IJugadorCAD.DameJugadores (first, size);
         return list;
 }
 }

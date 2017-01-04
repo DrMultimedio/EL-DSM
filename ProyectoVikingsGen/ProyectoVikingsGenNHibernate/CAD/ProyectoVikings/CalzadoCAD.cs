@@ -151,6 +151,9 @@ public void Modify (CalzadoEN calzado)
                 calzadoEN.Nombre = calzado.Nombre;
 
 
+                calzadoEN.Precio = calzado.Precio;
+
+
                 calzadoEN.Vida = calzado.Vida;
 
 

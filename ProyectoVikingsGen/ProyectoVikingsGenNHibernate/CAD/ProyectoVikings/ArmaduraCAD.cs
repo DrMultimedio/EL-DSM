@@ -151,6 +151,9 @@ public void Modify (ArmaduraEN armadura)
                 armaduraEN.Nombre = armadura.Nombre;
 
 
+                armaduraEN.Precio = armadura.Precio;
+
+
                 armaduraEN.Defensa = armadura.Defensa;
 
 
