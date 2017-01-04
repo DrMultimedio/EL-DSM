@@ -21,7 +21,7 @@ public static void Create (string databaseArg, string userArg, string passArg)
         String pass = passArg;
 
         // Conex DB
-        SqlConnection cnn = new SqlConnection (@"Server=(local); database=master; integrated security=yes");
+        SqlConnection cnn = new SqlConnection (@"Server=(local)\sqlexpress; database=master; integrated security=yes");
 
         // Order T-SQL create user
         String createUser = @"IF NOT EXISTS(SELECT name FROM master.dbo.syslogins WHERE name = '" + user + @"')
@@ -78,46 +78,46 @@ public static void InitializeData ()
         try
         {
                 // Insert the initilizations of entities using the CEN classes
-            /*
-            JugadorCAD jugadorCAD = new JugadorCAD();
-            JugadorCEN jugadorCEN = new JugadorCEN();
 
-            ArmaduraCAD armaduraCAD = new ArmaduraCAD();
-            ArmaduraCEN armaduraCEN = new ArmaduraCEN();
-            ArmaCAD armaCAD = new ArmaCAD();
-            ArmaCEN armaCEN = new ArmaCEN();
-            CalzadoCAD calzadoCAD = new CalzadoCAD();
-            CalzadoCEN calzadoCEN = new CalzadoCEN();
-            CascoCAD cascoCAD = new CascoCAD();
-            CascoCEN cascoCEN = new CascoCEN();
+                JugadorCAD jugadorCAD = new JugadorCAD ();
+                JugadorCEN jugadorCEN = new JugadorCEN ();
 
-            MonstruoCAD monstruoCAD = new MonstruoCAD();
-            MonstruoCEN monstruoCEN = new MonstruoCEN();
+                ArmaduraCAD armaduraCAD = new ArmaduraCAD ();
+                ArmaduraCEN armaduraCEN = new ArmaduraCEN ();
+                ArmaCAD armaCAD = new ArmaCAD ();
+                ArmaCEN armaCEN = new ArmaCEN ();
+                CalzadoCAD calzadoCAD = new CalzadoCAD ();
+                CalzadoCEN calzadoCEN = new CalzadoCEN ();
+                CascoCAD cascoCAD = new CascoCAD ();
+                CascoCEN cascoCEN = new CascoCEN ();
 
-            // Jugadores 
-            int jugador1 = jugadorCEN.New_("Paco", "paco@gmail.com", new DateTime(1997, 11, 19), "Pato", 20, 20, 1, 1, 0);
-            int jugador2 = jugadorCEN.New_("Jose", "jose@gmail.com", new DateTime(1957, 12, 19), "Pato", 20, 20, 1, 1, 0);
+                MonstruoCAD monstruoCAD = new MonstruoCAD ();
+                MonstruoCEN monstruoCEN = new MonstruoCEN ();
 
-            // Objetos
-            int armadura1 = armaduraCEN.New_("Grebas del abismo 2.0", 12, 10);
-            int armadura2 = armaduraCEN.New_("Armadura de cartón", 3, 4);
-            int calzado1 = calzadoCEN.New_("Botas del abismo 2.0", 12, 10);
-            int calzado2 = calzadoCEN.New_("Zapatos de cartón", 3, 4);
-            int casco1 = cascoCEN.New_("Casco del abismo 2.0", 12, 10);
-            int casco2 = cascoCEN.New_("Casco de cartón", 3, 4);
-            int arma1 = armaCEN.New_("Espada del abismo 2.0", 12);
-            int arma2 = armaCEN.New_("Espada de cartón", 3);
-            
-            //Monstruos
-            int monstruo1 = monstruoCEN.New_("Mariano", 30, 2, 2);
-            int monstruo2 = monstruoCEN.New_("Joutn", 30, 2, 2);
+                // Jugadores
+                int jugador1 = jugadorCEN.New_ ("Paco", "paco@gmail.com", new DateTime (1997, 11, 19), "Pato", 20, 20, 1, 1, 0);
+                int jugador2 = jugadorCEN.New_ ("Jose", "jose@gmail.com", new DateTime (1957, 12, 19), "Pato", 20, 20, 1, 1, 0);
 
-            //inventario
+                // Objetos
+                int armadura1 = armaduraCEN.New_ ("Grebas del abismo 2.0", 12, 10);
+                int armadura2 = armaduraCEN.New_ ("Armadura de carton", 3, 4);
+                int calzado1 = calzadoCEN.New_ ("Botas del abismo 2.0", 12, 10);
+                int calzado2 = calzadoCEN.New_ ("Zapatos de carton", 3, 4);
+                int casco1 = cascoCEN.New_ ("Casco del abismo 2.0", 12, 10);
+                int casco2 = cascoCEN.New_ ("Casco de carton", 3, 4);
+                int arma1 = armaCEN.New_ ("Espada del abismo 2.0", 12);
+                int arma2 = armaCEN.New_ ("Espada de carton", 3);
 
-            // p.e. CustomerCEN customer = new CustomerCEN();
+                //Monstruos
+                int monstruo1 = monstruoCEN.New_ ("Mariano", 30, 2, 2);
+                int monstruo2 = monstruoCEN.New_ ("Joutn", 30, 2, 2);
+
+                //inventario
+
+                // p.e. CustomerCEN customer = new CustomerCEN();
                 // customer.New_ (p_user:"user", p_password:"1234");
 
-            */
+
 
                 /*PROTECTED REGION END*/
         }

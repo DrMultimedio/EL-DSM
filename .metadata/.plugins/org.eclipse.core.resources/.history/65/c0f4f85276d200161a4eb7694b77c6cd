@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:es.ua.dlsi.ooh="http://www.dlsi.ua.es/ooh/conceptualView/1.0.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation">
-  <es.ua.dlsi.ooh:ConceptualModel xmi:id="_rTIvcKgxEeaQUvK_f_ac_w" name="ProyectoVikings" aliasDB="ProyectoVikingsGenNHibernate">
+  <es.ua.dlsi.ooh:ConceptualModel xmi:id="_rTIvcKgxEeaQUvK_f_ac_w" name="ProyectoVikings">
     <elements xmi:type="es.ua.dlsi.ooh:Class" xmi:id="_sXa28KgxEeaQUvK_f_ac_w" name="Jugador" alias="Jugador" inheritSons="_7LsHEKgyEeaQUvK_f_ac_w" asociationTarget="_mofBYKg1EeaQUvK_f_ac_w _WLCasKg5EeaQUvK_f_ac_w _WxbsUKg5EeaQUvK_f_ac_w _mEb08Kg8EeaQUvK_f_ac_w" associationOrigin="_bsrtEKgzEeaQUvK_f_ac_w">
       <operations xmi:type="es.ua.dlsi.ooh:Operation" xmi:id="_u2uK8agxEeaQUvK_f_ac_w" name="new" operationType="New" type="Object" typeObject="_sXa28KgxEeaQUvK_f_ac_w">
         <arguments xmi:type="es.ua.dlsi.ooh:Argument" xmi:id="_bxLDG7erEeah9Lq-N2iSiA" name="p_Nombre"/>
