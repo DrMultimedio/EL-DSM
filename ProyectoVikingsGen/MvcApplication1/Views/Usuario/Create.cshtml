@@ -1,0 +1,100 @@
+﻿@model ProyectoVikingsGenNHibernate.EN.ProyectoVikings.JugadorEN
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>JugadorEN</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Nombre)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Nombre)
+            @Html.ValidationMessageFor(model => model.Nombre)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Email)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Email)
+            @Html.ValidationMessageFor(model => model.Email)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Cumple)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Cumple)
+            @Html.ValidationMessageFor(model => model.Cumple)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Genero)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Genero)
+            @Html.ValidationMessageFor(model => model.Genero)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Vidamax)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Vidamax)
+            @Html.ValidationMessageFor(model => model.Vidamax)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.VidaAct)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.VidaAct)
+            @Html.ValidationMessageFor(model => model.VidaAct)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Ataque)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Ataque)
+            @Html.ValidationMessageFor(model => model.Ataque)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Defensa)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Defensa)
+            @Html.ValidationMessageFor(model => model.Defensa)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Oro)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Oro)
+            @Html.ValidationMessageFor(model => model.Oro)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
