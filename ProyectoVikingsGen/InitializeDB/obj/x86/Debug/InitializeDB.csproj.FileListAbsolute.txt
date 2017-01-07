@@ -17,3 +17,6 @@ C:\OOH4RIA\workspace\ProyectoVikingsGen\InitializeDB\bin\Debug\ProyectoVikingsGe
 C:\OOH4RIA\workspace\ProyectoVikingsGen\InitializeDB\obj\x86\Debug\InitializeDB.csprojResolveAssemblyReference.cache
 C:\OOH4RIA\workspace\ProyectoVikingsGen\InitializeDB\obj\x86\Debug\InitializeDB.exe
 C:\OOH4RIA\workspace\ProyectoVikingsGen\InitializeDB\obj\x86\Debug\InitializeDB.pdb
+C:\Users\ecta_\Documents\GitHub\EL-DSM\ProyectoVikingsGen\InitializeDB\bin\Debug\InitializeDB.exe.config
+C:\Users\ecta_\Documents\GitHub\EL-DSM\ProyectoVikingsGen\InitializeDB\obj\x86\Debug\InitializeDB.exe
+C:\Users\ecta_\Documents\GitHub\EL-DSM\ProyectoVikingsGen\InitializeDB\obj\x86\Debug\InitializeDB.pdb
