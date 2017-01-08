@@ -219,6 +219,8 @@
 			
 			<Compile Include="CP\ProyectoVikings\Batalla_PVPCP_Resolver.cs" />
 			
+			<Compile Include="CEN\ProyectoVikings\Batalla_PVPCEN_DameGanador.cs" />
+			
 	<Compile Include="EN\ProyectoVikings\InventarioEquipadoEN.cs" />
 	<Compile Include="CEN\ProyectoVikings\InventarioEquipadoCEN.cs" />
 	<Compile Include="CAD\ProyectoVikings\IInventarioEquipadoCAD.cs" />

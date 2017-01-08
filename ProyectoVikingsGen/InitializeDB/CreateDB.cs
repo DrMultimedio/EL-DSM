@@ -101,14 +101,16 @@ public static void InitializeData ()
                 Batalla_PVPCAD batallaPVPCAD = new Batalla_PVPCAD ();
                 Batalla_PVPCEN batallaPVPCEN = new Batalla_PVPCEN ();
 
+                Batalla_PVECP batallaPVECCP = new Batalla_PVECP ();
+                Batalla_PVPCP batallaPVPCCP = new Batalla_PVPCP();
 
                 Batalla_PVEEN batallapveEN = null;
 
 
                 // Jugadores
-                int jugador1 = jugadorCEN.New_ ("Paco", "paco@gmail.com", new DateTime (1997, 11, 19), Util.GetEncondeMD5("Pato"), 20, 20, 1, 1, 0, "Paco1");
-                int jugador2 = jugadorCEN.New_("Jose", "jose@gmail.com", new DateTime(1957, 12, 19), Util.GetEncondeMD5("Pato"), 20, 20, 1, 1, 0, "Jose1");
-                int jugador3 = jugadorCEN.New_("ThorTilla", "jose@gmail.com", new DateTime(1957, 12, 19), Util.GetEncondeMD5("Pato"), 50, 40, 5, 1, 0, "Jose1");
+                int jugador1 = jugadorCEN.New_ ("Paco", "paco@gmail.com", new DateTime (1997, 11, 19), "Pato", 20, 20, 3, 1, 0, "Paco1");
+                int jugador2 = jugadorCEN.New_ ("Jose", "jose@gmail.com", new DateTime (1957, 12, 19), Util.GetEncondeMD5 ("Pato"), 20, 20, 3, 1, 0, "Jose1");
+                int jugador3 = jugadorCEN.New_ ("ThorTilla", "jose@gmail.com", new DateTime (1957, 12, 19), Util.GetEncondeMD5 ("Pato"), 50, 40, 5, 1, 0, "Jose1");
 
                 // Objetos
                 int armadura1 = armaduraCEN.New_ ("Grebas del abismo 2.0", 12, 10, 3);
@@ -126,21 +128,95 @@ public static void InitializeData ()
                 int monstruo3 = monstruoCEN.New_ ("Ardilla", 15, 1, 2);
 
                 //batallas
-                int batalla1 = batallaPVECEN.New_ (0, 0, 0, ProyectoVikingsGenNHibernate.Enumerated.ProyectoVikings.TipoGanadorEnum.monstruo);
-                //Batalla_PVECP batallaPVECCP = new Batalla_PVECP();
-                JugadorCP jugadorCP = new JugadorCP();
+                int batalla1 = batallaPVECEN.New_ (monstruo1, jugador1, 0, ProyectoVikingsGenNHibernate.Enumerated.ProyectoVikings.TipoGanadorEnum.monstruo);
+                int batalla2 = batallaPVPCEN.New_ (jugador1, jugador1, 0, jugador1);
+                JugadorCP jugadorCP = new JugadorCP ();
 
-                //if (batallaPVECCP.Resolver(jugador1, monstruo2, batalla1))
-                if (jugadorCEN.Login(jugador1, "Pato"))
+                //Probamos el legoin
+                System.Console.WriteLine ("Login que va");
+
+                if (jugadorCEN.Login (jugador1, "Paco1")) {
+                        System.Console.WriteLine ("Loguiado");
+                }
+                else{
+                        System.Console.WriteLine ("No logiado");
+                }
+
+                System.Console.WriteLine ("Login que no va");
+
+                if (jugadorCEN.Login (jugador2, "Paco1")) {
+                        System.Console.WriteLine ("Loguiado");
+                }
+                else{
+                        System.Console.WriteLine ("No logiado");
+                }
+
+                //LE BATALLAS PVE
+                System.Console.WriteLine ("Batalla perdida");
+
+                if (batallaPVECCP.Resolver (jugador1, monstruo2, batalla1)) {
+                        System.Console.WriteLine ("Gana el jugador");
+                        System.Console.WriteLine (batallaPVECEN.DameGanador (batalla1));
+                }
+                else{
+                        System.Console.WriteLine ("Gana el Monstruo");
+                        System.Console.WriteLine (batallaPVECEN.DameGanador (batalla1));
+                }
+                System.Console.WriteLine ("Batalla ganada");
+
+                if (batallaPVECCP.Resolver (jugador1, monstruo3, batalla1)) {
+                        System.Console.WriteLine ("Gana el jugador");
+                        System.Console.WriteLine (batallaPVECEN.DameGanador (batalla1));
+                }
+                else{
+                        System.Console.WriteLine ("Gana el Monstruo");
+                        System.Console.WriteLine (batallaPVECEN.DameGanador (batalla1));
+                }
+                //LE BATALLAS PVP
+                System.Console.WriteLine ("Batalla perdida PVP");
+
+                if (batallaPVPCCP.Resolver (jugador1, jugador3, batalla2)) {
+                        System.Console.WriteLine ("Gana el jugador 1");
+                        System.Console.WriteLine (batallaPVPCEN.DameGanador(batalla2));
+                }
+                else{
+                        System.Console.WriteLine ("Gana el jugador 2");
+                        System.Console.WriteLine (batallaPVPCEN.DameGanador(batalla2));
+                }
+                System.Console.WriteLine ("Batalla ganada PVP");
+
+                if (batallaPVPCCP.Resolver (jugador3, jugador2, batalla2)) {
+                        System.Console.WriteLine ("Gana el jugador 1");
+                        System.Console.WriteLine (batallaPVPCEN.DameGanador (batalla2));
+                }
+                else{
+                        System.Console.WriteLine ("Gana el jugador 2");
+                        System.Console.WriteLine (batallaPVPCEN.DameGanador (batalla2));
+                }                System.Console.WriteLine ("Batalla ganada PVP");
+
+                if (batallaPVPCCP.Resolver (jugador3, jugador2, batalla2)) {
+                        System.Console.WriteLine ("Gana el jugador 1");
+                        System.Console.WriteLine (batallaPVPCEN.DameGanador (batalla2));
+                }
+                else{
+                        System.Console.WriteLine ("Gana el jugador 2");
+                        System.Console.WriteLine (batallaPVPCEN.DameGanador (batalla2));
+                }
+
+                System.Console.WriteLine("Ni idea de quien gana");
+
+                if (batallaPVPCCP.Resolver(jugador1, jugador2, batalla2))
                 {
-                    System.Console.WriteLine("Loguiado");
+                    System.Console.WriteLine("Gana el jugador 1");
+                    System.Console.WriteLine(batallaPVPCEN.DameGanador(batalla2));
                 }
                 else
                 {
-                    System.Console.WriteLine("gana el monstruo");
-
+                    System.Console.WriteLine("Gana el jugador 2");
+                    System.Console.WriteLine(batallaPVPCEN.DameGanador(batalla2));
                 }
-            //inventario
+
+                //inventario
 
                 //le prueba del algodon
                 IList<JugadorEN> jugadores = jugadorCEN.DameJugadores (0, 14);
@@ -148,7 +224,7 @@ public static void InitializeData ()
                 foreach (JugadorEN j in jugadores) {
                         System.Console.WriteLine (j.Nombre);
                 }
-                
+
 
                 // p.e. CustomerCEN customer = new CustomerCEN();
                 // customer.New_ (p_user:"user", p_password:"1234");

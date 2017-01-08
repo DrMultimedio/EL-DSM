@@ -78,16 +78,16 @@ public bool Resolver (int id_jugador, int id_monstruo, int batalla_oid)
                 int var = 1;
 
                 while (vida1 > 0 && vida2 > 0) {
-                        vida2 -= danyo1;
-                        vida1 -= danyo2;
+                        vida2 -= danyo1 + 1;
+                        vida1 -= danyo2 + 1;
                 }
 
                 if (vida1 <= 0) {
-                        batalla_PVECEN.Modify (batalla_oid, 10, ProyectoVikingsGenNHibernate.Enumerated.ProyectoVikings.TipoGanadorEnum.Jugador);
+                        batalla_PVECEN.Modify (batalla_oid, 10, ProyectoVikingsGenNHibernate.Enumerated.ProyectoVikings.TipoGanadorEnum.monstruo);
                         resultado = false;
                 }
                 else{
-                        batalla_PVECEN.Modify (batalla_oid, 10, ProyectoVikingsGenNHibernate.Enumerated.ProyectoVikings.TipoGanadorEnum.monstruo);
+                        batalla_PVECEN.Modify (batalla_oid, 10, ProyectoVikingsGenNHibernate.Enumerated.ProyectoVikings.TipoGanadorEnum.Jugador);
                         resultado = true;
                 }
 

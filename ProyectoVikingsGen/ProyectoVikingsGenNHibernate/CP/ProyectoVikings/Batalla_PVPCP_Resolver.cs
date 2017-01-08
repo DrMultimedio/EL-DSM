@@ -78,12 +78,12 @@ public bool Resolver (int jugador_oid, int jugador_oid1, int batalla_oid)
                 int var = 1;
 
                 while (vida1 > 0 && vida2 > 0) {
-                        vida2 -= danyo1;
-                        vida1 -= danyo2;
+                        vida2 -= danyo1 + 1;
+                        vida1 -= danyo2 + 1;
                 }
 
                 if (vida1 <= 0) {
-                        batalla_PVPCEN.Modify (batalla_oid, 10, jugador_oid1);
+                        batalla_PVPCEN.Modify (batalla_oid, 10, jugador_oid);
                         resultado = false;
                 }
                 else{

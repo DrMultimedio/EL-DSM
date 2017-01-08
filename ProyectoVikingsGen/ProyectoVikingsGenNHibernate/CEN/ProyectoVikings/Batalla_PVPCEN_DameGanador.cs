@@ -11,23 +11,23 @@ using ProyectoVikingsGenNHibernate.EN.ProyectoVikings;
 using ProyectoVikingsGenNHibernate.CAD.ProyectoVikings;
 
 
-/*PROTECTED REGION ID(usingProyectoVikingsGenNHibernate.CEN.ProyectoVikings_Batalla_PVE_dameGanador) ENABLED START*/
+/*PROTECTED REGION ID(usingProyectoVikingsGenNHibernate.CEN.ProyectoVikings_Batalla_PVP_dameGanador) ENABLED START*/
 //  references to other libraries
 /*PROTECTED REGION END*/
 
 namespace ProyectoVikingsGenNHibernate.CEN.ProyectoVikings
 {
-public partial class Batalla_PVECEN
+public partial class Batalla_PVPCEN
 {
-public ProyectoVikingsGenNHibernate.Enumerated.ProyectoVikings.TipoGanadorEnum DameGanador (int b_oid)
+public int DameGanador (int b_oid)
 {
-        /*PROTECTED REGION ID(ProyectoVikingsGenNHibernate.CEN.ProyectoVikings_Batalla_PVE_dameGanador) ENABLED START*/
+        /*PROTECTED REGION ID(ProyectoVikingsGenNHibernate.CEN.ProyectoVikings_Batalla_PVP_dameGanador) ENABLED START*/
 
         // Write here your custom code...
 
-        Batalla_PVEEN en = _IBatalla_PVECAD.ReadOIDDefault (b_oid);
+        Batalla_PVPEN en = _IBatalla_PVPCAD.ReadOIDDefault (b_oid);
 
-        return en.TipoGanador;
+        return en.IdGanador;
 
         /*PROTECTED REGION END*/
 }
