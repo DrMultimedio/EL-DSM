@@ -39,6 +39,9 @@
 					<property name="Oro" type="integer"> 
 						<column name="Oro"  not-null="true"/>
 					</property>
+					<property name="Password" type="string"> 
+						<column name="Password"  not-null="true"/>
+					</property>
 			
 			
 			
@@ -82,6 +85,8 @@
 							   <one-to-one name="InventarioEquipado" class="ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEquipadoEN" property-ref="Jugador_0" />							
 					 
 						
+			
+					
 					
 					
 					

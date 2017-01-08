@@ -110,6 +110,13 @@ private ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEquipadoEN inv
 
 
 
+/**
+ *	Atributo password
+ */
+private String password;
+
+
+
 
 
 
@@ -203,6 +210,12 @@ public virtual ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEquipad
 
 
 
+public virtual String Password {
+        get { return password; } set { password = value;  }
+}
+
+
+
 
 
 public JugadorEN()
@@ -211,20 +224,20 @@ public JugadorEN()
 
 
 
-public JugadorEN(int id, string nombre, string email, Nullable<DateTime> cumple, string genero, int vidamax, int vidaAct, int ataque, int defensa, int oro, ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEN inventario, ProyectoVikingsGenNHibernate.EN.ProyectoVikings.Batalla_PVEEN batalla_PVE, ProyectoVikingsGenNHibernate.EN.ProyectoVikings.Batalla_PVPEN batalla_PVP, ProyectoVikingsGenNHibernate.EN.ProyectoVikings.Batalla_PVPEN batalla_PVP_0, ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEquipadoEN inventarioEquipado
+public JugadorEN(int id, string nombre, string email, Nullable<DateTime> cumple, string genero, int vidamax, int vidaAct, int ataque, int defensa, int oro, ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEN inventario, ProyectoVikingsGenNHibernate.EN.ProyectoVikings.Batalla_PVEEN batalla_PVE, ProyectoVikingsGenNHibernate.EN.ProyectoVikings.Batalla_PVPEN batalla_PVP, ProyectoVikingsGenNHibernate.EN.ProyectoVikings.Batalla_PVPEN batalla_PVP_0, ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEquipadoEN inventarioEquipado, String password
                  )
 {
-        this.init (Id, nombre, email, cumple, genero, vidamax, vidaAct, ataque, defensa, oro, inventario, batalla_PVE, batalla_PVP, batalla_PVP_0, inventarioEquipado);
+        this.init (Id, nombre, email, cumple, genero, vidamax, vidaAct, ataque, defensa, oro, inventario, batalla_PVE, batalla_PVP, batalla_PVP_0, inventarioEquipado, password);
 }
 
 
 public JugadorEN(JugadorEN jugador)
 {
-        this.init (Id, jugador.Nombre, jugador.Email, jugador.Cumple, jugador.Genero, jugador.Vidamax, jugador.VidaAct, jugador.Ataque, jugador.Defensa, jugador.Oro, jugador.Inventario, jugador.Batalla_PVE, jugador.Batalla_PVP, jugador.Batalla_PVP_0, jugador.InventarioEquipado);
+        this.init (Id, jugador.Nombre, jugador.Email, jugador.Cumple, jugador.Genero, jugador.Vidamax, jugador.VidaAct, jugador.Ataque, jugador.Defensa, jugador.Oro, jugador.Inventario, jugador.Batalla_PVE, jugador.Batalla_PVP, jugador.Batalla_PVP_0, jugador.InventarioEquipado, jugador.Password);
 }
 
 private void init (int id
-                   , string nombre, string email, Nullable<DateTime> cumple, string genero, int vidamax, int vidaAct, int ataque, int defensa, int oro, ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEN inventario, ProyectoVikingsGenNHibernate.EN.ProyectoVikings.Batalla_PVEEN batalla_PVE, ProyectoVikingsGenNHibernate.EN.ProyectoVikings.Batalla_PVPEN batalla_PVP, ProyectoVikingsGenNHibernate.EN.ProyectoVikings.Batalla_PVPEN batalla_PVP_0, ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEquipadoEN inventarioEquipado)
+                   , string nombre, string email, Nullable<DateTime> cumple, string genero, int vidamax, int vidaAct, int ataque, int defensa, int oro, ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEN inventario, ProyectoVikingsGenNHibernate.EN.ProyectoVikings.Batalla_PVEEN batalla_PVE, ProyectoVikingsGenNHibernate.EN.ProyectoVikings.Batalla_PVPEN batalla_PVP, ProyectoVikingsGenNHibernate.EN.ProyectoVikings.Batalla_PVPEN batalla_PVP_0, ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEquipadoEN inventarioEquipado, String password)
 {
         this.Id = id;
 
@@ -256,6 +269,8 @@ private void init (int id
         this.Batalla_PVP_0 = batalla_PVP_0;
 
         this.InventarioEquipado = inventarioEquipado;
+
+        this.Password = password;
 }
 
 public override bool Equals (object obj)

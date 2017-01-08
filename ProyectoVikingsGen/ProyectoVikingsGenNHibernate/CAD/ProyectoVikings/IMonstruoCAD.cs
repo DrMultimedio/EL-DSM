@@ -23,5 +23,10 @@ void Destroy (int id
 
 
 System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.MonstruoEN> DameMonstruosBatalla ();
+
+
+
+MonstruoEN ReadOID (int id
+                    );
 }
 }

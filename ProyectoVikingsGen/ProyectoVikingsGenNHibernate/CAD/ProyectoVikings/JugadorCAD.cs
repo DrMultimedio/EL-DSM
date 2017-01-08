@@ -122,6 +122,9 @@ public void ModifyDefault (JugadorEN jugador)
 
 
 
+
+                jugadorEN.Password = jugador.Password;
+
                 session.Update (jugadorEN);
                 SessionCommit ();
         }
@@ -199,6 +202,9 @@ public void Modify (JugadorEN jugador)
 
 
                 jugadorEN.Oro = jugador.Oro;
+
+
+                jugadorEN.Password = jugador.Password;
 
                 session.Update (jugadorEN);
                 SessionCommit ();

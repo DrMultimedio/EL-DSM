@@ -28,7 +28,7 @@ public bool Login (int p_oid, string password)
         bool result = false;
         JugadorEN en = _IJugadorCAD.ReadOIDDefault (p_oid);
 
-        if (en.Contrasenya.Equals (Utils.Util.GetEncondeMD5 (contrasenya)))
+        if (en.Password.Equals (Utils.Util.GetEncondeMD5 (password)))
                 result = true;
         return result;
 

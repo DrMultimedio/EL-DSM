@@ -85,5 +85,13 @@ public System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.Proyecto
 {
         return _IMonstruoCAD.DameMonstruosBatalla ();
 }
+public MonstruoEN ReadOID (int id
+                           )
+{
+        MonstruoEN monstruoEN = null;
+
+        monstruoEN = _IMonstruoCAD.ReadOID (id);
+        return monstruoEN;
+}
 }
 }

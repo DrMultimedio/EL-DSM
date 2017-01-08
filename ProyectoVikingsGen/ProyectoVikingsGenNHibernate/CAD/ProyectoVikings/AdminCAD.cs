@@ -168,6 +168,9 @@ public void Modify (AdminEN admin)
 
                 adminEN.Oro = admin.Oro;
 
+
+                adminEN.Password = admin.Password;
+
                 session.Update (adminEN);
                 SessionCommit ();
         }

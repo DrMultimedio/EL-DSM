@@ -1,220 +1,296 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>8.0.30703</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{66C66636-FD6A-4A3F-A7C5-FE88BBA117AF}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ProyectoVikingsGenNHibernate</RootNamespace>
-    <AssemblyName>ProyectoVikingsGenNHibernate</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <PublishUrl>publish\</PublishUrl>
-    <Install>true</Install>
-    <InstallFrom>Disk</InstallFrom>
-    <UpdateEnabled>false</UpdateEnabled>
-    <UpdateMode>Foreground</UpdateMode>
-    <UpdateInterval>7</UpdateInterval>
-    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
-    <UpdatePeriodically>false</UpdatePeriodically>
-    <UpdateRequired>false</UpdateRequired>
-    <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
-    <UseApplicationTrust>false</UseApplicationTrust>
-    <BootstrapperEnabled>true</BootstrapperEnabled>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="Castle.DynamicProxy2, Version=2.1.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\ProyectoVikingsGenNHibernate\AppLib\Castle.DynamicProxy2.dll</HintPath>
-    </Reference>
-    <Reference Include="LinFu.DynamicProxy, Version=1.0.3.14911, Culture=neutral, PublicKeyToken=62a6874124340d6e, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\ProyectoVikingsGenNHibernate\AppLib\LinFu.DynamicProxy.dll</HintPath>
-    </Reference>
-    <Reference Include="NHibernate, Version=2.1.2.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\ProyectoVikingsGenNHibernate\AppLib\NHibernate.dll</HintPath>
-    </Reference>
-    <Reference Include="NHibernate.ByteCode.Castle, Version=2.1.2.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\ProyectoVikingsGenNHibernate\AppLib\NHibernate.ByteCode.Castle.dll</HintPath>
-    </Reference>
-    <Reference Include="NHibernate.ByteCode.LinFu, Version=2.1.2.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\ProyectoVikingsGenNHibernate\AppLib\NHibernate.ByteCode.LinFu.dll</HintPath>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Core">
-      <RequiredTargetFramework>4.0</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="System.Data.SqlServerCe, Version=3.5.1.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
-    <Reference Include="System.Transactions" />
-    <Reference Include="System.Xml.Linq">
-      <RequiredTargetFramework>4.0</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="System.Data.DataSetExtensions">
-      <RequiredTargetFramework>4.0</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="..\ProyectoVikingsGenNHibernate\AppLib\Antlr3.Runtime.dll" />
-    <Content Include="..\ProyectoVikingsGenNHibernate\AppLib\Castle.DynamicProxy2.dll" />
-    <Content Include="..\ProyectoVikingsGenNHibernate\AppLib\Iesi.Collections.dll" />
-    <Content Include="..\ProyectoVikingsGenNHibernate\AppLib\LinFu.DynamicProxy.dll" />
-    <Content Include="..\ProyectoVikingsGenNHibernate\AppLib\log4net.dll" />
-    <Content Include="..\ProyectoVikingsGenNHibernate\AppLib\NHibernate.ByteCode.Castle.dll" />
-    <Content Include="..\ProyectoVikingsGenNHibernate\AppLib\NHibernate.ByteCode.LinFu.dll" />
-    <Content Include="..\ProyectoVikingsGenNHibernate\AppLib\NHibernate.dll" />
-    <Content Include="..\ProyectoVikingsGenNHibernate\AppLib\nunit.core.dll" />
-    <Content Include="..\ProyectoVikingsGenNHibernate\AppLib\nunit.framework.dll" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="NHibernateHelper.cs" />
-    <Compile Include="Utils\Util.cs" />
-    <Compile Include="Exceptions\ModelException.cs" />
-    <Compile Include="Exceptions\DataLayerException.cs" />
-    <Compile Include="CAD\BasicCAD.cs" />
-    <Compile Include="CP\BasicCP.cs" />
-    <Compile Include="EN\ProyectoVikings\JugadorEN.cs" />
-    <Compile Include="CEN\ProyectoVikings\JugadorCEN.cs" />
-    <Compile Include="CAD\ProyectoVikings\IJugadorCAD.cs" />
-    <Compile Include="CAD\ProyectoVikings\JugadorCAD.cs" />
-    <Compile Include="CP\ProyectoVikings\JugadorCP.cs" />
-    <Compile Include="CEN\ProyectoVikings\JugadorCEN_Comprar.cs" />
-    <Compile Include="CEN\ProyectoVikings\JugadorCEN_CalcularDanyo.cs" />
-    <Compile Include="CEN\ProyectoVikings\JugadorCEN_CalcularDefensa.cs" />
-    <Compile Include="EN\ProyectoVikings\AdminEN.cs" />
-    <Compile Include="CEN\ProyectoVikings\AdminCEN.cs" />
-    <Compile Include="CAD\ProyectoVikings\IAdminCAD.cs" />
-    <Compile Include="CAD\ProyectoVikings\AdminCAD.cs" />
-    <Compile Include="CP\ProyectoVikings\AdminCP.cs" />
-    <Compile Include="EN\ProyectoVikings\InventarioEN.cs" />
-    <Compile Include="CEN\ProyectoVikings\InventarioCEN.cs" />
-    <Compile Include="CAD\ProyectoVikings\IInventarioCAD.cs" />
-    <Compile Include="CAD\ProyectoVikings\InventarioCAD.cs" />
-    <Compile Include="CP\ProyectoVikings\InventarioCP.cs" />
-    <Compile Include="EN\ProyectoVikings\MonstruoEN.cs" />
-    <Compile Include="CEN\ProyectoVikings\MonstruoCEN.cs" />
-    <Compile Include="CAD\ProyectoVikings\IMonstruoCAD.cs" />
-    <Compile Include="CAD\ProyectoVikings\MonstruoCAD.cs" />
-    <Compile Include="CP\ProyectoVikings\MonstruoCP.cs" />
-    <Compile Include="CEN\ProyectoVikings\MonstruoCEN_DameMonstruos.cs" />
-    <Compile Include="EN\ProyectoVikings\Batalla_PVEEN.cs" />
-    <Compile Include="CEN\ProyectoVikings\Batalla_PVECEN.cs" />
-    <Compile Include="CAD\ProyectoVikings\IBatalla_PVECAD.cs" />
-    <Compile Include="CAD\ProyectoVikings\Batalla_PVECAD.cs" />
-    <Compile Include="CP\ProyectoVikings\Batalla_PVECP.cs" />
-    <Compile Include="CP\ProyectoVikings\Batalla_PVECP_Resolver.cs" />
-    <Compile Include="CEN\ProyectoVikings\Batalla_PVECEN_DameGanador.cs" />
-    <Compile Include="EN\ProyectoVikings\ObjetoEN.cs" />
-    <Compile Include="CEN\ProyectoVikings\ObjetoCEN.cs" />
-    <Compile Include="CAD\ProyectoVikings\IObjetoCAD.cs" />
-    <Compile Include="CAD\ProyectoVikings\ObjetoCAD.cs" />
-    <Compile Include="CP\ProyectoVikings\ObjetoCP.cs" />
-    <Compile Include="EN\ProyectoVikings\ArmaduraEN.cs" />
-    <Compile Include="CEN\ProyectoVikings\ArmaduraCEN.cs" />
-    <Compile Include="CAD\ProyectoVikings\IArmaduraCAD.cs" />
-    <Compile Include="CAD\ProyectoVikings\ArmaduraCAD.cs" />
-    <Compile Include="CP\ProyectoVikings\ArmaduraCP.cs" />
-    <Compile Include="EN\ProyectoVikings\ArmaEN.cs" />
-    <Compile Include="CEN\ProyectoVikings\ArmaCEN.cs" />
-    <Compile Include="CAD\ProyectoVikings\IArmaCAD.cs" />
-    <Compile Include="CAD\ProyectoVikings\ArmaCAD.cs" />
-    <Compile Include="CP\ProyectoVikings\ArmaCP.cs" />
-    <Compile Include="EN\ProyectoVikings\CascoEN.cs" />
-    <Compile Include="CEN\ProyectoVikings\CascoCEN.cs" />
-    <Compile Include="CAD\ProyectoVikings\ICascoCAD.cs" />
-    <Compile Include="CAD\ProyectoVikings\CascoCAD.cs" />
-    <Compile Include="CP\ProyectoVikings\CascoCP.cs" />
-    <Compile Include="EN\ProyectoVikings\CalzadoEN.cs" />
-    <Compile Include="CEN\ProyectoVikings\CalzadoCEN.cs" />
-    <Compile Include="CAD\ProyectoVikings\ICalzadoCAD.cs" />
-    <Compile Include="CAD\ProyectoVikings\CalzadoCAD.cs" />
-    <Compile Include="CP\ProyectoVikings\CalzadoCP.cs" />
-    <Compile Include="EN\ProyectoVikings\Batalla_PVPEN.cs" />
-    <Compile Include="CEN\ProyectoVikings\Batalla_PVPCEN.cs" />
-    <Compile Include="CAD\ProyectoVikings\IBatalla_PVPCAD.cs" />
-    <Compile Include="CAD\ProyectoVikings\Batalla_PVPCAD.cs" />
-    <Compile Include="CP\ProyectoVikings\Batalla_PVPCP.cs" />
-    <Compile Include="CEN\ProyectoVikings\Batalla_PVPCEN_Resolver.cs" />
-    <Compile Include="EN\ProyectoVikings\InventarioEquipadoEN.cs" />
-    <Compile Include="CEN\ProyectoVikings\InventarioEquipadoCEN.cs" />
-    <Compile Include="CAD\ProyectoVikings\IInventarioEquipadoCAD.cs" />
-    <Compile Include="CAD\ProyectoVikings\InventarioEquipadoCAD.cs" />
-    <Compile Include="CP\ProyectoVikings\InventarioEquipadoCP.cs" />
-    <Compile Include="CP\ProyectoVikings\InventarioEquipadoCP_Equipar.cs" />
-    <Compile Include="CEN\ProyectoVikings\InventarioEquipadoCEN_Desequipar.cs" />
-    <Compile Include="Enumerated\ProyectoVikings\TipoGanadorEnum.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-      <DependentUpon>Settings.settings</DependentUpon>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Mappings\ProyectoVikings\jugador.hbm.xml" />
-    <EmbeddedResource Include="Mappings\ProyectoVikings\admin.hbm.xml" />
-    <EmbeddedResource Include="Mappings\ProyectoVikings\inventario.hbm.xml" />
-    <EmbeddedResource Include="Mappings\ProyectoVikings\monstruo.hbm.xml" />
-    <EmbeddedResource Include="Mappings\ProyectoVikings\batalla_pve.hbm.xml" />
-    <EmbeddedResource Include="Mappings\ProyectoVikings\objeto.hbm.xml" />
-    <EmbeddedResource Include="Mappings\ProyectoVikings\armadura.hbm.xml" />
-    <EmbeddedResource Include="Mappings\ProyectoVikings\arma.hbm.xml" />
-    <EmbeddedResource Include="Mappings\ProyectoVikings\casco.hbm.xml" />
-    <EmbeddedResource Include="Mappings\ProyectoVikings\calzado.hbm.xml" />
-    <EmbeddedResource Include="Mappings\ProyectoVikings\batalla_pvp.hbm.xml" />
-    <EmbeddedResource Include="Mappings\ProyectoVikings\inventarioequipado.hbm.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="hibernate.cfg.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="app.config" />
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Resources\xsd\nhibernate-configuration.xsd">
+<?xml version="1.0" encoding="utf-8"?>
+		<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		  <PropertyGroup>
+		    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+		    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+		    <ProductVersion>8.0.30703</ProductVersion>
+		    <SchemaVersion>2.0</SchemaVersion>
+		    <ProjectGuid>{66C66636-FD6A-4A3F-A7C5-FE88BBA117AF}</ProjectGuid>
+		    <OutputType>Library</OutputType>
+		    <AppDesignerFolder>Properties</AppDesignerFolder>
+		    <RootNamespace>ProyectoVikingsGenNHibernate</RootNamespace>
+		    <AssemblyName>ProyectoVikingsGenNHibernate</AssemblyName>
+		    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+		    <FileAlignment>512</FileAlignment>
+		    <PublishUrl>publish\</PublishUrl>
+		    <Install>true</Install>
+		    <InstallFrom>Disk</InstallFrom>
+		    <UpdateEnabled>false</UpdateEnabled>
+		    <UpdateMode>Foreground</UpdateMode>
+		    <UpdateInterval>7</UpdateInterval>
+		    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+		    <UpdatePeriodically>false</UpdatePeriodically>
+		    <UpdateRequired>false</UpdateRequired>
+		    <MapFileExtensions>true</MapFileExtensions>
+		    <ApplicationRevision>0</ApplicationRevision>
+		    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+		    <IsWebBootstrapper>false</IsWebBootstrapper>
+		    <UseApplicationTrust>false</UseApplicationTrust>
+		    <BootstrapperEnabled>true</BootstrapperEnabled>
+		  </PropertyGroup>
+		  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+		    <DebugSymbols>true</DebugSymbols>
+		    <DebugType>full</DebugType>
+		    <Optimize>false</Optimize>
+		    <OutputPath>bin\Debug\</OutputPath>
+		    <DefineConstants>DEBUG;TRACE</DefineConstants>
+		    <ErrorReport>prompt</ErrorReport>
+		    <WarningLevel>4</WarningLevel>
+		  </PropertyGroup>
+		  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+		    <DebugType>pdbonly</DebugType>
+		    <Optimize>true</Optimize>
+		    <OutputPath>bin\Release\</OutputPath>
+		    <DefineConstants>TRACE</DefineConstants>
+		    <ErrorReport>prompt</ErrorReport>
+		    <WarningLevel>4</WarningLevel>
+		  </PropertyGroup>
+		<ItemGroup>
+		    <Reference Include="Castle.DynamicProxy2, Version=2.1.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+		      <SpecificVersion>False</SpecificVersion>
+		      <HintPath>..\ProyectoVikingsGenNHibernate\AppLib\Castle.DynamicProxy2.dll</HintPath>
+		    </Reference>
+		    <Reference Include="LinFu.DynamicProxy, Version=1.0.3.14911, Culture=neutral, PublicKeyToken=62a6874124340d6e, processorArchitecture=MSIL">
+		      <SpecificVersion>False</SpecificVersion>
+		      <HintPath>..\ProyectoVikingsGenNHibernate\AppLib\LinFu.DynamicProxy.dll</HintPath>
+		    </Reference>
+		    <Reference Include="NHibernate, Version=2.1.2.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+		      <SpecificVersion>False</SpecificVersion>
+		      <HintPath>..\ProyectoVikingsGenNHibernate\AppLib\NHibernate.dll</HintPath>
+		    </Reference>
+		    <Reference Include="NHibernate.ByteCode.Castle, Version=2.1.2.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+		      <SpecificVersion>False</SpecificVersion>
+		      <HintPath>..\ProyectoVikingsGenNHibernate\AppLib\NHibernate.ByteCode.Castle.dll</HintPath>
+		    </Reference>
+		    <Reference Include="NHibernate.ByteCode.LinFu, Version=2.1.2.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+		      <SpecificVersion>False</SpecificVersion>
+		      <HintPath>..\ProyectoVikingsGenNHibernate\AppLib\NHibernate.ByteCode.LinFu.dll</HintPath>
+		    </Reference>
+		    <Reference Include="System" />
+		    <Reference Include="System.Core">
+		      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+		    </Reference>
+		    <Reference Include="System.Data.SqlServerCe, Version=3.5.1.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+		    <Reference Include="System.Transactions" />
+		    <Reference Include="System.Xml.Linq">
+		      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+		    </Reference>
+		    <Reference Include="System.Data.DataSetExtensions">
+		      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+		    </Reference>
+		    <Reference Include="System.Data" />
+		    <Reference Include="System.Xml" />
+		</ItemGroup>
+		
+		<ItemGroup>
+		    <Content Include="..\ProyectoVikingsGenNHibernate\AppLib\Antlr3.Runtime.dll" />
+		    <Content Include="..\ProyectoVikingsGenNHibernate\AppLib\Castle.DynamicProxy2.dll" />
+		    <Content Include="..\ProyectoVikingsGenNHibernate\AppLib\Iesi.Collections.dll" />
+		    <Content Include="..\ProyectoVikingsGenNHibernate\AppLib\LinFu.DynamicProxy.dll" />
+		    <Content Include="..\ProyectoVikingsGenNHibernate\AppLib\log4net.dll" />
+		    <Content Include="..\ProyectoVikingsGenNHibernate\AppLib\NHibernate.ByteCode.Castle.dll" />
+		    <Content Include="..\ProyectoVikingsGenNHibernate\AppLib\NHibernate.ByteCode.LinFu.dll" />
+		    <Content Include="..\ProyectoVikingsGenNHibernate\AppLib\NHibernate.dll" />
+		    <Content Include="..\ProyectoVikingsGenNHibernate\AppLib\nunit.core.dll" />
+		    <Content Include="..\ProyectoVikingsGenNHibernate\AppLib\nunit.framework.dll" />
+  		</ItemGroup>
+  		
+		<ItemGroup>
+			<Compile Include="NHibernateHelper.cs" />
+		    <Compile Include="Utils\Util.cs" />
+		    <Compile Include="Exceptions\ModelException.cs"/>
+		    <Compile Include="Exceptions\DataLayerException.cs"/>
+		    
+	<Compile Include="CAD\BasicCAD.cs"/>
+	<Compile Include="CP\BasicCP.cs"/>
+	<Compile Include="EN\ProyectoVikings\JugadorEN.cs" />
+	<Compile Include="CEN\ProyectoVikings\JugadorCEN.cs" />
+	<Compile Include="CAD\ProyectoVikings\IJugadorCAD.cs" />
+	<Compile Include="CAD\ProyectoVikings\JugadorCAD.cs" />
+	<Compile Include="CP\ProyectoVikings\JugadorCP.cs" />
+			
+			
+			
+			<Compile Include="CP\ProyectoVikings\JugadorCP_Comprar.cs" />
+			
+			<Compile Include="CEN\ProyectoVikings\JugadorCEN_CalcularDanyo.cs" />
+			
+			
+			<Compile Include="CEN\ProyectoVikings\JugadorCEN_CalcularDefensa.cs" />
+			
+			
+			
+			<Compile Include="CEN\ProyectoVikings\JugadorCEN_Login.cs" />
+			
+	<Compile Include="EN\ProyectoVikings\AdminEN.cs" />
+	<Compile Include="CEN\ProyectoVikings\AdminCEN.cs" />
+	<Compile Include="CAD\ProyectoVikings\IAdminCAD.cs" />
+	<Compile Include="CAD\ProyectoVikings\AdminCAD.cs" />
+	<Compile Include="CP\ProyectoVikings\AdminCP.cs" />
+			
+			
+			
+			<Compile Include="CEN\ProyectoVikings\AdminCEN_Borrar_jugador.cs" />
+			
+			<Compile Include="CEN\ProyectoVikings\AdminCEN_Modificar_jugador.cs" />
+			
+	<Compile Include="EN\ProyectoVikings\InventarioEN.cs" />
+	<Compile Include="CEN\ProyectoVikings\InventarioCEN.cs" />
+	<Compile Include="CAD\ProyectoVikings\IInventarioCAD.cs" />
+	<Compile Include="CAD\ProyectoVikings\InventarioCAD.cs" />
+	<Compile Include="CP\ProyectoVikings\InventarioCP.cs" />
+			
+			
+			
+			
+	<Compile Include="EN\ProyectoVikings\MonstruoEN.cs" />
+	<Compile Include="CEN\ProyectoVikings\MonstruoCEN.cs" />
+	<Compile Include="CAD\ProyectoVikings\IMonstruoCAD.cs" />
+	<Compile Include="CAD\ProyectoVikings\MonstruoCAD.cs" />
+	<Compile Include="CP\ProyectoVikings\MonstruoCP.cs" />
+			
+			
+			
+			
+			<Compile Include="CEN\ProyectoVikings\MonstruoCEN_DameMonstruos.cs" />
+			
+			
+	<Compile Include="EN\ProyectoVikings\Batalla_PVEEN.cs" />
+	<Compile Include="CEN\ProyectoVikings\Batalla_PVECEN.cs" />
+	<Compile Include="CAD\ProyectoVikings\IBatalla_PVECAD.cs" />
+	<Compile Include="CAD\ProyectoVikings\Batalla_PVECAD.cs" />
+	<Compile Include="CP\ProyectoVikings\Batalla_PVECP.cs" />
+			
+			
+			
+			<Compile Include="CP\ProyectoVikings\Batalla_PVECP_Resolver.cs" />
+			
+			<Compile Include="CEN\ProyectoVikings\Batalla_PVECEN_DameGanador.cs" />
+			
+			
+			
+	<Compile Include="EN\ProyectoVikings\ObjetoEN.cs" />
+	<Compile Include="CEN\ProyectoVikings\ObjetoCEN.cs" />
+	<Compile Include="CAD\ProyectoVikings\IObjetoCAD.cs" />
+	<Compile Include="CAD\ProyectoVikings\ObjetoCAD.cs" />
+	<Compile Include="CP\ProyectoVikings\ObjetoCP.cs" />
+			
+			
+			
+	<Compile Include="EN\ProyectoVikings\ArmaduraEN.cs" />
+	<Compile Include="CEN\ProyectoVikings\ArmaduraCEN.cs" />
+	<Compile Include="CAD\ProyectoVikings\IArmaduraCAD.cs" />
+	<Compile Include="CAD\ProyectoVikings\ArmaduraCAD.cs" />
+	<Compile Include="CP\ProyectoVikings\ArmaduraCP.cs" />
+			
+			
+			
+	<Compile Include="EN\ProyectoVikings\ArmaEN.cs" />
+	<Compile Include="CEN\ProyectoVikings\ArmaCEN.cs" />
+	<Compile Include="CAD\ProyectoVikings\IArmaCAD.cs" />
+	<Compile Include="CAD\ProyectoVikings\ArmaCAD.cs" />
+	<Compile Include="CP\ProyectoVikings\ArmaCP.cs" />
+			
+			
+			
+	<Compile Include="EN\ProyectoVikings\CascoEN.cs" />
+	<Compile Include="CEN\ProyectoVikings\CascoCEN.cs" />
+	<Compile Include="CAD\ProyectoVikings\ICascoCAD.cs" />
+	<Compile Include="CAD\ProyectoVikings\CascoCAD.cs" />
+	<Compile Include="CP\ProyectoVikings\CascoCP.cs" />
+			
+			
+			
+	<Compile Include="EN\ProyectoVikings\CalzadoEN.cs" />
+	<Compile Include="CEN\ProyectoVikings\CalzadoCEN.cs" />
+	<Compile Include="CAD\ProyectoVikings\ICalzadoCAD.cs" />
+	<Compile Include="CAD\ProyectoVikings\CalzadoCAD.cs" />
+	<Compile Include="CP\ProyectoVikings\CalzadoCP.cs" />
+			
+			
+			
+	<Compile Include="EN\ProyectoVikings\Batalla_PVPEN.cs" />
+	<Compile Include="CEN\ProyectoVikings\Batalla_PVPCEN.cs" />
+	<Compile Include="CAD\ProyectoVikings\IBatalla_PVPCAD.cs" />
+	<Compile Include="CAD\ProyectoVikings\Batalla_PVPCAD.cs" />
+	<Compile Include="CP\ProyectoVikings\Batalla_PVPCP.cs" />
+			
+			
+			
+			<Compile Include="CP\ProyectoVikings\Batalla_PVPCP_Resolver.cs" />
+			
+	<Compile Include="EN\ProyectoVikings\InventarioEquipadoEN.cs" />
+	<Compile Include="CEN\ProyectoVikings\InventarioEquipadoCEN.cs" />
+	<Compile Include="CAD\ProyectoVikings\IInventarioEquipadoCAD.cs" />
+	<Compile Include="CAD\ProyectoVikings\InventarioEquipadoCAD.cs" />
+	<Compile Include="CP\ProyectoVikings\InventarioEquipadoCP.cs" />
+			
+			
+			
+			<Compile Include="CP\ProyectoVikings\InventarioEquipadoCP_Equipar.cs" />
+			
+			<Compile Include="CEN\ProyectoVikings\InventarioEquipadoCEN_Desequipar.cs" />
+			
+			
+	<Compile Include="Enumerated\ProyectoVikings\TipoGanadorEnum.cs" />
+	
+	
+
+		    
+	
+
+		    <Compile Include="Properties\AssemblyInfo.cs" />
+		    <Compile Include="Properties\Settings.Designer.cs">
+		      <AutoGen>True</AutoGen>
+		      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+		      <DependentUpon>Settings.settings</DependentUpon>
+		    </Compile>
+		  </ItemGroup>
+		  <ItemGroup>
+		  
+	<EmbeddedResource Include="Mappings\ProyectoVikings\jugador.hbm.xml" />
+	<EmbeddedResource Include="Mappings\ProyectoVikings\admin.hbm.xml" />
+	<EmbeddedResource Include="Mappings\ProyectoVikings\inventario.hbm.xml" />
+	<EmbeddedResource Include="Mappings\ProyectoVikings\monstruo.hbm.xml" />
+	<EmbeddedResource Include="Mappings\ProyectoVikings\batalla_pve.hbm.xml" />
+	<EmbeddedResource Include="Mappings\ProyectoVikings\objeto.hbm.xml" />
+	<EmbeddedResource Include="Mappings\ProyectoVikings\armadura.hbm.xml" />
+	<EmbeddedResource Include="Mappings\ProyectoVikings\arma.hbm.xml" />
+	<EmbeddedResource Include="Mappings\ProyectoVikings\casco.hbm.xml" />
+	<EmbeddedResource Include="Mappings\ProyectoVikings\calzado.hbm.xml" />
+	<EmbeddedResource Include="Mappings\ProyectoVikings\batalla_pvp.hbm.xml" />
+	<EmbeddedResource Include="Mappings\ProyectoVikings\inventarioequipado.hbm.xml" />
+	
+	
+
+		  </ItemGroup>
+		  <ItemGroup>
+		    <Content Include="hibernate.cfg.xml">
+		      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		    </Content>
+		  </ItemGroup>
+		  <ItemGroup>
+		    <None Include="app.config" />
+		    <None Include="Properties\Settings.settings">
+		      <Generator>SettingsSingleFileGenerator</Generator>
+		      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+		    </None>
+		        <None Include="Resources\xsd\nhibernate-configuration.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Resources\xsd\nhibernate-mapping.xsd">
       <SubType>Designer</SubType>
     </None>
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+		  </ItemGroup>
+	 	
+		
+	
+		  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+		  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
 		       Other similar extension points exist, see Microsoft.Common.targets.
 		  <Target Name="BeforeBuild">
 		  </Target>
 		  <Target Name="AfterBuild">
 		  </Target>
 		  -->
-</Project>
+		</Project>

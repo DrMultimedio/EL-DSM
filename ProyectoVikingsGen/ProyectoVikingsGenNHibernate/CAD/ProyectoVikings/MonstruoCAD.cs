@@ -237,5 +237,34 @@ public System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.Proyecto
 
         return result;
 }
+//Sin e: ReadOID
+//Con e: MonstruoEN
+public MonstruoEN ReadOID (int id
+                           )
+{
+        MonstruoEN monstruoEN = null;
+
+        try
+        {
+                SessionInitializeTransaction ();
+                monstruoEN = (MonstruoEN)session.Get (typeof(MonstruoEN), id);
+                SessionCommit ();
+        }
+
+        catch (Exception ex) {
+                SessionRollBack ();
+                if (ex is ProyectoVikingsGenNHibernate.Exceptions.ModelException)
+                        throw ex;
+                throw new ProyectoVikingsGenNHibernate.Exceptions.DataLayerException ("Error in MonstruoCAD.", ex);
+        }
+
+
+        finally
+        {
+                SessionClose ();
+        }
+
+        return monstruoEN;
+}
 }
 }
