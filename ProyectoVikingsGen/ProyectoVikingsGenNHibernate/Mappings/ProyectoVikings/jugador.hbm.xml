@@ -107,6 +107,5 @@
 		  
 		  <query name="JugadorENReadAllHQL">from JugadorEN</query>
 		  <query name="JugadorENdameJugadoresBatallaHQL"><![CDATA[FROM JugadorEN]]></query>
-		  <query name="JugadorENdameOroHQL"><![CDATA[SELCT Oro FROM JugadorEN ]]></query>
 		</hibernate-mapping>
 	

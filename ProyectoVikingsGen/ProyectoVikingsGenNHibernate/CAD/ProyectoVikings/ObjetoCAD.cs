@@ -256,36 +256,5 @@ public System.Collections.Generic.IList<ObjetoEN> ReadAll (int first, int size)
 
         return result;
 }
-
-public System.Collections.Generic.IList<int> DameObjetosPorInventario (int i_oid)
-{
-        System.Collections.Generic.IList<int> result;
-        try
-        {
-                SessionInitializeTransaction ();
-                //String sql = @"FROM ObjetoEN self where SELECT obj.Id FROM Objeto as obj inner join obj.Inventario where Inventario.Id := i_oid";
-                //IQuery query = session.CreateQuery(sql);
-                IQuery query = (IQuery)session.GetNamedQuery ("ObjetoENdameObjetosPorInventarioHQL");
-                query.SetParameter ("i_oid", i_oid);
-
-                result = query.List<int>();
-                SessionCommit ();
-        }
-
-        catch (Exception ex) {
-                SessionRollBack ();
-                if (ex is ProyectoVikingsGenNHibernate.Exceptions.ModelException)
-                        throw ex;
-                throw new ProyectoVikingsGenNHibernate.Exceptions.DataLayerException ("Error in ObjetoCAD.", ex);
-        }
-
-
-        finally
-        {
-                SessionClose ();
-        }
-
-        return result;
-}
 }
 }

@@ -229,7 +229,7 @@ public ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEN DameInventar
 
         return result;
 }
-public void ObjetoRelationer (int p_Inventario_OID, System.Collections.Generic.IList<int> p_objeto_OIDs)
+public void ObjetoRelationer (int p_Inventario_OID, System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.ObjetoEN> p_objeto_OIDs)
 {
         ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEN inventarioEN = null;
         try
@@ -241,7 +241,7 @@ public void ObjetoRelationer (int p_Inventario_OID, System.Collections.Generic.I
                         inventarioEN.Objeto = new System.Collections.Generic.List<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.ObjetoEN>();
                 }
 
-                foreach (int item in p_objeto_OIDs) {
+                foreach (ProyectoVikingsGenNHibernate.EN.ProyectoVikings.ObjetoEN item in p_objeto_OIDs) {
                         objetoENAux = new ProyectoVikingsGenNHibernate.EN.ProyectoVikings.ObjetoEN ();
                         objetoENAux = (ProyectoVikingsGenNHibernate.EN.ProyectoVikings.ObjetoEN)session.Load (typeof(ProyectoVikingsGenNHibernate.EN.ProyectoVikings.ObjetoEN), item);
                         objetoENAux.Inventario.Add (inventarioEN);
@@ -266,36 +266,6 @@ public void ObjetoRelationer (int p_Inventario_OID, System.Collections.Generic.I
         {
                 SessionClose ();
         }
-}
-
-public System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEN> DameObjetosJugador ()
-{
-        System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEN> result;
-        try
-        {
-                SessionInitializeTransaction ();
-                //String sql = @"FROM InventarioEN self where SELECT obj FROM Objeto as obj inner join obj.Inventario where Inventario.Id := p_oid";
-                //IQuery query = session.CreateQuery(sql);
-                IQuery query = (IQuery)session.GetNamedQuery ("InventarioENdameObjetosJugadorHQL");
-
-                result = query.List<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEN>();
-                SessionCommit ();
-        }
-
-        catch (Exception ex) {
-                SessionRollBack ();
-                if (ex is ProyectoVikingsGenNHibernate.Exceptions.ModelException)
-                        throw ex;
-                throw new ProyectoVikingsGenNHibernate.Exceptions.DataLayerException ("Error in InventarioCAD.", ex);
-        }
-
-
-        finally
-        {
-                SessionClose ();
-        }
-
-        return result;
 }
 }
 }

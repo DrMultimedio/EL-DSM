@@ -336,37 +336,5 @@ public System.Collections.Generic.IList<JugadorEN> DameJugadores (int first, int
 
         return result;
 }
-
-public int DameOro ()
-{
-        int result;
-
-        try
-        {
-                SessionInitializeTransaction ();
-                //String sql = @"FROM JugadorEN self where SELCT Oro FROM JugadorEN ";
-                //IQuery query = session.CreateQuery(sql);
-                IQuery query = (IQuery)session.GetNamedQuery ("JugadorENdameOroHQL");
-
-
-                result = query.UniqueResult<int>();
-                SessionCommit ();
-        }
-
-        catch (Exception ex) {
-                SessionRollBack ();
-                if (ex is ProyectoVikingsGenNHibernate.Exceptions.ModelException)
-                        throw ex;
-                throw new ProyectoVikingsGenNHibernate.Exceptions.DataLayerException ("Error in JugadorCAD.", ex);
-        }
-
-
-        finally
-        {
-                SessionClose ();
-        }
-
-        return result;
-}
 }
 }
