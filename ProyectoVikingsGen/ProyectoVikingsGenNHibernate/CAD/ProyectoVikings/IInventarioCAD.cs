@@ -23,5 +23,8 @@ void Destroy (int id
 
 
 System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEN> DameInventarioPorJugador (int ? oid_jugador);
+
+
+void RelationerObjeto (int p_Inventario_OID, System.Collections.Generic.IList<int> p_objeto_OIDs);
 }
 }

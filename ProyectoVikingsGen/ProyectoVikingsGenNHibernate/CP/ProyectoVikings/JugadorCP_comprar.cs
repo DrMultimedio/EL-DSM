@@ -20,7 +20,7 @@ namespace ProyectoVikingsGenNHibernate.CP.ProyectoVikings
 {
 public partial class JugadorCP : BasicCP
 {
-public void Comprar (int p_oid)
+public void Comprar (int p_oid, int o_oid)
 {
         /*PROTECTED REGION ID(ProyectoVikingsGenNHibernate.CP.ProyectoVikings_Jugador_comprar) ENABLED START*/
 
@@ -38,10 +38,19 @@ public void Comprar (int p_oid)
 
 
                 // Write here your custom transaction ...
+                //definimos inventario y objeto y sus CAD y CEN
+                InventarioCAD inventarioCAD = null;
+                inventarioCAD = new InventarioCAD ();
+                InventarioCEN inventarioCEN = null;
+                inventarioCEN = new InventarioCEN ();
 
-                throw new NotImplementedException ("Method Comprar() not yet implemented.");
+                ObjetoCAD objetoCAD = null;
+                objetoCAD = new ObjetoCAD ();
+                ObjetoCEN objetoCEN = null;
+                objetoCEN = new ObjetoCEN ();
 
-
+                int oro = jugadorCEN.DameOro();
+                
 
                 SessionCommit ();
         }

@@ -83,6 +83,10 @@ public static void InitializeData ()
                 JugadorCAD jugadorCAD = new JugadorCAD ();
                 JugadorCEN jugadorCEN = new JugadorCEN ();
 
+                InventarioCAD inventarioCAD = new InventarioCAD ();
+                InventarioCEN inventarioCEN = new InventarioCEN ();
+
+
                 ArmaduraCAD armaduraCAD = new ArmaduraCAD ();
                 ArmaduraCEN armaduraCEN = new ArmaduraCEN ();
                 ArmaCAD armaCAD = new ArmaCAD ();
@@ -102,7 +106,7 @@ public static void InitializeData ()
                 Batalla_PVPCEN batallaPVPCEN = new Batalla_PVPCEN ();
 
                 Batalla_PVECP batallaPVECCP = new Batalla_PVECP ();
-                Batalla_PVPCP batallaPVPCCP = new Batalla_PVPCP();
+                Batalla_PVPCP batallaPVPCCP = new Batalla_PVPCP ();
 
                 Batalla_PVEEN batallapveEN = null;
 
@@ -111,6 +115,10 @@ public static void InitializeData ()
                 int jugador1 = jugadorCEN.New_ ("Paco", "paco@gmail.com", new DateTime (1997, 11, 19), "Pato", 20, 20, 3, 1, 0, "Paco1");
                 int jugador2 = jugadorCEN.New_ ("Jose", "jose@gmail.com", new DateTime (1957, 12, 19), Util.GetEncondeMD5 ("Pato"), 20, 20, 3, 1, 0, "Jose1");
                 int jugador3 = jugadorCEN.New_ ("ThorTilla", "jose@gmail.com", new DateTime (1957, 12, 19), Util.GetEncondeMD5 ("Pato"), 50, 40, 5, 1, 0, "Jose1");
+                //inventario
+                int inventario1 = inventarioCEN.New_ (10, jugador1);
+                int inventario2 = inventarioCEN.New_ (10, jugador2);
+                int inventario3 = inventarioCEN.New_ (10, jugador3);
 
                 // Objetos
                 int armadura1 = armaduraCEN.New_ ("Grebas del abismo 2.0", 12, 10, 3);
@@ -177,11 +185,11 @@ public static void InitializeData ()
 
                 if (batallaPVPCCP.Resolver (jugador1, jugador3, batalla2)) {
                         System.Console.WriteLine ("Gana el jugador 1");
-                        System.Console.WriteLine (batallaPVPCEN.DameGanador(batalla2));
+                        System.Console.WriteLine (batallaPVPCEN.DameGanador (batalla2));
                 }
                 else{
                         System.Console.WriteLine ("Gana el jugador 2");
-                        System.Console.WriteLine (batallaPVPCEN.DameGanador(batalla2));
+                        System.Console.WriteLine (batallaPVPCEN.DameGanador (batalla2));
                 }
                 System.Console.WriteLine ("Batalla ganada PVP");
 
@@ -203,20 +211,17 @@ public static void InitializeData ()
                         System.Console.WriteLine (batallaPVPCEN.DameGanador (batalla2));
                 }
 
-                System.Console.WriteLine("Ni idea de quien gana");
+                System.Console.WriteLine ("Ni idea de quien gana");
 
-                if (batallaPVPCCP.Resolver(jugador1, jugador2, batalla2))
-                {
-                    System.Console.WriteLine("Gana el jugador 1");
-                    System.Console.WriteLine(batallaPVPCEN.DameGanador(batalla2));
+                if (batallaPVPCCP.Resolver (jugador1, jugador2, batalla2)) {
+                        System.Console.WriteLine ("Gana el jugador 1");
+                        System.Console.WriteLine (batallaPVPCEN.DameGanador (batalla2));
                 }
-                else
-                {
-                    System.Console.WriteLine("Gana el jugador 2");
-                    System.Console.WriteLine(batallaPVPCEN.DameGanador(batalla2));
+                else{
+                        System.Console.WriteLine ("Gana el jugador 2");
+                        System.Console.WriteLine (batallaPVPCEN.DameGanador (batalla2));
                 }
 
-                //inventario
 
                 //le prueba del algodon
                 IList<JugadorEN> jugadores = jugadorCEN.DameJugadores (0, 14);

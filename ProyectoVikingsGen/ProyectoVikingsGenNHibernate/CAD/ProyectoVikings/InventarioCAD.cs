@@ -228,5 +228,43 @@ public System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.Proyecto
 
         return result;
 }
+public void RelationerObjeto (int p_Inventario_OID, System.Collections.Generic.IList<int> p_objeto_OIDs)
+{
+        ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEN inventarioEN = null;
+        try
+        {
+                SessionInitializeTransaction ();
+                inventarioEN = (InventarioEN)session.Load (typeof(InventarioEN), p_Inventario_OID);
+                ProyectoVikingsGenNHibernate.EN.ProyectoVikings.ObjetoEN objetoENAux = null;
+                if (inventarioEN.Objeto == null) {
+                        inventarioEN.Objeto = new System.Collections.Generic.List<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.ObjetoEN>();
+                }
+
+                foreach (int item in p_objeto_OIDs) {
+                        objetoENAux = new ProyectoVikingsGenNHibernate.EN.ProyectoVikings.ObjetoEN ();
+                        objetoENAux = (ProyectoVikingsGenNHibernate.EN.ProyectoVikings.ObjetoEN)session.Load (typeof(ProyectoVikingsGenNHibernate.EN.ProyectoVikings.ObjetoEN), item);
+                        objetoENAux.Inventario.Add (inventarioEN);
+
+                        inventarioEN.Objeto.Add (objetoENAux);
+                }
+
+
+                session.Update (inventarioEN);
+                SessionCommit ();
+        }
+
+        catch (Exception ex) {
+                SessionRollBack ();
+                if (ex is ProyectoVikingsGenNHibernate.Exceptions.ModelException)
+                        throw ex;
+                throw new ProyectoVikingsGenNHibernate.Exceptions.DataLayerException ("Error in InventarioCAD.", ex);
+        }
+
+
+        finally
+        {
+                SessionClose ();
+        }
+}
 }
 }

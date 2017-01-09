@@ -119,5 +119,9 @@ public System.Collections.Generic.IList<JugadorEN> DameJugadores (int first, int
         list = _IJugadorCAD.DameJugadores (first, size);
         return list;
 }
+public int DameOro ()
+{
+        return _IJugadorCAD.DameOro ();
+}
 }
 }
