@@ -27,5 +27,8 @@ ObjetoEN ReadOID (int id
 
 
 System.Collections.Generic.IList<ObjetoEN> ReadAll (int first, int size);
+
+
+System.Collections.Generic.IList<int> DameObjetosPorInventario (int i_oid);
 }
 }

@@ -91,5 +91,9 @@ public System.Collections.Generic.IList<ObjetoEN> ReadAll (int first, int size)
         list = _IObjetoCAD.ReadAll (first, size);
         return list;
 }
+public System.Collections.Generic.IList<int> DameObjetosPorInventario (int i_oid)
+{
+        return _IObjetoCAD.DameObjetosPorInventario (i_oid);
+}
 }
 }

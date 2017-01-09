@@ -184,6 +184,7 @@
 			
 			
 			
+			
 	<Compile Include="EN\ProyectoVikings\ArmaduraEN.cs" />
 	<Compile Include="CEN\ProyectoVikings\ArmaduraCEN.cs" />
 	<Compile Include="CAD\ProyectoVikings\IArmaduraCAD.cs" />

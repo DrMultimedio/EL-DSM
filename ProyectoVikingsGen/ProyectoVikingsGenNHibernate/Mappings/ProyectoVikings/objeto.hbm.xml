@@ -53,5 +53,6 @@
 		 </class>	
 		  
 		  <query name="ObjetoENReadAllHQL">from ObjetoEN</query>
+		  <query name="ObjetoENdameObjetosPorInventarioHQL"><![CDATA[SELECT obj.Id FROM Objeto as obj inner join obj.Inventario where Inventario.Id := i_oid]]></query>
 		</hibernate-mapping>
 	

@@ -57,7 +57,8 @@ public void Comprar (int p_oid, ProyectoVikingsGenNHibernate.EN.ProyectoVikings.
 
                 if (oro > precio) {
                         jugadorEN.Oro = oro - precio;
-                        inventarioCEN.ObjetoRelationer (inventarioCEN.DameInventarioPorJugador (p_oid).Id);
+                        objetoCEN.DameObjetosPorInventario(inventarioCEN.DameInventarioPorJugador(p_oid).Id).Add(objetoEN.Id);
+                        inventarioCEN.ObjetoRelationer(inventarioCEN.DameInventarioPorJugador(p_oid).Id, objetoCEN.DameObjetosPorInventario(inventarioCEN.DameInventarioPorJugador(p_oid).Id));
                 }
 
                 SessionCommit ();
