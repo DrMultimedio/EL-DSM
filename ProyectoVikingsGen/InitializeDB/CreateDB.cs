@@ -82,10 +82,12 @@ public static void InitializeData ()
 
                 JugadorCAD jugadorCAD = new JugadorCAD ();
                 JugadorCEN jugadorCEN = new JugadorCEN ();
-
+                JugadorEN jugadorEN = new JugadorEN ();
                 InventarioCAD inventarioCAD = new InventarioCAD ();
                 InventarioCEN inventarioCEN = new InventarioCEN ();
 
+                ObjetoCAD objetoCAD = new ObjetoCAD ();
+                ObjetoCEN objetoCEN = new ObjetoCEN ();
 
                 ArmaduraCAD armaduraCAD = new ArmaduraCAD ();
                 ArmaduraCEN armaduraCEN = new ArmaduraCEN ();
@@ -221,7 +223,11 @@ public static void InitializeData ()
                         System.Console.WriteLine ("Gana el jugador 2");
                         System.Console.WriteLine (batallaPVPCEN.DameGanador (batalla2));
                 }
+                //pruebas objetos
+                System.Console.WriteLine ("Oro antes " + jugadorCEN.ReadOID (jugador1).Oro);
 
+                jugadorCP.Comprar (jugador1, objetoCEN.ReadOID (armadura1));
+                System.Console.WriteLine ("Oro despues " + jugadorCEN.ReadOID (jugador1).Oro);
 
                 //le prueba del algodon
                 IList<JugadorEN> jugadores = jugadorCEN.DameJugadores (0, 14);

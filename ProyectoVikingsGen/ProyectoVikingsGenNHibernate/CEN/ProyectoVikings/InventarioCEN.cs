@@ -80,15 +80,19 @@ public void Destroy (int id
         _IInventarioCAD.Destroy (id);
 }
 
-public System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEN> DameInventarioPorJugador (int ? oid_jugador)
+public ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEN DameInventarioPorJugador (int ? oid_jugador)
 {
         return _IInventarioCAD.DameInventarioPorJugador (oid_jugador);
 }
-public void RelationerObjeto (int p_Inventario_OID, System.Collections.Generic.IList<int> p_objeto_OIDs)
+public void ObjetoRelationer (int p_Inventario_OID, System.Collections.Generic.IList<int> p_objeto_OIDs)
 {
         //Call to InventarioCAD
 
-        _IInventarioCAD.RelationerObjeto (p_Inventario_OID, p_objeto_OIDs);
+        _IInventarioCAD.ObjetoRelationer (p_Inventario_OID, p_objeto_OIDs);
+}
+public System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEN> DameObjetosJugador ()
+{
+        return _IInventarioCAD.DameObjetosJugador ();
 }
 }
 }

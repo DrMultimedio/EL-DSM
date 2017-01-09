@@ -147,6 +147,7 @@
 			
 			
 			
+			
 	<Compile Include="EN\ProyectoVikings\MonstruoEN.cs" />
 	<Compile Include="CEN\ProyectoVikings\MonstruoCEN.cs" />
 	<Compile Include="CAD\ProyectoVikings\IMonstruoCAD.cs" />
@@ -178,6 +179,8 @@
 	<Compile Include="CAD\ProyectoVikings\IObjetoCAD.cs" />
 	<Compile Include="CAD\ProyectoVikings\ObjetoCAD.cs" />
 	<Compile Include="CP\ProyectoVikings\ObjetoCP.cs" />
+			
+			
 			
 			
 			

@@ -44,5 +44,6 @@
 		  
 		  <query name="InventarioENReadAllHQL">from InventarioEN</query>
 		  <query name="InventarioENdameInventarioPorJugadorHQL"><![CDATA[FROM InventarioEN WHERE id = :oid_jugador]]></query>
+		  <query name="InventarioENdameObjetosJugadorHQL"><![CDATA[SELECT obj FROM Objeto as obj inner join obj.Inventario where Inventario.Id := p_oid]]></query>
 		</hibernate-mapping>
 	

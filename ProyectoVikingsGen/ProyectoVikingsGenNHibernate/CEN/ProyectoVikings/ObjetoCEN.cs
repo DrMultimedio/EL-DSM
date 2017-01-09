@@ -74,5 +74,22 @@ public void Destroy (int id
 {
         _IObjetoCAD.Destroy (id);
 }
+
+public ObjetoEN ReadOID (int id
+                         )
+{
+        ObjetoEN objetoEN = null;
+
+        objetoEN = _IObjetoCAD.ReadOID (id);
+        return objetoEN;
+}
+
+public System.Collections.Generic.IList<ObjetoEN> ReadAll (int first, int size)
+{
+        System.Collections.Generic.IList<ObjetoEN> list = null;
+
+        list = _IObjetoCAD.ReadAll (first, size);
+        return list;
+}
 }
 }

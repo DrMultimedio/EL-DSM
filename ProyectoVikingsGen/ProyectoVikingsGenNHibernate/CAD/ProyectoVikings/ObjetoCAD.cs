@@ -196,5 +196,65 @@ public void Destroy (int id
                 SessionClose ();
         }
 }
+
+//Sin e: ReadOID
+//Con e: ObjetoEN
+public ObjetoEN ReadOID (int id
+                         )
+{
+        ObjetoEN objetoEN = null;
+
+        try
+        {
+                SessionInitializeTransaction ();
+                objetoEN = (ObjetoEN)session.Get (typeof(ObjetoEN), id);
+                SessionCommit ();
+        }
+
+        catch (Exception ex) {
+                SessionRollBack ();
+                if (ex is ProyectoVikingsGenNHibernate.Exceptions.ModelException)
+                        throw ex;
+                throw new ProyectoVikingsGenNHibernate.Exceptions.DataLayerException ("Error in ObjetoCAD.", ex);
+        }
+
+
+        finally
+        {
+                SessionClose ();
+        }
+
+        return objetoEN;
+}
+
+public System.Collections.Generic.IList<ObjetoEN> ReadAll (int first, int size)
+{
+        System.Collections.Generic.IList<ObjetoEN> result = null;
+        try
+        {
+                SessionInitializeTransaction ();
+                if (size > 0)
+                        result = session.CreateCriteria (typeof(ObjetoEN)).
+                                 SetFirstResult (first).SetMaxResults (size).List<ObjetoEN>();
+                else
+                        result = session.CreateCriteria (typeof(ObjetoEN)).List<ObjetoEN>();
+                SessionCommit ();
+        }
+
+        catch (Exception ex) {
+                SessionRollBack ();
+                if (ex is ProyectoVikingsGenNHibernate.Exceptions.ModelException)
+                        throw ex;
+                throw new ProyectoVikingsGenNHibernate.Exceptions.DataLayerException ("Error in ObjetoCAD.", ex);
+        }
+
+
+        finally
+        {
+                SessionClose ();
+        }
+
+        return result;
+}
 }
 }

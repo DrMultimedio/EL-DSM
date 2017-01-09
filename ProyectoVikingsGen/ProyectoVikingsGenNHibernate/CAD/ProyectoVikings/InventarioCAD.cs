@@ -198,9 +198,9 @@ public void Destroy (int id
         }
 }
 
-public System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEN> DameInventarioPorJugador (int ? oid_jugador)
+public ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEN DameInventarioPorJugador (int ? oid_jugador)
 {
-        System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEN> result;
+        ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEN result;
         try
         {
                 SessionInitializeTransaction ();
@@ -209,7 +209,8 @@ public System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.Proyecto
                 IQuery query = (IQuery)session.GetNamedQuery ("InventarioENdameInventarioPorJugadorHQL");
                 query.SetParameter ("oid_jugador", oid_jugador);
 
-                result = query.List<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEN>();
+
+                result = query.UniqueResult<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEN>();
                 SessionCommit ();
         }
 
@@ -228,7 +229,7 @@ public System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.Proyecto
 
         return result;
 }
-public void RelationerObjeto (int p_Inventario_OID, System.Collections.Generic.IList<int> p_objeto_OIDs)
+public void ObjetoRelationer (int p_Inventario_OID, System.Collections.Generic.IList<int> p_objeto_OIDs)
 {
         ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEN inventarioEN = null;
         try
@@ -265,6 +266,36 @@ public void RelationerObjeto (int p_Inventario_OID, System.Collections.Generic.I
         {
                 SessionClose ();
         }
+}
+
+public System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEN> DameObjetosJugador ()
+{
+        System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEN> result;
+        try
+        {
+                SessionInitializeTransaction ();
+                //String sql = @"FROM InventarioEN self where SELECT obj FROM Objeto as obj inner join obj.Inventario where Inventario.Id := p_oid";
+                //IQuery query = session.CreateQuery(sql);
+                IQuery query = (IQuery)session.GetNamedQuery ("InventarioENdameObjetosJugadorHQL");
+
+                result = query.List<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEN>();
+                SessionCommit ();
+        }
+
+        catch (Exception ex) {
+                SessionRollBack ();
+                if (ex is ProyectoVikingsGenNHibernate.Exceptions.ModelException)
+                        throw ex;
+                throw new ProyectoVikingsGenNHibernate.Exceptions.DataLayerException ("Error in InventarioCAD.", ex);
+        }
+
+
+        finally
+        {
+                SessionClose ();
+        }
+
+        return result;
 }
 }
 }

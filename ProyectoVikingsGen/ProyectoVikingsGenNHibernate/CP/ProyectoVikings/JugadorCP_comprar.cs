@@ -20,7 +20,7 @@ namespace ProyectoVikingsGenNHibernate.CP.ProyectoVikings
 {
 public partial class JugadorCP : BasicCP
 {
-public void Comprar (int p_oid, int o_oid)
+public void Comprar (int p_oid, ProyectoVikingsGenNHibernate.EN.ProyectoVikings.ObjetoEN objetoEN)
 {
         /*PROTECTED REGION ID(ProyectoVikingsGenNHibernate.CP.ProyectoVikings_Jugador_comprar) ENABLED START*/
 
@@ -49,8 +49,16 @@ public void Comprar (int p_oid, int o_oid)
                 ObjetoCEN objetoCEN = null;
                 objetoCEN = new ObjetoCEN ();
 
-                int oro = jugadorCEN.DameOro();
-                
+                JugadorEN jugadorEN = jugadorCEN.ReadOID (p_oid);
+
+                InventarioEN inventarioEN = inventarioCEN.DameInventarioPorJugador (p_oid);
+                int oro = jugadorEN.Oro;
+                int precio = objetoEN.Precio;
+
+                if (oro > precio) {
+                        jugadorEN.Oro = oro - precio;
+                        inventarioCEN.ObjetoRelationer (inventarioCEN.DameInventarioPorJugador (p_oid).Id);
+                }
 
                 SessionCommit ();
         }
