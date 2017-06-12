@@ -27,5 +27,11 @@ ObjetoEN ReadOID (int id
 
 
 System.Collections.Generic.IList<ObjetoEN> ReadAll (int first, int size);
+
+
+System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.ObjetoEN> DameObjetosPorInventario (int oid_inventario);
+
+
+System.Collections.Generic.IList<ObjetoEN> DameObjetos (int first, int size);
 }
 }

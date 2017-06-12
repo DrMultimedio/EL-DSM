@@ -25,18 +25,6 @@
         					</many-to-one>
 					 
 						
-			
-		  			
-						<bag name="Objeto_0" table="[objeto_0_inventarioEquipado]" inverse="true" >
-							<key>
-								
-									<column name="FK_idInventario_idInventarioEquipado"/> 
-							</key>
-      						<many-to-many class="ProyectoVikingsGenNHibernate.EN.ProyectoVikings.ObjetoEN">
-									<column name="FK_idObjeto_idObjeto_0"/> 
-      						</many-to-many>
-    					</bag>
-					
 					
 		
  	  

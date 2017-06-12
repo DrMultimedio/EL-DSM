@@ -14,13 +14,6 @@ private ProyectoVikingsGenNHibernate.EN.ProyectoVikings.JugadorEN jugador_0;
 
 
 
-/**
- *	Atributo objeto_0
- */
-private System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.ObjetoEN> objeto_0;
-
-
-
 
 
 
@@ -30,43 +23,34 @@ public virtual ProyectoVikingsGenNHibernate.EN.ProyectoVikings.JugadorEN Jugador
 
 
 
-public virtual System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.ObjetoEN> Objeto_0 {
-        get { return objeto_0; } set { objeto_0 = value;  }
-}
-
-
-
 
 
 public InventarioEquipadoEN() : base ()
 {
-        objeto_0 = new System.Collections.Generic.List<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.ObjetoEN>();
 }
 
 
 
-public InventarioEquipadoEN(int id, ProyectoVikingsGenNHibernate.EN.ProyectoVikings.JugadorEN jugador_0, System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.ObjetoEN> objeto_0
+public InventarioEquipadoEN(int id, ProyectoVikingsGenNHibernate.EN.ProyectoVikings.JugadorEN jugador_0
                             , int invMax, ProyectoVikingsGenNHibernate.EN.ProyectoVikings.JugadorEN jugador, System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.ObjetoEN> objeto
                             )
 {
-        this.init (Id, jugador_0, objeto_0, invMax, jugador, objeto);
+        this.init (Id, jugador_0, invMax, jugador, objeto);
 }
 
 
 public InventarioEquipadoEN(InventarioEquipadoEN inventarioEquipado)
 {
-        this.init (Id, inventarioEquipado.Jugador_0, inventarioEquipado.Objeto_0, inventarioEquipado.InvMax, inventarioEquipado.Jugador, inventarioEquipado.Objeto);
+        this.init (Id, inventarioEquipado.Jugador_0, inventarioEquipado.InvMax, inventarioEquipado.Jugador, inventarioEquipado.Objeto);
 }
 
 private void init (int id
-                   , ProyectoVikingsGenNHibernate.EN.ProyectoVikings.JugadorEN jugador_0, System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.ObjetoEN> objeto_0, int invMax, ProyectoVikingsGenNHibernate.EN.ProyectoVikings.JugadorEN jugador, System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.ObjetoEN> objeto)
+                   , ProyectoVikingsGenNHibernate.EN.ProyectoVikings.JugadorEN jugador_0, int invMax, ProyectoVikingsGenNHibernate.EN.ProyectoVikings.JugadorEN jugador, System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.ObjetoEN> objeto)
 {
         this.Id = id;
 
 
         this.Jugador_0 = jugador_0;
-
-        this.Objeto_0 = objeto_0;
 
         this.InvMax = invMax;
 

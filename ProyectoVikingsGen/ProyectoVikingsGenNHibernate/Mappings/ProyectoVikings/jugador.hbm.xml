@@ -63,22 +63,37 @@
 						
 			
 		  			
+						<bag name="Batalla_PVE" >
+							<key>
+							
+								
+								<column name="FK_idJugador_idJugador"/>
+					      	</key>
+							<one-to-many class="ProyectoVikingsGenNHibernate.EN.ProyectoVikings.Batalla_PVEEN"/>
+					    </bag>
 					
-							   <one-to-one name="Batalla_PVE" class="ProyectoVikingsGenNHibernate.EN.ProyectoVikings.Batalla_PVEEN" property-ref="Jugador" />							
-					 
-						
 			
 		  			
+						<bag name="Batalla_PVP" >
+							<key>
+							
+								
+								<column name="FK_idJugador_idJugador"/>
+					      	</key>
+							<one-to-many class="ProyectoVikingsGenNHibernate.EN.ProyectoVikings.Batalla_PVPEN"/>
+					    </bag>
 					
-							   <one-to-one name="Batalla_PVP" class="ProyectoVikingsGenNHibernate.EN.ProyectoVikings.Batalla_PVPEN" property-ref="Jugador" />							
-					 
-						
 			
 		  			
+						<bag name="Batalla_PVP_0" >
+							<key>
+							
+								
+								<column name="FK_idJugador_idJugador_0"/>
+					      	</key>
+							<one-to-many class="ProyectoVikingsGenNHibernate.EN.ProyectoVikings.Batalla_PVPEN"/>
+					    </bag>
 					
-							   <one-to-one name="Batalla_PVP_0" class="ProyectoVikingsGenNHibernate.EN.ProyectoVikings.Batalla_PVPEN" property-ref="Jugador_0" />							
-					 
-						
 			
 		  			
 					

@@ -14,6 +14,8 @@ using ProyectoVikingsGenNHibernate.CEN.ProyectoVikings;
 
 /*PROTECTED REGION ID(usingProyectoVikingsGenNHibernate.CP.ProyectoVikings_Jugador_comprar) ENABLED START*/
 //  references to other libraries
+using System.Collections.Generic;
+
 /*PROTECTED REGION END*/
 
 namespace ProyectoVikingsGenNHibernate.CP.ProyectoVikings
@@ -49,6 +51,9 @@ public void Comprar (int p_oid, ProyectoVikingsGenNHibernate.EN.ProyectoVikings.
                 ObjetoCEN objetoCEN = null;
                 objetoCEN = new ObjetoCEN ();
 
+                ObjetoCP objetoCP = null;
+                objetoCP = new ObjetoCP ();
+
                 JugadorEN jugadorEN = jugadorCEN.ReadOID (p_oid);
 
                 InventarioEN inventarioEN = inventarioCEN.DameInventarioPorJugador (p_oid);
@@ -57,8 +62,20 @@ public void Comprar (int p_oid, ProyectoVikingsGenNHibernate.EN.ProyectoVikings.
 
                 if (oro > precio) {
                         jugadorEN.Oro = oro - precio;
-                        //objetoCEN.DameObjetosPorInventario (inventarioCEN.DameInventarioPorJugador (p_oid).Id).Add (objetoEN);
-                        //inventarioCEN.ObjetoRelationer (jugadorEN.Inventario.Id, objetoCEN.DameObjetosPorInventario (jugadorEN.Inventario.Id));
+
+                        IList<ObjetoEN> objetos = objetoCEN.DameObjetosPorInventario (jugadorEN.Inventario.Id);
+
+
+
+                        IList<int> objetosOID = new List<int>();
+
+
+                        System.Console.WriteLine (objetoEN.Nombre);
+
+
+                        objetosOID.Add (objetoEN.Id);
+
+                        inventarioCEN.ObjetoRelationer (jugadorEN.Inventario.Id, objetosOID);
                 }
 
                 SessionCommit ();

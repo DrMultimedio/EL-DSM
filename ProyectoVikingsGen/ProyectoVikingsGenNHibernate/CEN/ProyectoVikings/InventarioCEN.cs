@@ -84,7 +84,7 @@ public ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEN DameInventar
 {
         return _IInventarioCAD.DameInventarioPorJugador (oid_jugador);
 }
-public void ObjetoRelationer (int p_Inventario_OID, System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.ObjetoEN> p_objeto_OIDs)
+public void ObjetoRelationer (int p_Inventario_OID, System.Collections.Generic.IList<int> p_objeto_OIDs)
 {
         //Call to InventarioCAD
 

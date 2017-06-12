@@ -45,20 +45,20 @@ public CalzadoEN() : base ()
 
 
 public CalzadoEN(int id, int vida, int defensa
-                 , string nombre, System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEN> inventario, System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEquipadoEN> inventarioEquipado, int precio
+                 , string nombre, System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEN> inventario, int precio
                  )
 {
-        this.init (Id, vida, defensa, nombre, inventario, inventarioEquipado, precio);
+        this.init (Id, vida, defensa, nombre, inventario, precio);
 }
 
 
 public CalzadoEN(CalzadoEN calzado)
 {
-        this.init (Id, calzado.Vida, calzado.Defensa, calzado.Nombre, calzado.Inventario, calzado.InventarioEquipado, calzado.Precio);
+        this.init (Id, calzado.Vida, calzado.Defensa, calzado.Nombre, calzado.Inventario, calzado.Precio);
 }
 
 private void init (int id
-                   , int vida, int defensa, string nombre, System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEN> inventario, System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEquipadoEN> inventarioEquipado, int precio)
+                   , int vida, int defensa, string nombre, System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEN> inventario, int precio)
 {
         this.Id = id;
 
@@ -70,8 +70,6 @@ private void init (int id
         this.Nombre = nombre;
 
         this.Inventario = inventario;
-
-        this.InventarioEquipado = inventarioEquipado;
 
         this.Precio = precio;
 }

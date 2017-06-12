@@ -22,18 +22,16 @@
 			
 			
 		  			
-					
-							   <one-to-one name="Monstruo" class="ProyectoVikingsGenNHibernate.EN.ProyectoVikings.MonstruoEN" property-ref="Batalla_PVE" />							
-					 
-						
+						<many-to-one name="Monstruo" class="ProyectoVikingsGenNHibernate.EN.ProyectoVikings.MonstruoEN" >	
+								<column name="FK_idMonstruo_idMonstruo"/> 
+						</many-to-one>
+											 					
 			
 		  			
-					
-							<many-to-one name="Jugador" class="ProyectoVikingsGenNHibernate.EN.ProyectoVikings.JugadorEN" >
+						<many-to-one name="Jugador" class="ProyectoVikingsGenNHibernate.EN.ProyectoVikings.JugadorEN" >	
 								<column name="FK_idJugador_idJugador"/> 
-        					</many-to-one>
-					 
-						
+						</many-to-one>
+											 					
 			
 			
 					

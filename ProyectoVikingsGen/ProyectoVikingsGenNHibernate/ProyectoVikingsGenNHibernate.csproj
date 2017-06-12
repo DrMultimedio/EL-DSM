@@ -113,16 +113,16 @@
 			
 			<Compile Include="CP\ProyectoVikings\JugadorCP_Comprar.cs" />
 			
-			<Compile Include="CEN\ProyectoVikings\JugadorCEN_CalcularDanyoExtra.cs" />
+			<Compile Include="CP\ProyectoVikings\JugadorCP_CalcularDanyoExtra.cs" />
 			
 			
-			<Compile Include="CEN\ProyectoVikings\JugadorCEN_CalcularDefensaExtra.cs" />
+			<Compile Include="CP\ProyectoVikings\JugadorCP_CalcularDefensaExtra.cs" />
 			
 			
 			
 			<Compile Include="CEN\ProyectoVikings\JugadorCEN_Login.cs" />
 			
-			<Compile Include="CEN\ProyectoVikings\JugadorCEN_CalcularVidaExtra.cs" />
+			<Compile Include="CP\ProyectoVikings\JugadorCP_CalcularVidaExtra.cs" />
 			
 	<Compile Include="EN\ProyectoVikings\AdminEN.cs" />
 	<Compile Include="CEN\ProyectoVikings\AdminCEN.cs" />
@@ -182,6 +182,8 @@
 			
 			
 			
+			
+			
 	<Compile Include="EN\ProyectoVikings\ArmaduraEN.cs" />
 	<Compile Include="CEN\ProyectoVikings\ArmaduraCEN.cs" />
 	<Compile Include="CAD\ProyectoVikings\IArmaduraCAD.cs" />
@@ -233,8 +235,6 @@
 	<Compile Include="CP\ProyectoVikings\InventarioEquipadoCP.cs" />
 			
 			
-			
-			<Compile Include="CP\ProyectoVikings\InventarioEquipadoCP_Equipar.cs" />
 			
 			<Compile Include="CEN\ProyectoVikings\InventarioEquipadoCEN_Desequipar.cs" />
 			

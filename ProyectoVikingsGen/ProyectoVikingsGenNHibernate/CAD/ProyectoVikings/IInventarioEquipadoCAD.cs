@@ -22,8 +22,6 @@ void Destroy (int id
               );
 
 
-void Equipar (int p_InventarioEquipado_OID, System.Collections.Generic.IList<int> p_objeto_0_OIDs);
-
 
 System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEquipadoEN> DameInventarioPorJugadorEquipado ();
 }

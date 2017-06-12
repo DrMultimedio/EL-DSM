@@ -95,7 +95,6 @@ public void ModifyDefault (ObjetoEN objeto)
 
 
 
-
                 objetoEN.Precio = objeto.Precio;
 
                 session.Update (objetoEN);
@@ -228,6 +227,66 @@ public ObjetoEN ReadOID (int id
 }
 
 public System.Collections.Generic.IList<ObjetoEN> ReadAll (int first, int size)
+{
+        System.Collections.Generic.IList<ObjetoEN> result = null;
+        try
+        {
+                SessionInitializeTransaction ();
+                if (size > 0)
+                        result = session.CreateCriteria (typeof(ObjetoEN)).
+                                 SetFirstResult (first).SetMaxResults (size).List<ObjetoEN>();
+                else
+                        result = session.CreateCriteria (typeof(ObjetoEN)).List<ObjetoEN>();
+                SessionCommit ();
+        }
+
+        catch (Exception ex) {
+                SessionRollBack ();
+                if (ex is ProyectoVikingsGenNHibernate.Exceptions.ModelException)
+                        throw ex;
+                throw new ProyectoVikingsGenNHibernate.Exceptions.DataLayerException ("Error in ObjetoCAD.", ex);
+        }
+
+
+        finally
+        {
+                SessionClose ();
+        }
+
+        return result;
+}
+
+public System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.ObjetoEN> DameObjetosPorInventario (int oid_inventario)
+{
+        System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.ObjetoEN> result;
+        try
+        {
+                SessionInitializeTransaction ();
+                //String sql = @"FROM ObjetoEN self where FROM ObjetoEN WHERE ObjetoEN.Inventario.id = 0";
+                //IQuery query = session.CreateQuery(sql);
+                IQuery query = (IQuery)session.GetNamedQuery ("ObjetoENdameObjetosPorInventarioHQL");
+                query.SetParameter ("oid_inventario", oid_inventario);
+
+                result = query.List<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.ObjetoEN>();
+                SessionCommit ();
+        }
+
+        catch (Exception ex) {
+                SessionRollBack ();
+                if (ex is ProyectoVikingsGenNHibernate.Exceptions.ModelException)
+                        throw ex;
+                throw new ProyectoVikingsGenNHibernate.Exceptions.DataLayerException ("Error in ObjetoCAD.", ex);
+        }
+
+
+        finally
+        {
+                SessionClose ();
+        }
+
+        return result;
+}
+public System.Collections.Generic.IList<ObjetoEN> DameObjetos (int first, int size)
 {
         System.Collections.Generic.IList<ObjetoEN> result = null;
         try

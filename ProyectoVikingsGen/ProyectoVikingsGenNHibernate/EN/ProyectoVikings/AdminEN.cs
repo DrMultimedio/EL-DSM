@@ -14,7 +14,7 @@ public AdminEN() : base ()
 
 
 public AdminEN(int id,
-               string nombre, string email, Nullable<DateTime> cumple, string genero, int vidamax, int vidaAct, int ataque, int defensa, int oro, ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEN inventario, ProyectoVikingsGenNHibernate.EN.ProyectoVikings.Batalla_PVEEN batalla_PVE, ProyectoVikingsGenNHibernate.EN.ProyectoVikings.Batalla_PVPEN batalla_PVP, ProyectoVikingsGenNHibernate.EN.ProyectoVikings.Batalla_PVPEN batalla_PVP_0, ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEquipadoEN inventarioEquipado, String password
+               string nombre, string email, Nullable<DateTime> cumple, string genero, int vidamax, int vidaAct, int ataque, int defensa, int oro, ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEN inventario, System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.Batalla_PVEEN> batalla_PVE, System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.Batalla_PVPEN> batalla_PVP, System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.Batalla_PVPEN> batalla_PVP_0, ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEquipadoEN inventarioEquipado, String password
                )
 {
         this.init (Id, nombre, email, cumple, genero, vidamax, vidaAct, ataque, defensa, oro, inventario, batalla_PVE, batalla_PVP, batalla_PVP_0, inventarioEquipado, password);
@@ -27,7 +27,7 @@ public AdminEN(AdminEN admin)
 }
 
 private void init (int id
-                   , string nombre, string email, Nullable<DateTime> cumple, string genero, int vidamax, int vidaAct, int ataque, int defensa, int oro, ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEN inventario, ProyectoVikingsGenNHibernate.EN.ProyectoVikings.Batalla_PVEEN batalla_PVE, ProyectoVikingsGenNHibernate.EN.ProyectoVikings.Batalla_PVPEN batalla_PVP, ProyectoVikingsGenNHibernate.EN.ProyectoVikings.Batalla_PVPEN batalla_PVP_0, ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEquipadoEN inventarioEquipado, String password)
+                   , string nombre, string email, Nullable<DateTime> cumple, string genero, int vidamax, int vidaAct, int ataque, int defensa, int oro, ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEN inventario, System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.Batalla_PVEEN> batalla_PVE, System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.Batalla_PVPEN> batalla_PVP, System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.Batalla_PVPEN> batalla_PVP_0, ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEquipadoEN inventarioEquipado, String password)
 {
         this.Id = id;
 

@@ -127,14 +127,14 @@ public int New_ (Batalla_PVPEN batalla_PVP)
                         batalla_PVP.Jugador = (ProyectoVikingsGenNHibernate.EN.ProyectoVikings.JugadorEN)session.Load (typeof(ProyectoVikingsGenNHibernate.EN.ProyectoVikings.JugadorEN), batalla_PVP.Jugador.Id);
 
                         batalla_PVP.Jugador.Batalla_PVP
-                                = batalla_PVP;
+                        .Add (batalla_PVP);
                 }
                 if (batalla_PVP.Jugador_0 != null) {
                         // Argumento OID y no colección.
                         batalla_PVP.Jugador_0 = (ProyectoVikingsGenNHibernate.EN.ProyectoVikings.JugadorEN)session.Load (typeof(ProyectoVikingsGenNHibernate.EN.ProyectoVikings.JugadorEN), batalla_PVP.Jugador_0.Id);
 
                         batalla_PVP.Jugador_0.Batalla_PVP_0
-                                = batalla_PVP;
+                        .Add (batalla_PVP);
                 }
 
                 session.Save (batalla_PVP);

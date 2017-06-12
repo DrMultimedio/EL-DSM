@@ -22,20 +22,16 @@
 			
 			
 		  			
-					
-							<many-to-one name="Jugador" class="ProyectoVikingsGenNHibernate.EN.ProyectoVikings.JugadorEN" >
+						<many-to-one name="Jugador" class="ProyectoVikingsGenNHibernate.EN.ProyectoVikings.JugadorEN" >	
 								<column name="FK_idJugador_idJugador"/> 
-        					</many-to-one>
-					 
-						
+						</many-to-one>
+											 					
 			
 		  			
-					
-							<many-to-one name="Jugador_0" class="ProyectoVikingsGenNHibernate.EN.ProyectoVikings.JugadorEN" >
+						<many-to-one name="Jugador_0" class="ProyectoVikingsGenNHibernate.EN.ProyectoVikings.JugadorEN" >	
 								<column name="FK_idJugador_idJugador_0"/> 
-        					</many-to-one>
-					 
-						
+						</many-to-one>
+											 					
 			
 			
 					

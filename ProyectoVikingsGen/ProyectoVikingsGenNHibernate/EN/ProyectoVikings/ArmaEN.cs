@@ -32,20 +32,20 @@ public ArmaEN() : base ()
 
 
 public ArmaEN(int id, int ataque
-              , string nombre, System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEN> inventario, System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEquipadoEN> inventarioEquipado, int precio
+              , string nombre, System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEN> inventario, int precio
               )
 {
-        this.init (Id, ataque, nombre, inventario, inventarioEquipado, precio);
+        this.init (Id, ataque, nombre, inventario, precio);
 }
 
 
 public ArmaEN(ArmaEN arma)
 {
-        this.init (Id, arma.Ataque, arma.Nombre, arma.Inventario, arma.InventarioEquipado, arma.Precio);
+        this.init (Id, arma.Ataque, arma.Nombre, arma.Inventario, arma.Precio);
 }
 
 private void init (int id
-                   , int ataque, string nombre, System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEN> inventario, System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEquipadoEN> inventarioEquipado, int precio)
+                   , int ataque, string nombre, System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEN> inventario, int precio)
 {
         this.Id = id;
 
@@ -55,8 +55,6 @@ private void init (int id
         this.Nombre = nombre;
 
         this.Inventario = inventario;
-
-        this.InventarioEquipado = inventarioEquipado;
 
         this.Precio = precio;
 }

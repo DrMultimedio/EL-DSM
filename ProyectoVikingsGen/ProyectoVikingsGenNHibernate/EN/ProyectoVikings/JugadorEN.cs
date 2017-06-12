@@ -85,21 +85,21 @@ private ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEN inventario;
 /**
  *	Atributo batalla_PVE
  */
-private ProyectoVikingsGenNHibernate.EN.ProyectoVikings.Batalla_PVEEN batalla_PVE;
+private System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.Batalla_PVEEN> batalla_PVE;
 
 
 
 /**
  *	Atributo batalla_PVP
  */
-private ProyectoVikingsGenNHibernate.EN.ProyectoVikings.Batalla_PVPEN batalla_PVP;
+private System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.Batalla_PVPEN> batalla_PVP;
 
 
 
 /**
  *	Atributo batalla_PVP_0
  */
-private ProyectoVikingsGenNHibernate.EN.ProyectoVikings.Batalla_PVPEN batalla_PVP_0;
+private System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.Batalla_PVPEN> batalla_PVP_0;
 
 
 
@@ -186,19 +186,19 @@ public virtual ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEN Inve
 
 
 
-public virtual ProyectoVikingsGenNHibernate.EN.ProyectoVikings.Batalla_PVEEN Batalla_PVE {
+public virtual System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.Batalla_PVEEN> Batalla_PVE {
         get { return batalla_PVE; } set { batalla_PVE = value;  }
 }
 
 
 
-public virtual ProyectoVikingsGenNHibernate.EN.ProyectoVikings.Batalla_PVPEN Batalla_PVP {
+public virtual System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.Batalla_PVPEN> Batalla_PVP {
         get { return batalla_PVP; } set { batalla_PVP = value;  }
 }
 
 
 
-public virtual ProyectoVikingsGenNHibernate.EN.ProyectoVikings.Batalla_PVPEN Batalla_PVP_0 {
+public virtual System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.Batalla_PVPEN> Batalla_PVP_0 {
         get { return batalla_PVP_0; } set { batalla_PVP_0 = value;  }
 }
 
@@ -220,11 +220,14 @@ public virtual String Password {
 
 public JugadorEN()
 {
+        batalla_PVE = new System.Collections.Generic.List<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.Batalla_PVEEN>();
+        batalla_PVP = new System.Collections.Generic.List<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.Batalla_PVPEN>();
+        batalla_PVP_0 = new System.Collections.Generic.List<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.Batalla_PVPEN>();
 }
 
 
 
-public JugadorEN(int id, string nombre, string email, Nullable<DateTime> cumple, string genero, int vidamax, int vidaAct, int ataque, int defensa, int oro, ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEN inventario, ProyectoVikingsGenNHibernate.EN.ProyectoVikings.Batalla_PVEEN batalla_PVE, ProyectoVikingsGenNHibernate.EN.ProyectoVikings.Batalla_PVPEN batalla_PVP, ProyectoVikingsGenNHibernate.EN.ProyectoVikings.Batalla_PVPEN batalla_PVP_0, ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEquipadoEN inventarioEquipado, String password
+public JugadorEN(int id, string nombre, string email, Nullable<DateTime> cumple, string genero, int vidamax, int vidaAct, int ataque, int defensa, int oro, ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEN inventario, System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.Batalla_PVEEN> batalla_PVE, System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.Batalla_PVPEN> batalla_PVP, System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.Batalla_PVPEN> batalla_PVP_0, ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEquipadoEN inventarioEquipado, String password
                  )
 {
         this.init (Id, nombre, email, cumple, genero, vidamax, vidaAct, ataque, defensa, oro, inventario, batalla_PVE, batalla_PVP, batalla_PVP_0, inventarioEquipado, password);
@@ -237,7 +240,7 @@ public JugadorEN(JugadorEN jugador)
 }
 
 private void init (int id
-                   , string nombre, string email, Nullable<DateTime> cumple, string genero, int vidamax, int vidaAct, int ataque, int defensa, int oro, ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEN inventario, ProyectoVikingsGenNHibernate.EN.ProyectoVikings.Batalla_PVEEN batalla_PVE, ProyectoVikingsGenNHibernate.EN.ProyectoVikings.Batalla_PVPEN batalla_PVP, ProyectoVikingsGenNHibernate.EN.ProyectoVikings.Batalla_PVPEN batalla_PVP_0, ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEquipadoEN inventarioEquipado, String password)
+                   , string nombre, string email, Nullable<DateTime> cumple, string genero, int vidamax, int vidaAct, int ataque, int defensa, int oro, ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEN inventario, System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.Batalla_PVEEN> batalla_PVE, System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.Batalla_PVPEN> batalla_PVP, System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.Batalla_PVPEN> batalla_PVP_0, ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEquipadoEN inventarioEquipado, String password)
 {
         this.Id = id;
 

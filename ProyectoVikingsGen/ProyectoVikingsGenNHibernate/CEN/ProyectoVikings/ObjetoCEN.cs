@@ -91,5 +91,16 @@ public System.Collections.Generic.IList<ObjetoEN> ReadAll (int first, int size)
         list = _IObjetoCAD.ReadAll (first, size);
         return list;
 }
+public System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.ObjetoEN> DameObjetosPorInventario (int oid_inventario)
+{
+        return _IObjetoCAD.DameObjetosPorInventario (oid_inventario);
+}
+public System.Collections.Generic.IList<ObjetoEN> DameObjetos (int first, int size)
+{
+        System.Collections.Generic.IList<ObjetoEN> list = null;
+
+        list = _IObjetoCAD.DameObjetos (first, size);
+        return list;
+}
 }
 }

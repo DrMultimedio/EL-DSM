@@ -229,7 +229,7 @@ public ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEN DameInventar
 
         return result;
 }
-public void ObjetoRelationer (int p_Inventario_OID, System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.ObjetoEN> p_objeto_OIDs)
+public void ObjetoRelationer (int p_Inventario_OID, System.Collections.Generic.IList<int> p_objeto_OIDs)
 {
         ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEN inventarioEN = null;
         try
@@ -241,7 +241,7 @@ public void ObjetoRelationer (int p_Inventario_OID, System.Collections.Generic.I
                         inventarioEN.Objeto = new System.Collections.Generic.List<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.ObjetoEN>();
                 }
 
-                foreach (ProyectoVikingsGenNHibernate.EN.ProyectoVikings.ObjetoEN item in p_objeto_OIDs) {
+                foreach (int item in p_objeto_OIDs) {
                         objetoENAux = new ProyectoVikingsGenNHibernate.EN.ProyectoVikings.ObjetoEN ();
                         objetoENAux = (ProyectoVikingsGenNHibernate.EN.ProyectoVikings.ObjetoEN)session.Load (typeof(ProyectoVikingsGenNHibernate.EN.ProyectoVikings.ObjetoEN), item);
                         objetoENAux.Inventario.Add (inventarioEN);

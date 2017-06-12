@@ -41,9 +41,10 @@ public bool Resolver (int jugador_oid, int jugador_oid1, int batalla_oid)
                 // Write here your custom transaction ...
 
 
+                //definimos la variable CAD
                 JugadorCAD jugadorCAD1 = null;
                 JugadorCAD jugadorCAD2 = null;
-
+                //inicializamos la variable
                 jugadorCAD1 = new JugadorCAD ();
                 jugadorCAD2 = new JugadorCAD ();
 

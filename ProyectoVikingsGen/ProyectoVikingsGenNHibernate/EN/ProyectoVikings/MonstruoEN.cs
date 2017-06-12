@@ -43,7 +43,7 @@ private int defensa;
 /**
  *	Atributo batalla_PVE
  */
-private ProyectoVikingsGenNHibernate.EN.ProyectoVikings.Batalla_PVEEN batalla_PVE;
+private System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.Batalla_PVEEN> batalla_PVE;
 
 
 
@@ -80,7 +80,7 @@ public virtual int Defensa {
 
 
 
-public virtual ProyectoVikingsGenNHibernate.EN.ProyectoVikings.Batalla_PVEEN Batalla_PVE {
+public virtual System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.Batalla_PVEEN> Batalla_PVE {
         get { return batalla_PVE; } set { batalla_PVE = value;  }
 }
 
@@ -90,11 +90,12 @@ public virtual ProyectoVikingsGenNHibernate.EN.ProyectoVikings.Batalla_PVEEN Bat
 
 public MonstruoEN()
 {
+        batalla_PVE = new System.Collections.Generic.List<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.Batalla_PVEEN>();
 }
 
 
 
-public MonstruoEN(int id, string nombre, int vida, int ataque, int defensa, ProyectoVikingsGenNHibernate.EN.ProyectoVikings.Batalla_PVEEN batalla_PVE
+public MonstruoEN(int id, string nombre, int vida, int ataque, int defensa, System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.Batalla_PVEEN> batalla_PVE
                   )
 {
         this.init (Id, nombre, vida, ataque, defensa, batalla_PVE);
@@ -107,7 +108,7 @@ public MonstruoEN(MonstruoEN monstruo)
 }
 
 private void init (int id
-                   , string nombre, int vida, int ataque, int defensa, ProyectoVikingsGenNHibernate.EN.ProyectoVikings.Batalla_PVEEN batalla_PVE)
+                   , string nombre, int vida, int ataque, int defensa, System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.Batalla_PVEEN> batalla_PVE)
 {
         this.Id = id;
 

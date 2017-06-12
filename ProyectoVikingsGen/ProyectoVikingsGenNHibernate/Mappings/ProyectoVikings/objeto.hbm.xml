@@ -33,18 +33,6 @@
       						</many-to-many>
     					</bag>
 			
-		  			
-						<bag name="InventarioEquipado" table="[objeto_0_inventarioEquipado]"  >
-							<key>
-								
-									<column name="FK_idObjeto_idObjeto_0"/> 
-							</key>
-      						<many-to-many class="ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEquipadoEN">
-									<column name="FK_idInventario_idInventarioEquipado"/> 
-      						</many-to-many>
-    					</bag>
-			
-					
 					
 					
 					
@@ -53,5 +41,6 @@
 		 </class>	
 		  
 		  <query name="ObjetoENReadAllHQL">from ObjetoEN</query>
+		  <query name="ObjetoENdameObjetosPorInventarioHQL"><![CDATA[FROM ObjetoEN WHERE ObjetoEN.Inventario.id = 0]]></query>
 		</hibernate-mapping>
 	

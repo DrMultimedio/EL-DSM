@@ -91,7 +91,6 @@ public void ModifyDefault (InventarioEquipadoEN inventarioEquipado)
                 SessionInitializeTransaction ();
                 InventarioEquipadoEN inventarioEquipadoEN = (InventarioEquipadoEN)session.Load (typeof(InventarioEquipadoEN), inventarioEquipado.Id);
 
-
                 session.Update (inventarioEquipadoEN);
                 SessionCommit ();
         }
@@ -185,45 +184,6 @@ public void Destroy (int id
                 SessionInitializeTransaction ();
                 InventarioEquipadoEN inventarioEquipadoEN = (InventarioEquipadoEN)session.Load (typeof(InventarioEquipadoEN), id);
                 session.Delete (inventarioEquipadoEN);
-                SessionCommit ();
-        }
-
-        catch (Exception ex) {
-                SessionRollBack ();
-                if (ex is ProyectoVikingsGenNHibernate.Exceptions.ModelException)
-                        throw ex;
-                throw new ProyectoVikingsGenNHibernate.Exceptions.DataLayerException ("Error in InventarioEquipadoCAD.", ex);
-        }
-
-
-        finally
-        {
-                SessionClose ();
-        }
-}
-
-public void Equipar (int p_InventarioEquipado_OID, System.Collections.Generic.IList<int> p_objeto_0_OIDs)
-{
-        ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEquipadoEN inventarioEquipadoEN = null;
-        try
-        {
-                SessionInitializeTransaction ();
-                inventarioEquipadoEN = (InventarioEquipadoEN)session.Load (typeof(InventarioEquipadoEN), p_InventarioEquipado_OID);
-                ProyectoVikingsGenNHibernate.EN.ProyectoVikings.ObjetoEN objeto_0ENAux = null;
-                if (inventarioEquipadoEN.Objeto_0 == null) {
-                        inventarioEquipadoEN.Objeto_0 = new System.Collections.Generic.List<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.ObjetoEN>();
-                }
-
-                foreach (int item in p_objeto_0_OIDs) {
-                        objeto_0ENAux = new ProyectoVikingsGenNHibernate.EN.ProyectoVikings.ObjetoEN ();
-                        objeto_0ENAux = (ProyectoVikingsGenNHibernate.EN.ProyectoVikings.ObjetoEN)session.Load (typeof(ProyectoVikingsGenNHibernate.EN.ProyectoVikings.ObjetoEN), item);
-                        objeto_0ENAux.InventarioEquipado.Add (inventarioEquipadoEN);
-
-                        inventarioEquipadoEN.Objeto_0.Add (objeto_0ENAux);
-                }
-
-
-                session.Update (inventarioEquipadoEN);
                 SessionCommit ();
         }
 

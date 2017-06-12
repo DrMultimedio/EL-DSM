@@ -27,13 +27,6 @@ private System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.Proyect
 
 
 /**
- *	Atributo inventarioEquipado
- */
-private System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEquipadoEN> inventarioEquipado;
-
-
-
-/**
  *	Atributo precio
  */
 private int precio;
@@ -61,12 +54,6 @@ public virtual System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.
 
 
 
-public virtual System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEquipadoEN> InventarioEquipado {
-        get { return inventarioEquipado; } set { inventarioEquipado = value;  }
-}
-
-
-
 public virtual int Precio {
         get { return precio; } set { precio = value;  }
 }
@@ -78,25 +65,24 @@ public virtual int Precio {
 public ObjetoEN()
 {
         inventario = new System.Collections.Generic.List<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEN>();
-        inventarioEquipado = new System.Collections.Generic.List<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEquipadoEN>();
 }
 
 
 
-public ObjetoEN(int id, string nombre, System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEN> inventario, System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEquipadoEN> inventarioEquipado, int precio
+public ObjetoEN(int id, string nombre, System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEN> inventario, int precio
                 )
 {
-        this.init (Id, nombre, inventario, inventarioEquipado, precio);
+        this.init (Id, nombre, inventario, precio);
 }
 
 
 public ObjetoEN(ObjetoEN objeto)
 {
-        this.init (Id, objeto.Nombre, objeto.Inventario, objeto.InventarioEquipado, objeto.Precio);
+        this.init (Id, objeto.Nombre, objeto.Inventario, objeto.Precio);
 }
 
 private void init (int id
-                   , string nombre, System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEN> inventario, System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEquipadoEN> inventarioEquipado, int precio)
+                   , string nombre, System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEN> inventario, int precio)
 {
         this.Id = id;
 
@@ -104,8 +90,6 @@ private void init (int id
         this.Nombre = nombre;
 
         this.Inventario = inventario;
-
-        this.InventarioEquipado = inventarioEquipado;
 
         this.Precio = precio;
 }

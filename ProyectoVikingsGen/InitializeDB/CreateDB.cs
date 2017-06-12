@@ -114,7 +114,7 @@ public static void InitializeData ()
 
 
                 // Jugadores
-                int jugador1 = jugadorCEN.New_ ("Paco", "paco@gmail.com", new DateTime (1997, 11, 19), "Pato", 20, 20, 3, 1, 0, "Paco1");
+                int jugador1 = jugadorCEN.New_ ("Paco", "paco@gmail.com", new DateTime (1997, 11, 19), "Pato", 20, 20, 3, 1, 300, "Paco1");
                 int jugador2 = jugadorCEN.New_ ("Jose", "jose@gmail.com", new DateTime (1957, 12, 19), Util.GetEncondeMD5 ("Pato"), 20, 20, 3, 1, 0, "Jose1");
                 int jugador3 = jugadorCEN.New_ ("ThorTilla", "jose@gmail.com", new DateTime (1957, 12, 19), Util.GetEncondeMD5 ("Pato"), 50, 40, 5, 1, 0, "Jose1");
                 //inventario
@@ -224,18 +224,25 @@ public static void InitializeData ()
                         System.Console.WriteLine (batallaPVPCEN.DameGanador (batalla2));
                 }
                 //pruebas objetos
+
                 System.Console.WriteLine ("Oro antes " + jugadorCEN.ReadOID (jugador1).Oro);
 
                 jugadorCP.Comprar (jugador1, objetoCEN.ReadOID (armadura1));
                 System.Console.WriteLine ("Oro despues " + jugadorCEN.ReadOID (jugador1).Oro);
-
+                IList<ObjetoEN> objetos = objetoCEN.DameObjetos (0, 2);
+                foreach (ObjetoEN j in objetos) {
+                        System.Console.WriteLine (j.Nombre);
+                }
                 //le prueba del algodon
                 IList<JugadorEN> jugadores = jugadorCEN.DameJugadores (0, 14);
 
                 foreach (JugadorEN j in jugadores) {
                         System.Console.WriteLine (j.Nombre);
                 }
+                System.Console.WriteLine ("Calcular danyo");
 
+                jugadorCP.CalcularDanyoExtra (jugador1);
+                System.Console.WriteLine ("Salimso de calcular danyo");
 
                 // p.e. CustomerCEN customer = new CustomerCEN();
                 // customer.New_ (p_user:"user", p_password:"1234");
