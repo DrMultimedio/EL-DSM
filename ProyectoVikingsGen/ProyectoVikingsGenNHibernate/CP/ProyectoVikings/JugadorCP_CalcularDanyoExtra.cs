@@ -63,16 +63,17 @@ public int CalcularDanyoExtra (int p_oid)
 
                 InventarioEN inventarioEN = null;
 
-                inventarioEN = inventarioCEN.DameInventarioPorJugador (p_oid);
+                inventarioEN = jugadorCEN.DameInventario (p_oid);
                 System.Console.WriteLine ("Anters");
 
                 IList<ObjetoEN> objetos = objetosCEN.DameObjetosPorInventario (inventarioEN.Id);
                 System.Console.WriteLine ("despuers");
-
-                foreach (ObjetoEN o in inventarioEN.Objeto) {
-                        System.Console.WriteLine (o.Nombre);
-                        System.Console.WriteLine ("Hola");
-                }
+                
+                   foreach (ObjetoEN o in inventarioEN.Objeto) {
+                           System.Console.WriteLine (o.Nombre);
+                           System.Console.WriteLine ("Hola");
+                   }
+                
 
 
 

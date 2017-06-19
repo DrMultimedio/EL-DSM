@@ -80,10 +80,6 @@ public void Destroy (int id
         _IInventarioCAD.Destroy (id);
 }
 
-public ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEN DameInventarioPorJugador (int ? oid_jugador)
-{
-        return _IInventarioCAD.DameInventarioPorJugador (oid_jugador);
-}
 public void ObjetoRelationer (int p_Inventario_OID, System.Collections.Generic.IList<int> p_objeto_OIDs)
 {
         //Call to InventarioCAD

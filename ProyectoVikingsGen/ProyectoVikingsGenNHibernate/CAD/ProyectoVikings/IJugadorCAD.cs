@@ -33,5 +33,10 @@ System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings
 
 
 System.Collections.Generic.IList<JugadorEN> DameJugadores (int first, int size);
+
+
+
+
+ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEN DameInventario (int jugador_oid);
 }
 }

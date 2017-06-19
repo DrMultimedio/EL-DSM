@@ -262,7 +262,7 @@ public System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.Proyecto
         try
         {
                 SessionInitializeTransaction ();
-                //String sql = @"FROM ObjetoEN self where FROM ObjetoEN WHERE ObjetoEN.Inventario.id = 0";
+                //String sql = @"FROM ObjetoEN self where FROM ObjetoEN as objeto inner join objeto.Inventario as inv WHERE inv.Id = :oid_inventario";
                 //IQuery query = session.CreateQuery(sql);
                 IQuery query = (IQuery)session.GetNamedQuery ("ObjetoENdameObjetosPorInventarioHQL");
                 query.SetParameter ("oid_inventario", oid_inventario);

@@ -122,5 +122,6 @@
 		  
 		  <query name="JugadorENReadAllHQL">from JugadorEN</query>
 		  <query name="JugadorENdameJugadoresBatallaHQL"><![CDATA[FROM JugadorEN]]></query>
+		  <query name="JugadorENdameInventarioHQL"><![CDATA[select inv FROM JugadorEN as jug inner join jug.Inventario as inv where inv.Jugador.Id = :jugador_oid]]></query>
 		</hibernate-mapping>
 	

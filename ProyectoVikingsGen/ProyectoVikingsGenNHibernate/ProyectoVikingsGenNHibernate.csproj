@@ -124,6 +124,7 @@
 			
 			<Compile Include="CP\ProyectoVikings\JugadorCP_CalcularVidaExtra.cs" />
 			
+			
 	<Compile Include="EN\ProyectoVikings\AdminEN.cs" />
 	<Compile Include="CEN\ProyectoVikings\AdminCEN.cs" />
 	<Compile Include="CAD\ProyectoVikings\IAdminCAD.cs" />
@@ -141,7 +142,6 @@
 	<Compile Include="CAD\ProyectoVikings\IInventarioCAD.cs" />
 	<Compile Include="CAD\ProyectoVikings\InventarioCAD.cs" />
 	<Compile Include="CP\ProyectoVikings\InventarioCP.cs" />
-			
 			
 			
 			

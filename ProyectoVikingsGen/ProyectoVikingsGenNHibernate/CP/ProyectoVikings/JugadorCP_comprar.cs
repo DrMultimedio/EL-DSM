@@ -56,7 +56,7 @@ public void Comprar (int p_oid, ProyectoVikingsGenNHibernate.EN.ProyectoVikings.
 
                 JugadorEN jugadorEN = jugadorCEN.ReadOID (p_oid);
 
-                InventarioEN inventarioEN = inventarioCEN.DameInventarioPorJugador (p_oid);
+                InventarioEN inventarioEN = jugadorCEN.DameInventario (p_oid);
                 int oro = jugadorEN.Oro;
                 int precio = objetoEN.Precio;
 
@@ -69,8 +69,6 @@ public void Comprar (int p_oid, ProyectoVikingsGenNHibernate.EN.ProyectoVikings.
 
                         IList<int> objetosOID = new List<int>();
 
-
-                        System.Console.WriteLine (objetoEN.Nombre);
 
 
                         objetosOID.Add (objetoEN.Id);

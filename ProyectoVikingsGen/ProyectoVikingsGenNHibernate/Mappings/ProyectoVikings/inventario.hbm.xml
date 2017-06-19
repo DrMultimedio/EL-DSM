@@ -43,6 +43,5 @@
 		 </class>	
 		  
 		  <query name="InventarioENReadAllHQL">from InventarioEN</query>
-		  <query name="InventarioENdameInventarioPorJugadorHQL"><![CDATA[FROM InventarioEN WHERE id = :oid_jugador]]></query>
 		</hibernate-mapping>
 	

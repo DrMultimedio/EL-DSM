@@ -119,5 +119,9 @@ public System.Collections.Generic.IList<JugadorEN> DameJugadores (int first, int
         list = _IJugadorCAD.DameJugadores (first, size);
         return list;
 }
+public ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEN DameInventario (int jugador_oid)
+{
+        return _IJugadorCAD.DameInventario (jugador_oid);
+}
 }
 }
