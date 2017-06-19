@@ -33,6 +33,27 @@ private int precio;
 
 
 
+/**
+ *	Atributo tipo
+ */
+private ProyectoVikingsGenNHibernate.Enumerated.ProyectoVikings.TipoObjetoEnum tipo;
+
+
+
+/**
+ *	Atributo ataque
+ */
+private int ataque;
+
+
+
+/**
+ *	Atributo defensa
+ */
+private int defensa;
+
+
+
 
 
 
@@ -60,6 +81,24 @@ public virtual int Precio {
 
 
 
+public virtual ProyectoVikingsGenNHibernate.Enumerated.ProyectoVikings.TipoObjetoEnum Tipo {
+        get { return tipo; } set { tipo = value;  }
+}
+
+
+
+public virtual int Ataque {
+        get { return ataque; } set { ataque = value;  }
+}
+
+
+
+public virtual int Defensa {
+        get { return defensa; } set { defensa = value;  }
+}
+
+
+
 
 
 public ObjetoEN()
@@ -69,20 +108,20 @@ public ObjetoEN()
 
 
 
-public ObjetoEN(int id, string nombre, System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEN> inventario, int precio
+public ObjetoEN(int id, string nombre, System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEN> inventario, int precio, ProyectoVikingsGenNHibernate.Enumerated.ProyectoVikings.TipoObjetoEnum tipo, int ataque, int defensa
                 )
 {
-        this.init (Id, nombre, inventario, precio);
+        this.init (Id, nombre, inventario, precio, tipo, ataque, defensa);
 }
 
 
 public ObjetoEN(ObjetoEN objeto)
 {
-        this.init (Id, objeto.Nombre, objeto.Inventario, objeto.Precio);
+        this.init (Id, objeto.Nombre, objeto.Inventario, objeto.Precio, objeto.Tipo, objeto.Ataque, objeto.Defensa);
 }
 
 private void init (int id
-                   , string nombre, System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEN> inventario, int precio)
+                   , string nombre, System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEN> inventario, int precio, ProyectoVikingsGenNHibernate.Enumerated.ProyectoVikings.TipoObjetoEnum tipo, int ataque, int defensa)
 {
         this.Id = id;
 
@@ -92,6 +131,12 @@ private void init (int id
         this.Inventario = inventario;
 
         this.Precio = precio;
+
+        this.Tipo = tipo;
+
+        this.Ataque = ataque;
+
+        this.Defensa = defensa;
 }
 
 public override bool Equals (object obj)

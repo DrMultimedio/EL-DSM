@@ -18,6 +18,15 @@
 					<property name="Precio" type="integer"> 
 						<column name="Precio"  not-null="true"/>
 					</property>
+					<property name="Tipo" > 
+						<column name="Tipo"  not-null="true"/>
+					</property>
+					<property name="Ataque" type="integer"> 
+						<column name="Ataque"  not-null="true"/>
+					</property>
+					<property name="Defensa" type="integer"> 
+						<column name="Defensa"  not-null="true"/>
+					</property>
 			
 			
 			
@@ -33,6 +42,12 @@
       						</many-to-many>
     					</bag>
 			
+			
+			
+			
+					
+					
+					
 					
 					
 					
@@ -41,6 +56,6 @@
 		 </class>	
 		  
 		  <query name="ObjetoENReadAllHQL">from ObjetoEN</query>
-		  <query name="ObjetoENdameObjetosPorInventarioHQL"><![CDATA[FROM ObjetoEN as objeto inner join objeto.Inventario as inv WHERE inv.Id = :oid_inventario]]></query>
+		  <query name="ObjetoENdameObjetosPorInventarioHQL"><![CDATA[SELECT objeto FROM ObjetoEN as objeto inner join objeto.Inventario as inv WHERE inv.Id = :oid_inventario]]></query>
 		</hibernate-mapping>
 	

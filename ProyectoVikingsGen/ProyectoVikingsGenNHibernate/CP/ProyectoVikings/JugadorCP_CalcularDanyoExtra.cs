@@ -68,12 +68,13 @@ public int CalcularDanyoExtra (int p_oid)
 
                 IList<ObjetoEN> objetos = objetosCEN.DameObjetosPorInventario (inventarioEN.Id);
                 System.Console.WriteLine ("despuers");
-                
-                   foreach (ObjetoEN o in inventarioEN.Objeto) {
-                           System.Console.WriteLine (o.Nombre);
-                           System.Console.WriteLine ("Hola");
-                   }
-                
+
+                foreach (ObjetoEN o in objetos)
+                {
+                        System.Console.WriteLine (o.Nombre);
+                        System.Console.WriteLine ("Hola");
+                }
+
 
 
 

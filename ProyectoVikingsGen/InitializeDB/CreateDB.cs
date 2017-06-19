@@ -89,14 +89,7 @@ public static void InitializeData ()
                 ObjetoCAD objetoCAD = new ObjetoCAD ();
                 ObjetoCEN objetoCEN = new ObjetoCEN ();
 
-                ArmaduraCAD armaduraCAD = new ArmaduraCAD ();
-                ArmaduraCEN armaduraCEN = new ArmaduraCEN ();
-                ArmaCAD armaCAD = new ArmaCAD ();
-                ArmaCEN armaCEN = new ArmaCEN ();
-                CalzadoCAD calzadoCAD = new CalzadoCAD ();
-                CalzadoCEN calzadoCEN = new CalzadoCEN ();
-                CascoCAD cascoCAD = new CascoCAD ();
-                CascoCEN cascoCEN = new CascoCEN ();
+
 
                 MonstruoCAD monstruoCAD = new MonstruoCAD ();
                 MonstruoCEN monstruoCEN = new MonstruoCEN ();
@@ -123,14 +116,14 @@ public static void InitializeData ()
                 int inventario3 = inventarioCEN.New_ (10, jugador3);
 
                 // Objetos
-                int armadura1 = armaduraCEN.New_ ("Grebas del abismo 2.0", 12, 10, 3);
-                int armadura2 = armaduraCEN.New_ ("Armadura de carton", 3, 4, 3);
-                int calzado1 = calzadoCEN.New_ ("Botas del abismo 2.0", 12, 10, 3);
-                int calzado2 = calzadoCEN.New_ ("Zapatos de carton", 3, 4, 3);
-                int casco1 = cascoCEN.New_ ("Casco del abismo 2.0", 12, 10, 3);
-                int casco2 = cascoCEN.New_ ("Casco de carton", 3, 4, 3);
-                int arma1 = armaCEN.New_ ("Espada del abismo 2.0", 12, 3);
-                int arma2 = armaCEN.New_ ("Espada de carton", 3, 3);
+                int armadura1 = objetoCEN.New_ ("Pechera del abismo 2.0", 12, ProyectoVikingsGenNHibernate.Enumerated.ProyectoVikings.TipoObjetoEnum.Pecho, 10, 3);
+                int armadura2 = objetoCEN.New_ ("Armadura de cart�n ", 2, ProyectoVikingsGenNHibernate.Enumerated.ProyectoVikings.TipoObjetoEnum.Pecho, 4, 1);
+                int calzado1 = objetoCEN.New_ ("Grebas del abismo ", 68, ProyectoVikingsGenNHibernate.Enumerated.ProyectoVikings.TipoObjetoEnum.Grebas, 8, 2);
+                int calzado2 = objetoCEN.New_ ("Zapatos de carton", 8, ProyectoVikingsGenNHibernate.Enumerated.ProyectoVikings.TipoObjetoEnum.Grebas, 2, 1);
+                int casco1 = objetoCEN.New_ ("Casco del abismo", 68, ProyectoVikingsGenNHibernate.Enumerated.ProyectoVikings.TipoObjetoEnum.Casco, 12, 5);
+                int casco2 = objetoCEN.New_ ("Casco de cart�n", 8, ProyectoVikingsGenNHibernate.Enumerated.ProyectoVikings.TipoObjetoEnum.Casco, 3, 2);
+                int arma1 = objetoCEN.New_ ("Hacha del abismo", 68, ProyectoVikingsGenNHibernate.Enumerated.ProyectoVikings.TipoObjetoEnum.Arma, 0, 52);
+                int arma2 = objetoCEN.New_ ("Hacha de cart�ib", 8, ProyectoVikingsGenNHibernate.Enumerated.ProyectoVikings.TipoObjetoEnum.Arma, 0, 14);
 
                 //Monstruos
                 int monstruo1 = monstruoCEN.New_ ("Mariano", 30, 2, 2);

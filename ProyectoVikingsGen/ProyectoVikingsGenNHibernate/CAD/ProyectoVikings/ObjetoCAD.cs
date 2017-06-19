@@ -97,6 +97,15 @@ public void ModifyDefault (ObjetoEN objeto)
 
                 objetoEN.Precio = objeto.Precio;
 
+
+                objetoEN.Tipo = objeto.Tipo;
+
+
+                objetoEN.Ataque = objeto.Ataque;
+
+
+                objetoEN.Defensa = objeto.Defensa;
+
                 session.Update (objetoEN);
                 SessionCommit ();
         }
@@ -153,6 +162,15 @@ public void Modify (ObjetoEN objeto)
 
 
                 objetoEN.Precio = objeto.Precio;
+
+
+                objetoEN.Tipo = objeto.Tipo;
+
+
+                objetoEN.Ataque = objeto.Ataque;
+
+
+                objetoEN.Defensa = objeto.Defensa;
 
                 session.Update (objetoEN);
                 SessionCommit ();
@@ -262,7 +280,7 @@ public System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.Proyecto
         try
         {
                 SessionInitializeTransaction ();
-                //String sql = @"FROM ObjetoEN self where FROM ObjetoEN as objeto inner join objeto.Inventario as inv WHERE inv.Id = :oid_inventario";
+                //String sql = @"FROM ObjetoEN self where SELECT objeto FROM ObjetoEN as objeto inner join objeto.Inventario as inv WHERE inv.Id = :oid_inventario";
                 //IQuery query = session.CreateQuery(sql);
                 IQuery query = (IQuery)session.GetNamedQuery ("ObjetoENdameObjetosPorInventarioHQL");
                 query.SetParameter ("oid_inventario", oid_inventario);

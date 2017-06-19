@@ -184,38 +184,6 @@
 			
 			
 			
-	<Compile Include="EN\ProyectoVikings\ArmaduraEN.cs" />
-	<Compile Include="CEN\ProyectoVikings\ArmaduraCEN.cs" />
-	<Compile Include="CAD\ProyectoVikings\IArmaduraCAD.cs" />
-	<Compile Include="CAD\ProyectoVikings\ArmaduraCAD.cs" />
-	<Compile Include="CP\ProyectoVikings\ArmaduraCP.cs" />
-			
-			
-			
-	<Compile Include="EN\ProyectoVikings\ArmaEN.cs" />
-	<Compile Include="CEN\ProyectoVikings\ArmaCEN.cs" />
-	<Compile Include="CAD\ProyectoVikings\IArmaCAD.cs" />
-	<Compile Include="CAD\ProyectoVikings\ArmaCAD.cs" />
-	<Compile Include="CP\ProyectoVikings\ArmaCP.cs" />
-			
-			
-			
-	<Compile Include="EN\ProyectoVikings\CascoEN.cs" />
-	<Compile Include="CEN\ProyectoVikings\CascoCEN.cs" />
-	<Compile Include="CAD\ProyectoVikings\ICascoCAD.cs" />
-	<Compile Include="CAD\ProyectoVikings\CascoCAD.cs" />
-	<Compile Include="CP\ProyectoVikings\CascoCP.cs" />
-			
-			
-			
-	<Compile Include="EN\ProyectoVikings\CalzadoEN.cs" />
-	<Compile Include="CEN\ProyectoVikings\CalzadoCEN.cs" />
-	<Compile Include="CAD\ProyectoVikings\ICalzadoCAD.cs" />
-	<Compile Include="CAD\ProyectoVikings\CalzadoCAD.cs" />
-	<Compile Include="CP\ProyectoVikings\CalzadoCP.cs" />
-			
-			
-			
 	<Compile Include="EN\ProyectoVikings\Batalla_PVPEN.cs" />
 	<Compile Include="CEN\ProyectoVikings\Batalla_PVPCEN.cs" />
 	<Compile Include="CAD\ProyectoVikings\IBatalla_PVPCAD.cs" />
@@ -240,6 +208,7 @@
 			
 			
 	<Compile Include="Enumerated\ProyectoVikings\TipoGanadorEnum.cs" />
+	<Compile Include="Enumerated\ProyectoVikings\TipoObjetoEnum.cs" />
 	
 	
 
@@ -261,10 +230,6 @@
 	<EmbeddedResource Include="Mappings\ProyectoVikings\monstruo.hbm.xml" />
 	<EmbeddedResource Include="Mappings\ProyectoVikings\batalla_pve.hbm.xml" />
 	<EmbeddedResource Include="Mappings\ProyectoVikings\objeto.hbm.xml" />
-	<EmbeddedResource Include="Mappings\ProyectoVikings\armadura.hbm.xml" />
-	<EmbeddedResource Include="Mappings\ProyectoVikings\arma.hbm.xml" />
-	<EmbeddedResource Include="Mappings\ProyectoVikings\casco.hbm.xml" />
-	<EmbeddedResource Include="Mappings\ProyectoVikings\calzado.hbm.xml" />
 	<EmbeddedResource Include="Mappings\ProyectoVikings\batalla_pvp.hbm.xml" />
 	<EmbeddedResource Include="Mappings\ProyectoVikings\inventarioequipado.hbm.xml" />
 	

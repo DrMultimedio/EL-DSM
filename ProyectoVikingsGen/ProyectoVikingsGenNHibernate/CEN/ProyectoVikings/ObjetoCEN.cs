@@ -38,7 +38,7 @@ public IObjetoCAD get_IObjetoCAD ()
         return this._IObjetoCAD;
 }
 
-public int New_ (string p_Nombre, int p_Precio)
+public int New_ (string p_Nombre, int p_Precio, ProyectoVikingsGenNHibernate.Enumerated.ProyectoVikings.TipoObjetoEnum p_Tipo, int p_Ataque, int p_Defensa)
 {
         ObjetoEN objetoEN = null;
         int oid;
@@ -49,13 +49,19 @@ public int New_ (string p_Nombre, int p_Precio)
 
         objetoEN.Precio = p_Precio;
 
+        objetoEN.Tipo = p_Tipo;
+
+        objetoEN.Ataque = p_Ataque;
+
+        objetoEN.Defensa = p_Defensa;
+
         //Call to ObjetoCAD
 
         oid = _IObjetoCAD.New_ (objetoEN);
         return oid;
 }
 
-public void Modify (int p_Objeto_OID, string p_Nombre, int p_Precio)
+public void Modify (int p_Objeto_OID, string p_Nombre, int p_Precio, ProyectoVikingsGenNHibernate.Enumerated.ProyectoVikings.TipoObjetoEnum p_Tipo, int p_Ataque, int p_Defensa)
 {
         ObjetoEN objetoEN = null;
 
@@ -64,6 +70,9 @@ public void Modify (int p_Objeto_OID, string p_Nombre, int p_Precio)
         objetoEN.Id = p_Objeto_OID;
         objetoEN.Nombre = p_Nombre;
         objetoEN.Precio = p_Precio;
+        objetoEN.Tipo = p_Tipo;
+        objetoEN.Ataque = p_Ataque;
+        objetoEN.Defensa = p_Defensa;
         //Call to ObjetoCAD
 
         _IObjetoCAD.Modify (objetoEN);
