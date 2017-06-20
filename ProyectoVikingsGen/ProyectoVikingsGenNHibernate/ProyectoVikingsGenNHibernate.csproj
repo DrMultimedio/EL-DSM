@@ -125,6 +125,7 @@
 			<Compile Include="CP\ProyectoVikings\JugadorCP_CalcularVidaExtra.cs" />
 			
 			
+			
 	<Compile Include="EN\ProyectoVikings\AdminEN.cs" />
 	<Compile Include="CEN\ProyectoVikings\AdminCEN.cs" />
 	<Compile Include="CAD\ProyectoVikings\IAdminCAD.cs" />
@@ -184,6 +185,9 @@
 			
 			
 			
+			
+			<Compile Include="CEN\ProyectoVikings\ObjetoCEN_DameTipo.cs" />
+			
 	<Compile Include="EN\ProyectoVikings\Batalla_PVPEN.cs" />
 	<Compile Include="CEN\ProyectoVikings\Batalla_PVPCEN.cs" />
 	<Compile Include="CAD\ProyectoVikings\IBatalla_PVPCAD.cs" />
@@ -196,16 +200,25 @@
 			
 			<Compile Include="CEN\ProyectoVikings\Batalla_PVPCEN_DameGanador.cs" />
 			
-	<Compile Include="EN\ProyectoVikings\InventarioEquipadoEN.cs" />
-	<Compile Include="CEN\ProyectoVikings\InventarioEquipadoCEN.cs" />
-	<Compile Include="CAD\ProyectoVikings\IInventarioEquipadoCAD.cs" />
-	<Compile Include="CAD\ProyectoVikings\InventarioEquipadoCAD.cs" />
-	<Compile Include="CP\ProyectoVikings\InventarioEquipadoCP.cs" />
+	<Compile Include="EN\ProyectoVikings\EquipoEN.cs" />
+	<Compile Include="CEN\ProyectoVikings\EquipoCEN.cs" />
+	<Compile Include="CAD\ProyectoVikings\IEquipoCAD.cs" />
+	<Compile Include="CAD\ProyectoVikings\EquipoCAD.cs" />
+	<Compile Include="CP\ProyectoVikings\EquipoCP.cs" />
 			
 			
 			
-			<Compile Include="CEN\ProyectoVikings\InventarioEquipadoCEN_Desequipar.cs" />
 			
+			<Compile Include="CP\ProyectoVikings\EquipoCP_Equipar.cs" />
+			
+			
+			<Compile Include="CEN\ProyectoVikings\EquipoCEN_CheckArma.cs" />
+			
+			<Compile Include="CEN\ProyectoVikings\EquipoCEN_CheckPechera.cs" />
+			
+			<Compile Include="CEN\ProyectoVikings\EquipoCEN_CheckCasco.cs" />
+			
+			<Compile Include="CEN\ProyectoVikings\EquipoCEN_CheckGrebas.cs" />
 			
 	<Compile Include="Enumerated\ProyectoVikings\TipoGanadorEnum.cs" />
 	<Compile Include="Enumerated\ProyectoVikings\TipoObjetoEnum.cs" />
@@ -231,7 +244,7 @@
 	<EmbeddedResource Include="Mappings\ProyectoVikings\batalla_pve.hbm.xml" />
 	<EmbeddedResource Include="Mappings\ProyectoVikings\objeto.hbm.xml" />
 	<EmbeddedResource Include="Mappings\ProyectoVikings\batalla_pvp.hbm.xml" />
-	<EmbeddedResource Include="Mappings\ProyectoVikings\inventarioequipado.hbm.xml" />
+	<EmbeddedResource Include="Mappings\ProyectoVikings\equipo.hbm.xml" />
 	
 	
 

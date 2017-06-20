@@ -31,7 +31,7 @@ public int CalcularDanyoExtra (int p_oid)
         IJugadorCAD jugadorCAD = null;
         JugadorCEN jugadorCEN = null;
 
-        int result = -1;
+        int result = 0;
 
 
         try
@@ -51,28 +51,25 @@ public int CalcularDanyoExtra (int p_oid)
                 ObjetoCEN objetosCEN = null;
                 objetosCEN = new ObjetoCEN ();
 
-                ObjetoEN objetoEN = null;
+                EquipoCAD equipoCAD = null;
+                equipoCAD = new EquipoCAD ();
 
 
-                InventarioCAD inventarioCAD = null;
-                inventarioCAD = new InventarioCAD ();
+                EquipoCEN equipoCEN = null;
+                equipoCEN = new EquipoCEN ();
 
+                EquipoEN equipoEN = null;
+                JugadorEN jugador = null;
+                jugador = jugadorCEN.ReadOID(p_oid);
 
-                InventarioCEN inventarioCEN = null;
-                inventarioCEN = new InventarioCEN ();
+            equipoEN = jugadorCEN.DameEquipo(p_oid);
 
-                InventarioEN inventarioEN = null;
+            IList<ObjetoEN> objetos = objetosCEN.DameObjetosPorEquipo (equipoEN.Id);
 
-                inventarioEN = jugadorCEN.DameInventario (p_oid);
-                System.Console.WriteLine ("Anters");
+                foreach (ObjetoEN o in objetos) {
 
-                IList<ObjetoEN> objetos = objetosCEN.DameObjetosPorInventario (inventarioEN.Id);
-                System.Console.WriteLine ("despuers");
-
-                foreach (ObjetoEN o in objetos)
-                {
                         System.Console.WriteLine (o.Nombre);
-                        System.Console.WriteLine ("Hola");
+                        result = result + o.Ataque;
                 }
 
 

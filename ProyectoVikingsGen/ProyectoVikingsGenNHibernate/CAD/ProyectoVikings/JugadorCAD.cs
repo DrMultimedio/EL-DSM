@@ -368,5 +368,36 @@ public ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEN DameInventar
 
         return result;
 }
+public ProyectoVikingsGenNHibernate.EN.ProyectoVikings.EquipoEN DameEquipo (int jugador_oid)
+{
+        ProyectoVikingsGenNHibernate.EN.ProyectoVikings.EquipoEN result;
+        try
+        {
+                SessionInitializeTransaction ();
+                //String sql = @"FROM JugadorEN self where select equ FROM JugadorEN as jug inner join jug.Equipo as equ where equ.Jugador.Id = :jugador_oid";
+                //IQuery query = session.CreateQuery(sql);
+                IQuery query = (IQuery)session.GetNamedQuery ("JugadorENdameEquipoHQL");
+                query.SetParameter ("jugador_oid", jugador_oid);
+
+
+                result = query.UniqueResult<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.EquipoEN>();
+                SessionCommit ();
+        }
+
+        catch (Exception ex) {
+                SessionRollBack ();
+                if (ex is ProyectoVikingsGenNHibernate.Exceptions.ModelException)
+                        throw ex;
+                throw new ProyectoVikingsGenNHibernate.Exceptions.DataLayerException ("Error in JugadorCAD.", ex);
+        }
+
+
+        finally
+        {
+                SessionClose ();
+        }
+
+        return result;
+}
 }
 }

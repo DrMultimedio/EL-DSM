@@ -54,6 +54,13 @@ private int defensa;
 
 
 
+/**
+ *	Atributo equipo
+ */
+private System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.EquipoEN> equipo;
+
+
+
 
 
 
@@ -99,29 +106,36 @@ public virtual int Defensa {
 
 
 
+public virtual System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.EquipoEN> Equipo {
+        get { return equipo; } set { equipo = value;  }
+}
+
+
+
 
 
 public ObjetoEN()
 {
         inventario = new System.Collections.Generic.List<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEN>();
+        equipo = new System.Collections.Generic.List<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.EquipoEN>();
 }
 
 
 
-public ObjetoEN(int id, string nombre, System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEN> inventario, int precio, ProyectoVikingsGenNHibernate.Enumerated.ProyectoVikings.TipoObjetoEnum tipo, int ataque, int defensa
+public ObjetoEN(int id, string nombre, System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEN> inventario, int precio, ProyectoVikingsGenNHibernate.Enumerated.ProyectoVikings.TipoObjetoEnum tipo, int ataque, int defensa, System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.EquipoEN> equipo
                 )
 {
-        this.init (Id, nombre, inventario, precio, tipo, ataque, defensa);
+        this.init (Id, nombre, inventario, precio, tipo, ataque, defensa, equipo);
 }
 
 
 public ObjetoEN(ObjetoEN objeto)
 {
-        this.init (Id, objeto.Nombre, objeto.Inventario, objeto.Precio, objeto.Tipo, objeto.Ataque, objeto.Defensa);
+        this.init (Id, objeto.Nombre, objeto.Inventario, objeto.Precio, objeto.Tipo, objeto.Ataque, objeto.Defensa, objeto.Equipo);
 }
 
 private void init (int id
-                   , string nombre, System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEN> inventario, int precio, ProyectoVikingsGenNHibernate.Enumerated.ProyectoVikings.TipoObjetoEnum tipo, int ataque, int defensa)
+                   , string nombre, System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEN> inventario, int precio, ProyectoVikingsGenNHibernate.Enumerated.ProyectoVikings.TipoObjetoEnum tipo, int ataque, int defensa, System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.EquipoEN> equipo)
 {
         this.Id = id;
 
@@ -137,6 +151,8 @@ private void init (int id
         this.Ataque = ataque;
 
         this.Defensa = defensa;
+
+        this.Equipo = equipo;
 }
 
 public override bool Equals (object obj)

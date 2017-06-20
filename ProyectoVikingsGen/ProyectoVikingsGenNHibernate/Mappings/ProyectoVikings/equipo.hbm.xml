@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+		<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+		                   assembly="ProyectoVikingsGenNHibernate"
+		                   namespace="ProyectoVikingsGenNHibernate.EN.ProyectoVikings">
+		    
+		    
+			
+				<class name="EquipoEN" table="Equipo"> 
+				  	
+						<id name="Id" column="id" type="integer"> 
+							<generator class="hilo"/>
+						</id>
+			
+					
+					<property name="ArmaEquipada" type="boolean"> 
+						<column name="ArmaEquipada"  not-null="true"/>
+					</property>
+					<property name="PecheraEquipada" type="boolean"> 
+						<column name="PecheraEquipada"  not-null="true"/>
+					</property>
+					<property name="GrebasEquipadas" type="boolean"> 
+						<column name="GrebasEquipadas"  not-null="true"/>
+					</property>
+					<property name="CascoEquipado" type="boolean"> 
+						<column name="CascoEquipado"  not-null="true"/>
+					</property>
+			
+			
+		  			
+					
+							<many-to-one name="Jugador" class="ProyectoVikingsGenNHibernate.EN.ProyectoVikings.JugadorEN" >
+								<column name="FK_idJugador_idJugador_0"/> 
+        					</many-to-one>
+					 
+						
+			
+			
+			
+			
+			
+		  			
+						<bag name="Objeto" table="[objeto_equipo]" inverse="true" >
+							<key>
+								
+									<column name="FK_id_idEquipo"/> 
+							</key>
+      						<many-to-many class="ProyectoVikingsGenNHibernate.EN.ProyectoVikings.ObjetoEN">
+									<column name="FK_idObjeto_idObjeto"/> 
+      						</many-to-many>
+    					</bag>
+			
+					
+					
+					
+					
+					
+					
+					
+		
+		 </class>	
+		  
+		  <query name="EquipoENReadAllHQL">from EquipoEN</query>
+		</hibernate-mapping>
+	

@@ -123,5 +123,9 @@ public ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEN DameInventar
 {
         return _IJugadorCAD.DameInventario (jugador_oid);
 }
+public ProyectoVikingsGenNHibernate.EN.ProyectoVikings.EquipoEN DameEquipo (int jugador_oid)
+{
+        return _IJugadorCAD.DameEquipo (jugador_oid);
+}
 }
 }

@@ -97,7 +97,7 @@
 			
 		  			
 					
-							   <one-to-one name="InventarioEquipado" class="ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEquipadoEN" property-ref="Jugador_0" />							
+							   <one-to-one name="Equipo" class="ProyectoVikingsGenNHibernate.EN.ProyectoVikings.EquipoEN" property-ref="Jugador" />							
 					 
 						
 			
@@ -123,5 +123,6 @@
 		  <query name="JugadorENReadAllHQL">from JugadorEN</query>
 		  <query name="JugadorENdameJugadoresBatallaHQL"><![CDATA[FROM JugadorEN]]></query>
 		  <query name="JugadorENdameInventarioHQL"><![CDATA[select inv FROM JugadorEN as jug inner join jug.Inventario as inv where inv.Jugador.Id = :jugador_oid]]></query>
+		  <query name="JugadorENdameEquipoHQL"><![CDATA[select equ FROM JugadorEN as jug inner join jug.Equipo as equ where equ.Jugador.Id = :jugador_oid]]></query>
 		</hibernate-mapping>
 	

@@ -45,6 +45,18 @@
 			
 			
 			
+			
+		  			
+						<bag name="Equipo" table="[objeto_equipo]"  >
+							<key>
+								
+									<column name="FK_idObjeto_idObjeto"/> 
+							</key>
+      						<many-to-many class="ProyectoVikingsGenNHibernate.EN.ProyectoVikings.EquipoEN">
+									<column name="FK_id_idEquipo"/> 
+      						</many-to-many>
+    					</bag>
+					
 					
 					
 					
@@ -57,5 +69,6 @@
 		  
 		  <query name="ObjetoENReadAllHQL">from ObjetoEN</query>
 		  <query name="ObjetoENdameObjetosPorInventarioHQL"><![CDATA[SELECT objeto FROM ObjetoEN as objeto inner join objeto.Inventario as inv WHERE inv.Id = :oid_inventario]]></query>
+		  <query name="ObjetoENdameObjetosPorEquipoHQL"><![CDATA[SELECT objeto FROM ObjetoEN as objeto inner join objeto.Equipo as inv WHERE inv.Id = :oid_equipo]]></query>
 		</hibernate-mapping>
 	

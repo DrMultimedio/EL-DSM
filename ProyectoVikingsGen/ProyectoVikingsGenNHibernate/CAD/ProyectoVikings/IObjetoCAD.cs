@@ -33,5 +33,8 @@ System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings
 
 
 System.Collections.Generic.IList<ObjetoEN> DameObjetos (int first, int size);
+
+
+System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.ObjetoEN> DameObjetosPorEquipo (int oid_equipo);
 }
 }

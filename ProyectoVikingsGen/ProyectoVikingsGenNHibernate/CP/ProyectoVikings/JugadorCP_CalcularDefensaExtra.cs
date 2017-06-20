@@ -14,6 +14,9 @@ using ProyectoVikingsGenNHibernate.CEN.ProyectoVikings;
 
 /*PROTECTED REGION ID(usingProyectoVikingsGenNHibernate.CP.ProyectoVikings_Jugador_CalcularDefensaExtra) ENABLED START*/
 //  references to other libraries
+
+using System.Collections.Generic;
+
 /*PROTECTED REGION END*/
 
 namespace ProyectoVikingsGenNHibernate.CP.ProyectoVikings
@@ -24,38 +27,70 @@ public int CalcularDefensaExtra (int p_oid)
 {
         /*PROTECTED REGION ID(ProyectoVikingsGenNHibernate.CP.ProyectoVikings_Jugador_CalcularDefensaExtra) ENABLED START*/
 
-        IJugadorCAD jugadorCAD = null;
-        JugadorCEN jugadorCEN = null;
+    IJugadorCAD jugadorCAD = null;
+    JugadorCEN jugadorCEN = null;
 
-        int result = -1;
+    int result = 0;
 
 
-        try
+    try
+    {
+        SessionInitializeTransaction();
+        jugadorCAD = new JugadorCAD(session);
+        jugadorCEN = new JugadorCEN(jugadorCAD);
+
+
+
+        // Write here your custom transaction ...
+
+        ObjetoCAD objetosCAD = null;
+        objetosCAD = new ObjetoCAD();
+
+
+        ObjetoCEN objetosCEN = null;
+        objetosCEN = new ObjetoCEN();
+
+        ObjetoEN objetoEN = null;
+
+
+        EquipoCAD equipoCAD = null;
+        equipoCAD = new EquipoCAD();
+
+
+        EquipoCEN equipoCEN = null;
+        equipoCEN = new EquipoCEN();
+
+        EquipoEN equipoEN = null;
+
+        equipoEN = jugadorCEN.DameEquipo(p_oid);
+        System.Console.WriteLine("Anters");
+
+        IList<ObjetoEN> objetos = objetosCEN.DameObjetosPorEquipo(equipoEN.Id);
+        System.Console.WriteLine("despuers");
+
+        foreach (ObjetoEN o in objetos)
         {
-                SessionInitializeTransaction ();
-                jugadorCAD = new JugadorCAD (session);
-                jugadorCEN = new  JugadorCEN (jugadorCAD);
-
-
-
-                // Write here your custom transaction ...
-
-                throw new NotImplementedException ("Method CalcularDefensaExtra() not yet implemented.");
-
-
-
-                SessionCommit ();
+            System.Console.WriteLine(o.Nombre);
+            result = result + o.Defensa;
         }
-        catch (Exception ex)
-        {
-                SessionRollBack ();
-                throw ex;
-        }
-        finally
-        {
-                SessionClose ();
-        }
-        return result;
+
+
+
+
+        SessionCommit();
+    }
+    catch (Exception ex)
+    {
+        SessionRollBack();
+        System.Console.WriteLine(ex.InnerException);
+
+        throw ex;
+    }
+    finally
+    {
+        SessionClose();
+    }
+    return result;
 
 
         /*PROTECTED REGION END*/

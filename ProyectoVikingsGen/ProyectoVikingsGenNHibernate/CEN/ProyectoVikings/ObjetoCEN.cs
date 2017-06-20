@@ -111,5 +111,9 @@ public System.Collections.Generic.IList<ObjetoEN> DameObjetos (int first, int si
         list = _IObjetoCAD.DameObjetos (first, size);
         return list;
 }
+public System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.ObjetoEN> DameObjetosPorEquipo (int oid_equipo)
+{
+        return _IObjetoCAD.DameObjetosPorEquipo (oid_equipo);
+}
 }
 }

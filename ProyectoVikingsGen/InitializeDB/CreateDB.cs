@@ -86,6 +86,10 @@ public static void InitializeData ()
                 InventarioCAD inventarioCAD = new InventarioCAD ();
                 InventarioCEN inventarioCEN = new InventarioCEN ();
 
+                EquipoCAD equipoCAD = new EquipoCAD ();
+                EquipoCEN equipoCEN = new EquipoCEN ();
+                EquipoCP equipoCP = new EquipoCP ();
+
                 ObjetoCAD objetoCAD = new ObjetoCAD ();
                 ObjetoCEN objetoCEN = new ObjetoCEN ();
 
@@ -105,6 +109,8 @@ public static void InitializeData ()
 
                 Batalla_PVEEN batallapveEN = null;
 
+                System.Collections.Generic.IList<int> equipar = new System.Collections.Generic.List<int>();
+
 
                 // Jugadores
                 int jugador1 = jugadorCEN.New_ ("Paco", "paco@gmail.com", new DateTime (1997, 11, 19), "Pato", 20, 20, 3, 1, 300, "Paco1");
@@ -114,16 +120,20 @@ public static void InitializeData ()
                 int inventario1 = inventarioCEN.New_ (10, jugador1);
                 int inventario2 = inventarioCEN.New_ (10, jugador2);
                 int inventario3 = inventarioCEN.New_ (10, jugador3);
+                //equipo
+                int equipo1 = equipoCEN.New_ (jugador1, false, false, false, false);
+                int equipo2 = equipoCEN.New_ (jugador2, false, false, false, false);
+                int equipo3 = equipoCEN.New_ (jugador3, false, false, false, false);
 
                 // Objetos
                 int armadura1 = objetoCEN.New_ ("Pechera del abismo 2.0", 12, ProyectoVikingsGenNHibernate.Enumerated.ProyectoVikings.TipoObjetoEnum.Pecho, 10, 3);
-                int armadura2 = objetoCEN.New_ ("Armadura de cart�n ", 2, ProyectoVikingsGenNHibernate.Enumerated.ProyectoVikings.TipoObjetoEnum.Pecho, 4, 1);
+                int armadura2 = objetoCEN.New_ ("Armadura de carton ", 2, ProyectoVikingsGenNHibernate.Enumerated.ProyectoVikings.TipoObjetoEnum.Pecho, 4, 1);
                 int calzado1 = objetoCEN.New_ ("Grebas del abismo ", 68, ProyectoVikingsGenNHibernate.Enumerated.ProyectoVikings.TipoObjetoEnum.Grebas, 8, 2);
                 int calzado2 = objetoCEN.New_ ("Zapatos de carton", 8, ProyectoVikingsGenNHibernate.Enumerated.ProyectoVikings.TipoObjetoEnum.Grebas, 2, 1);
                 int casco1 = objetoCEN.New_ ("Casco del abismo", 68, ProyectoVikingsGenNHibernate.Enumerated.ProyectoVikings.TipoObjetoEnum.Casco, 12, 5);
-                int casco2 = objetoCEN.New_ ("Casco de cart�n", 8, ProyectoVikingsGenNHibernate.Enumerated.ProyectoVikings.TipoObjetoEnum.Casco, 3, 2);
+                int casco2 = objetoCEN.New_ ("Casco de carton", 8, ProyectoVikingsGenNHibernate.Enumerated.ProyectoVikings.TipoObjetoEnum.Casco, 3, 2);
                 int arma1 = objetoCEN.New_ ("Hacha del abismo", 68, ProyectoVikingsGenNHibernate.Enumerated.ProyectoVikings.TipoObjetoEnum.Arma, 0, 52);
-                int arma2 = objetoCEN.New_ ("Hacha de cart�ib", 8, ProyectoVikingsGenNHibernate.Enumerated.ProyectoVikings.TipoObjetoEnum.Arma, 0, 14);
+                int arma2 = objetoCEN.New_ ("Hacha de carton", 8, ProyectoVikingsGenNHibernate.Enumerated.ProyectoVikings.TipoObjetoEnum.Arma, 0, 14);
 
                 //Monstruos
                 int monstruo1 = monstruoCEN.New_ ("Mariano", 30, 2, 2);
@@ -152,6 +162,17 @@ public static void InitializeData ()
                 }
                 else{
                         System.Console.WriteLine ("No logiado");
+                }
+                //pruebas objetos
+
+                System.Console.WriteLine("Oro antes " + jugadorCEN.ReadOID(jugador1).Oro);
+
+                jugadorCP.Comprar(jugador1, objetoCEN.ReadOID(armadura1));
+                System.Console.WriteLine("Oro despues " + jugadorCEN.ReadOID(jugador1).Oro);
+                IList<ObjetoEN> objetos = objetoCEN.DameObjetos(0, 2);
+                foreach (ObjetoEN j in objetos)
+                {
+                    System.Console.WriteLine(j.Nombre);
                 }
 
                 //LE BATALLAS PVE
@@ -216,17 +237,28 @@ public static void InitializeData ()
                         System.Console.WriteLine ("Gana el jugador 2");
                         System.Console.WriteLine (batallaPVPCEN.DameGanador (batalla2));
                 }
-                //pruebas objetos
 
-                System.Console.WriteLine ("Oro antes " + jugadorCEN.ReadOID (jugador1).Oro);
+                    //pruebas equipo
+                    EquipoEN equipoEN = equipoCEN.DameEquipo(equipo1);
+                    System.Console.WriteLine("Pregunto si llevo equipada un arma " + equipoCEN.CheckArma(equipo1));
+                    System.Console.WriteLine("Equipo un arma");
 
-                jugadorCP.Comprar (jugador1, objetoCEN.ReadOID (armadura1));
-                System.Console.WriteLine ("Oro despues " + jugadorCEN.ReadOID (jugador1).Oro);
-                IList<ObjetoEN> objetos = objetoCEN.DameObjetos (0, 2);
-                foreach (ObjetoEN j in objetos) {
-                        System.Console.WriteLine (j.Nombre);
+                    equipar.Add(arma1);
+                    equipoCP.Equipar(equipo1, equipar);
+                    System.Console.WriteLine("Pregunto si llevo equipada un arma " + equipoCEN.CheckArma(equipo1));
+                    System.Console.WriteLine("Pregunto si llevo equipada un casco " + equipoCEN.CheckCasco(equipo1));
+                 System.Console.WriteLine("Gana jugador 1");
+
+                if (batallaPVPCCP.Resolver(jugador1, jugador2, batalla2))
+                {
+                    System.Console.WriteLine("Gana el jugador 1");
+                    System.Console.WriteLine(batallaPVPCEN.DameGanador(batalla2));
                 }
-                //le prueba del algodon
+                else
+                {
+                    System.Console.WriteLine("Gana el jugador 2");
+                    System.Console.WriteLine(batallaPVPCEN.DameGanador(batalla2));
+                }                //le prueba del algodon
                 IList<JugadorEN> jugadores = jugadorCEN.DameJugadores (0, 14);
 
                 foreach (JugadorEN j in jugadores) {
@@ -236,6 +268,8 @@ public static void InitializeData ()
 
                 jugadorCP.CalcularDanyoExtra (jugador1);
                 System.Console.WriteLine ("Salimso de calcular danyo");
+
+
 
                 // p.e. CustomerCEN customer = new CustomerCEN();
                 // customer.New_ (p_user:"user", p_password:"1234");

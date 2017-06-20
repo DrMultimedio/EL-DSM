@@ -51,6 +51,8 @@ public bool Resolver (int jugador_oid, int jugador_oid1, int batalla_oid)
                 JugadorCEN jugadorCEN1 = null;
                 JugadorCEN jugadorCEN2 = null;
 
+                JugadorCP jugadorCP = new JugadorCP();
+
                 jugadorCEN1 = new JugadorCEN (jugadorCAD1);
                 jugadorCEN2 = new JugadorCEN (jugadorCAD2);
 
@@ -60,17 +62,26 @@ public bool Resolver (int jugador_oid, int jugador_oid1, int batalla_oid)
                 jugadorEN1 = jugadorCEN1.ReadOID (jugador_oid);
                 jugadorEN2 = jugadorCEN2.ReadOID (jugador_oid1);
 
+                EquipoCAD equipoCAD = new EquipoCAD();
+                EquipoCEN equipoCEN = new EquipoCEN();
+
+                EquipoEN equipoJug1 = null;
+                EquipoEN equipoJug2 = null;
+
+                equipoJug1 = jugadorCEN1.DameEquipo(jugador_oid);
+                equipoJug2 = jugadorCEN1.DameEquipo(jugador_oid1);
+                
                 //ahora empiezo a resolver la batalla
                 //vamos restando el ataque de uno a la vida del otro hasta que la vida de uno de los dos llegue a cero
 
                 int vida1 = jugadorEN1.Vidamax;
                 int vida2 = jugadorEN2.Vidamax;
 
-                int ataque1 = jugadorEN1.Ataque;
-                int ataque2 = jugadorEN2.Ataque;
+                int ataque1 = jugadorEN1.Ataque + jugadorCP.CalcularDanyoExtra(jugador_oid);
+                int ataque2 = jugadorEN2.Ataque + jugadorCP.CalcularDanyoExtra(jugador_oid1);
 
-                int defensa1 = jugadorEN1.Defensa;
-                int defensa2 = jugadorEN2.Defensa;
+                int defensa1 = jugadorEN1.Defensa + jugadorCP.CalcularDefensaExtra(jugador_oid); ;
+                int defensa2 = jugadorEN2.Defensa + jugadorCP.CalcularDefensaExtra(jugador_oid1);
 
                 int danyo1 = ataque1 - defensa2;
                 int danyo2 = ataque2 - defensa1;

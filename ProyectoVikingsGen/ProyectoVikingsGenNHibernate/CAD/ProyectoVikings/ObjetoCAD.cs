@@ -106,6 +106,7 @@ public void ModifyDefault (ObjetoEN objeto)
 
                 objetoEN.Defensa = objeto.Defensa;
 
+
                 session.Update (objetoEN);
                 SessionCommit ();
         }
@@ -315,6 +316,37 @@ public System.Collections.Generic.IList<ObjetoEN> DameObjetos (int first, int si
                                  SetFirstResult (first).SetMaxResults (size).List<ObjetoEN>();
                 else
                         result = session.CreateCriteria (typeof(ObjetoEN)).List<ObjetoEN>();
+                SessionCommit ();
+        }
+
+        catch (Exception ex) {
+                SessionRollBack ();
+                if (ex is ProyectoVikingsGenNHibernate.Exceptions.ModelException)
+                        throw ex;
+                throw new ProyectoVikingsGenNHibernate.Exceptions.DataLayerException ("Error in ObjetoCAD.", ex);
+        }
+
+
+        finally
+        {
+                SessionClose ();
+        }
+
+        return result;
+}
+
+public System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.ObjetoEN> DameObjetosPorEquipo (int oid_equipo)
+{
+        System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.ObjetoEN> result;
+        try
+        {
+                SessionInitializeTransaction ();
+                //String sql = @"FROM ObjetoEN self where SELECT objeto FROM ObjetoEN as objeto inner join objeto.Equipo as inv WHERE inv.Id = :oid_equipo";
+                //IQuery query = session.CreateQuery(sql);
+                IQuery query = (IQuery)session.GetNamedQuery ("ObjetoENdameObjetosPorEquipoHQL");
+                query.SetParameter ("oid_equipo", oid_equipo);
+
+                result = query.List<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.ObjetoEN>();
                 SessionCommit ();
         }
 
