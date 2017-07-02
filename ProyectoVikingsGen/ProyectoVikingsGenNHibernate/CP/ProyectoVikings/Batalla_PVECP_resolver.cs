@@ -59,17 +59,17 @@ public bool Resolver (int id_jugador, int id_monstruo, int batalla_oid)
                 jugadorEN1 = jugadorCEN1.ReadOID (id_jugador);
                 monstruoEN = monstruoCEN.ReadOID (id_monstruo);
 
-                JugadorCP jugadorCP = new JugadorCP();
+                JugadorCP jugadorCP = new JugadorCP ();
                 //ahora empiezo a resolver la batalla
                 //vamos restando el ataque de uno a la vida del otro hasta que la vida de uno de los dos llegue a cero
 
                 int vida1 = jugadorEN1.Vidamax;
                 int vida2 = monstruoEN.Vida;
 
-                int ataque1 = jugadorEN1.Ataque + jugadorCP.CalcularDanyoExtra(id_jugador);
+                int ataque1 = jugadorEN1.Ataque + jugadorCP.CalcularDanyoExtra (id_jugador);
                 int ataque2 = monstruoEN.Ataque;
 
-                int defensa1 = jugadorEN1.Defensa + jugadorCP.CalcularDefensaExtra(id_jugador);
+                int defensa1 = jugadorEN1.Defensa + jugadorCP.CalcularDefensaExtra (id_jugador);
                 int defensa2 = monstruoEN.Defensa;
 
                 int danyo1 = ataque1 - defensa2;

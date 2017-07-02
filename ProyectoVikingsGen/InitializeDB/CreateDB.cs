@@ -165,14 +165,13 @@ public static void InitializeData ()
                 }
                 //pruebas objetos
 
-                System.Console.WriteLine("Oro antes " + jugadorCEN.ReadOID(jugador1).Oro);
+                System.Console.WriteLine ("Oro antes " + jugadorCEN.ReadOID (jugador1).Oro);
 
-                jugadorCP.Comprar(jugador1, objetoCEN.ReadOID(armadura1));
-                System.Console.WriteLine("Oro despues " + jugadorCEN.ReadOID(jugador1).Oro);
-                IList<ObjetoEN> objetos = objetoCEN.DameObjetos(0, 2);
-                foreach (ObjetoEN j in objetos)
-                {
-                    System.Console.WriteLine(j.Nombre);
+                jugadorCP.Comprar (jugador1, objetoCEN.ReadOID (armadura1));
+                System.Console.WriteLine ("Oro despues " + jugadorCEN.ReadOID (jugador1).Oro);
+                IList<ObjetoEN> objetos = objetoCEN.DameObjetos (0, 2);
+                foreach (ObjetoEN j in objetos) {
+                        System.Console.WriteLine (j.Nombre);
                 }
 
                 //LE BATALLAS PVE
@@ -238,26 +237,24 @@ public static void InitializeData ()
                         System.Console.WriteLine (batallaPVPCEN.DameGanador (batalla2));
                 }
 
-                    //pruebas equipo
-                    EquipoEN equipoEN = equipoCEN.DameEquipo(equipo1);
-                    System.Console.WriteLine("Pregunto si llevo equipada un arma " + equipoCEN.CheckArma(equipo1));
-                    System.Console.WriteLine("Equipo un arma");
+                //pruebas equipo
+                EquipoEN equipoEN = equipoCEN.DameEquipo (equipo1);
+                System.Console.WriteLine ("Pregunto si llevo equipada un arma " + equipoCEN.CheckArma (equipo1));
+                System.Console.WriteLine ("Equipo un arma");
 
-                    equipar.Add(arma1);
-                    equipoCP.Equipar(equipo1, equipar);
-                    System.Console.WriteLine("Pregunto si llevo equipada un arma " + equipoCEN.CheckArma(equipo1));
-                    System.Console.WriteLine("Pregunto si llevo equipada un casco " + equipoCEN.CheckCasco(equipo1));
-                 System.Console.WriteLine("Gana jugador 1");
+                equipar.Add (arma1);
+                equipoCP.Equipar (equipo1, equipar);
+                System.Console.WriteLine ("Pregunto si llevo equipada un arma " + equipoCEN.CheckArma (equipo1));
+                System.Console.WriteLine ("Pregunto si llevo equipada un casco " + equipoCEN.CheckCasco (equipo1));
+                System.Console.WriteLine ("Gana jugador 1");
 
-                if (batallaPVPCCP.Resolver(jugador1, jugador2, batalla2))
-                {
-                    System.Console.WriteLine("Gana el jugador 1");
-                    System.Console.WriteLine(batallaPVPCEN.DameGanador(batalla2));
+                if (batallaPVPCCP.Resolver (jugador1, jugador2, batalla2)) {
+                        System.Console.WriteLine ("Gana el jugador 1");
+                        System.Console.WriteLine (batallaPVPCEN.DameGanador (batalla2));
                 }
-                else
-                {
-                    System.Console.WriteLine("Gana el jugador 2");
-                    System.Console.WriteLine(batallaPVPCEN.DameGanador(batalla2));
+                else{
+                        System.Console.WriteLine ("Gana el jugador 2");
+                        System.Console.WriteLine (batallaPVPCEN.DameGanador (batalla2));
                 }                //le prueba del algodon
                 IList<JugadorEN> jugadores = jugadorCEN.DameJugadores (0, 14);
 
@@ -269,7 +266,11 @@ public static void InitializeData ()
                 jugadorCP.CalcularDanyoExtra (jugador1);
                 System.Console.WriteLine ("Salimso de calcular danyo");
 
+                System.Console.WriteLine ("Pedimos usuario por nombre");
 
+                String paco = jugadorCEN.DameJugadorPorNombre ("Paco").Nombre;
+
+                System.Console.WriteLine (paco);
 
                 // p.e. CustomerCEN customer = new CustomerCEN();
                 // customer.New_ (p_user:"user", p_password:"1234");

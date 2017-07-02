@@ -126,6 +126,7 @@
 			
 			
 			
+			
 	<Compile Include="EN\ProyectoVikings\AdminEN.cs" />
 	<Compile Include="CEN\ProyectoVikings\AdminCEN.cs" />
 	<Compile Include="CAD\ProyectoVikings\IAdminCAD.cs" />

@@ -124,5 +124,6 @@
 		  <query name="JugadorENdameJugadoresBatallaHQL"><![CDATA[FROM JugadorEN]]></query>
 		  <query name="JugadorENdameInventarioHQL"><![CDATA[select inv FROM JugadorEN as jug inner join jug.Inventario as inv where inv.Jugador.Id = :jugador_oid]]></query>
 		  <query name="JugadorENdameEquipoHQL"><![CDATA[select equ FROM JugadorEN as jug inner join jug.Equipo as equ where equ.Jugador.Id = :jugador_oid]]></query>
+		  <query name="JugadorENdameJugadorPorNombreHQL"><![CDATA[FROM JugadorEN as usu WHERE usu.Nombre = :cadena]]></query>
 		</hibernate-mapping>
 	

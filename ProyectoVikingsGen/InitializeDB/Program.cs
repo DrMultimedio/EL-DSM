@@ -43,7 +43,6 @@ static void Main (string[] args)
                 }
                 /*PROTECTED REGION END*/
         }
-        
         catch (Exception e)
         {
                 System.Console.WriteLine (e.Message.ToString () + '\n' + e.StackTrace);

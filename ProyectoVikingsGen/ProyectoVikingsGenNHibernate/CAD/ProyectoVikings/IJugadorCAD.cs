@@ -41,5 +41,8 @@ ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEN DameInventario (int
 
 
 ProyectoVikingsGenNHibernate.EN.ProyectoVikings.EquipoEN DameEquipo (int jugador_oid);
+
+
+ProyectoVikingsGenNHibernate.EN.ProyectoVikings.JugadorEN DameJugadorPorNombre (string cadena);
 }
 }

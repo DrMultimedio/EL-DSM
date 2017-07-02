@@ -60,14 +60,13 @@ public int CalcularDanyoExtra (int p_oid)
 
                 EquipoEN equipoEN = null;
                 JugadorEN jugador = null;
-                jugador = jugadorCEN.ReadOID(p_oid);
+                jugador = jugadorCEN.ReadOID (p_oid);
 
-            equipoEN = jugadorCEN.DameEquipo(p_oid);
+                equipoEN = jugadorCEN.DameEquipo (p_oid);
 
-            IList<ObjetoEN> objetos = objetosCEN.DameObjetosPorEquipo (equipoEN.Id);
+                IList<ObjetoEN> objetos = objetosCEN.DameObjetosPorEquipo (equipoEN.Id);
 
                 foreach (ObjetoEN o in objetos) {
-
                         System.Console.WriteLine (o.Nombre);
                         result = result + o.Ataque;
                 }
