@@ -38,7 +38,7 @@ public IJugadorCAD get_IJugadorCAD ()
         return this._IJugadorCAD;
 }
 
-public int New_ (string p_Nombre, string p_Email, Nullable<DateTime> p_Cumple, string p_Genero, int p_Vidamax, int p_VidaAct, int p_Ataque, int p_Defensa, int p_Oro, String p_Password)
+public int New_ (string p_Nombre, string p_Email, Nullable<DateTime> p_Cumple, string p_Genero, int p_Vidamax, int p_VidaAct, int p_Ataque, int p_Defensa, int p_Oro, String p_Password, string p_attribute)
 {
         JugadorEN jugadorEN = null;
         int oid;
@@ -65,13 +65,15 @@ public int New_ (string p_Nombre, string p_Email, Nullable<DateTime> p_Cumple, s
 
         jugadorEN.Password = Utils.Util.GetEncondeMD5 (p_Password);
 
+        jugadorEN.Attribute = p_attribute;
+
         //Call to JugadorCAD
 
         oid = _IJugadorCAD.New_ (jugadorEN);
         return oid;
 }
 
-public void Modify (int p_Jugador_OID, string p_Nombre, string p_Email, Nullable<DateTime> p_Cumple, string p_Genero, int p_Vidamax, int p_VidaAct, int p_Ataque, int p_Defensa, int p_Oro, String p_Password)
+public void Modify (int p_Jugador_OID, string p_Nombre, string p_Email, Nullable<DateTime> p_Cumple, string p_Genero, int p_Vidamax, int p_VidaAct, int p_Ataque, int p_Defensa, int p_Oro, String p_Password, string p_attribute)
 {
         JugadorEN jugadorEN = null;
 
@@ -88,6 +90,7 @@ public void Modify (int p_Jugador_OID, string p_Nombre, string p_Email, Nullable
         jugadorEN.Defensa = p_Defensa;
         jugadorEN.Oro = p_Oro;
         jugadorEN.Password = Utils.Util.GetEncondeMD5 (p_Password);
+        jugadorEN.Attribute = p_attribute;
         //Call to JugadorCAD
 
         _IJugadorCAD.Modify (jugadorEN);

@@ -10,6 +10,10 @@ using Microsoft.Web.WebPages.OAuth;
 using WebMatrix.WebData;
 using MvcApplication1.Filters;
 using MvcApplication1.Models;
+using ProyectoVikingsGenNHibernate.CEN.ProyectoVikings;
+using ProyectoVikingsGenNHibernate.EN.ProyectoVikings;
+using ProyectoVikingsGenNHibernate.CAD.ProyectoVikings;
+using System.IO;
 
 namespace MvcApplication1.Controllers
 {
@@ -37,7 +41,12 @@ namespace MvcApplication1.Controllers
         {
             if (ModelState.IsValid && WebSecurity.Login(model.UserName, model.Password, persistCookie: model.RememberMe))
             {
-                return RedirectToLocal(returnUrl);
+                JugadorCEN usucen = new JugadorCEN();
+                int usuid = usucen.DameJugadorPorNombre(model.UserName).Id;
+                if (usucen.Login(usuid, model.Password)) 
+                {
+                    return RedirectToLocal(returnUrl);
+                }
             }
 
             // Si llegamos a este punto, es que se ha producido un error y volvemos a mostrar el formulario
@@ -61,9 +70,45 @@ namespace MvcApplication1.Controllers
         // GET: /Account/Register
 
         [AllowAnonymous]
-        public ActionResult Register()
+        public ActionResult Register(RegisterModel model)
         {
-            return View();
+            WebSecurity.CreateUserAndAccount(model.UserName, model.Password);
+            if (!Roles.RoleExists("usuario"))
+            {
+                Roles.CreateRole("usuario");
+            }
+            if (!Roles.RoleExists("admin"))
+            {
+                Roles.CreateRole("admin");
+            }
+            if (ModelState.IsValid)
+            {
+
+             
+
+                try
+                {
+                    JugadorCEN usu = new JugadorCEN();
+                    JugadorEN usuen = new JugadorEN();
+                    usuen.Password = model.Password;
+                    usuen.Nombre= model.UserName;
+                    usuen.Email = model.Email;
+                  
+                    usuen.Genero= model.Genero;
+                    Roles.AddUserToRole(model.UserName, "usuario");
+                    WebSecurity.Login(model.UserName, model.Password);
+
+
+                    return RedirectToAction("Index", "Home");
+                }
+                catch (MembershipCreateUserException e)
+                {
+                    ModelState.AddModelError("", ErrorCodeToString(e.StatusCode));
+                }
+            }
+
+            // Si llegamos a este punto, es que se ha producido un error y volvemos a mostrar el formulario
+            return View(model);
         }
 
         //

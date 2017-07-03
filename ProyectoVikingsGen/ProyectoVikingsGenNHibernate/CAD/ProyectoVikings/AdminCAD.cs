@@ -171,6 +171,9 @@ public void Modify (AdminEN admin)
 
                 adminEN.Password = admin.Password;
 
+
+                adminEN.Attribute = admin.Attribute;
+
                 session.Update (adminEN);
                 SessionCommit ();
         }

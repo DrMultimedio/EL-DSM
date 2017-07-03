@@ -7,7 +7,7 @@
 <h2>Nuevo BatallaPVE</h2>
 
 @using (Html.BeginForm("Create", "BatallaPVE", FormMethod.Post, new { enctype = "multipart/form-data" }))
-{ 
+{
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
     //id, recompensa, tipoGanador
@@ -45,7 +45,7 @@
     </fieldset>
 }
 <!--h3>Mapa</h3>-->
-<div id="map" style="height: 600px;"></div>
+
 <div>
     @Html.ActionLink("Volver a BatallaPVEs", "Index")
 </div>

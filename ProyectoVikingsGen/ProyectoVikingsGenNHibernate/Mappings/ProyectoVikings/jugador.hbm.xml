@@ -42,6 +42,9 @@
 					<property name="Password" type="string"> 
 						<column name="Password"  not-null="true"/>
 					</property>
+					<property name="Attribute" type="string"> 
+						<column name="attribute"  not-null="true"/>
+					</property>
 			
 			
 			
@@ -101,6 +104,8 @@
 					 
 						
 			
+			
+					
 					
 					
 					

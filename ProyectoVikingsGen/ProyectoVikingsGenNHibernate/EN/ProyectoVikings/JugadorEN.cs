@@ -117,6 +117,13 @@ private String password;
 
 
 
+/**
+ *	Atributo attribute
+ */
+private string attribute;
+
+
+
 
 
 
@@ -216,6 +223,12 @@ public virtual String Password {
 
 
 
+public virtual string Attribute {
+        get { return attribute; } set { attribute = value;  }
+}
+
+
+
 
 
 public JugadorEN()
@@ -227,20 +240,20 @@ public JugadorEN()
 
 
 
-public JugadorEN(int id, string nombre, string email, Nullable<DateTime> cumple, string genero, int vidamax, int vidaAct, int ataque, int defensa, int oro, ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEN inventario, System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.Batalla_PVEEN> batalla_PVE, System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.Batalla_PVPEN> batalla_PVP, System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.Batalla_PVPEN> batalla_PVP_0, ProyectoVikingsGenNHibernate.EN.ProyectoVikings.EquipoEN equipo, String password
+public JugadorEN(int id, string nombre, string email, Nullable<DateTime> cumple, string genero, int vidamax, int vidaAct, int ataque, int defensa, int oro, ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEN inventario, System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.Batalla_PVEEN> batalla_PVE, System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.Batalla_PVPEN> batalla_PVP, System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.Batalla_PVPEN> batalla_PVP_0, ProyectoVikingsGenNHibernate.EN.ProyectoVikings.EquipoEN equipo, String password, string attribute
                  )
 {
-        this.init (Id, nombre, email, cumple, genero, vidamax, vidaAct, ataque, defensa, oro, inventario, batalla_PVE, batalla_PVP, batalla_PVP_0, equipo, password);
+        this.init (Id, nombre, email, cumple, genero, vidamax, vidaAct, ataque, defensa, oro, inventario, batalla_PVE, batalla_PVP, batalla_PVP_0, equipo, password, attribute);
 }
 
 
 public JugadorEN(JugadorEN jugador)
 {
-        this.init (Id, jugador.Nombre, jugador.Email, jugador.Cumple, jugador.Genero, jugador.Vidamax, jugador.VidaAct, jugador.Ataque, jugador.Defensa, jugador.Oro, jugador.Inventario, jugador.Batalla_PVE, jugador.Batalla_PVP, jugador.Batalla_PVP_0, jugador.Equipo, jugador.Password);
+        this.init (Id, jugador.Nombre, jugador.Email, jugador.Cumple, jugador.Genero, jugador.Vidamax, jugador.VidaAct, jugador.Ataque, jugador.Defensa, jugador.Oro, jugador.Inventario, jugador.Batalla_PVE, jugador.Batalla_PVP, jugador.Batalla_PVP_0, jugador.Equipo, jugador.Password, jugador.Attribute);
 }
 
 private void init (int id
-                   , string nombre, string email, Nullable<DateTime> cumple, string genero, int vidamax, int vidaAct, int ataque, int defensa, int oro, ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEN inventario, System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.Batalla_PVEEN> batalla_PVE, System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.Batalla_PVPEN> batalla_PVP, System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.Batalla_PVPEN> batalla_PVP_0, ProyectoVikingsGenNHibernate.EN.ProyectoVikings.EquipoEN equipo, String password)
+                   , string nombre, string email, Nullable<DateTime> cumple, string genero, int vidamax, int vidaAct, int ataque, int defensa, int oro, ProyectoVikingsGenNHibernate.EN.ProyectoVikings.InventarioEN inventario, System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.Batalla_PVEEN> batalla_PVE, System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.Batalla_PVPEN> batalla_PVP, System.Collections.Generic.IList<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.Batalla_PVPEN> batalla_PVP_0, ProyectoVikingsGenNHibernate.EN.ProyectoVikings.EquipoEN equipo, String password, string attribute)
 {
         this.Id = id;
 
@@ -274,6 +287,8 @@ private void init (int id
         this.Equipo = equipo;
 
         this.Password = password;
+
+        this.Attribute = attribute;
 }
 
 public override bool Equals (object obj)

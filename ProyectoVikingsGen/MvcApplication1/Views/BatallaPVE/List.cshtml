@@ -1,0 +1,60 @@
+﻿@model IEnumerable<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.Batalla_PVEEN>
+
+@{
+    ViewBag.Title = "Mis BatallaPVEs";
+}
+
+<h2>Mis BatallaPVEs</h2>
+
+<p>
+    @Html.ActionLink("Nuevo BatallaPVE", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TipoGanador)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Recompensa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Jugador)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Monstruo)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipoGanador)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Recompensa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Jugador.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Monstruo.Nombre)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Detalles", "Details", new { id = item.Id}) |
+                @Html.ActionLink("Borrar", "Delete", new { id = item.Id }) |
+                @Html.ActionLink("Ver Jugador", "Details", "Jugador", new { id = item.Id }, "null") |
+                @Html.ActionLink("Ver Monstruo", "Details", "Monstruo", new { id = item.Id }, "null")
+
+
+
+            </td>
+        </tr>
+    }
+
+</table>
+<div>
+    @Html.ActionLink("Volver a BatallaPVEs", "Index")
+</div>

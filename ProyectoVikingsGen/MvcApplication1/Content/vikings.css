@@ -1,0 +1,95 @@
+body {
+    background-color: black;
+    background: url(../img/juego-bg.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    font-family: "Lora", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+}
+#menu_superior{
+    background-color: rgba(0, 0, 0, 0.85);
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+}
+.vertical-center{
+
+  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 100vh; /* These two lines are counted as one :-)       */
+
+  display: flex;
+  align-items: center;
+}
+.horizontal-center-text{
+    text-align: center;
+}
+.horizontal-center-img{
+    margin: 0 auto;
+}
+.div_contenido{
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 5px;
+    color: white;
+    padding: 3px;
+    margin: 0px;
+
+
+}
+.img_batalla_jugador{
+    float: left;
+}
+.img_batalla_enemigo{
+    float: right;
+}
+footer{
+    color: white;
+}
+.selec_contendiente{
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 5px;
+    color: white;
+    padding: 5px;
+
+}
+.perfil{
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 5px;
+    color: white;
+    padding: 5px;
+}
+.item{
+    background: #8B8B8B no-repeat center center / 32px 32px;
+    border: 2px solid;
+    border-color: #373737 #FFF #FFF #373737;
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+    line-height: 1;
+    text-align: left;
+    vertical-align: bottom;
+}
+.invslot {
+    position: relative;
+    display: inline-block;
+    background: #8B8B8B no-repeat center center / 32px 32px;
+    border: 2px solid;
+    border-color: #373737 #FFF #FFF #373737;
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+    line-height: 1;
+    text-align: left;
+    vertical-align: bottom;
+}
+.invslot img{
+    width: 90%;
+    height: 90%;
+
+}

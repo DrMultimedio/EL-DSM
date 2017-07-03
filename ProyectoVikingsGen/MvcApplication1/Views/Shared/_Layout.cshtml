@@ -8,9 +8,19 @@
         <meta name="viewport" content="width=device-width" />
         @Styles.Render("~/Content/css")
         @Scripts.Render("~/bundles/modernizr")
+        @Scripts.Render("~/Content/bootstrap.min.css")
+        @Scripts.Render("~/Content/vikings.css")
+        @Scripts.Render("~/Content/3-col-portfolio.css")
+
+
+
+
     </head>
     <body>
         <header>
+
+
+
             <div class="content-wrapper">
                 <div class="float-left">
                     <p class="site-title">@Html.ActionLink("su logotipo aquí", "Index", "Home")</p>
@@ -21,6 +31,9 @@
                     </section>
                     <nav>
                         <ul id="menu">
+                            <li>@Html.ActionLink("Usuario", "View1", "Home")</li>
+                            <li>@Html.ActionLink("Usuario2", "Index", "BatallaPVE")</li>
+
                             <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
                             <li>@Html.ActionLink("Acerca de", "About", "Home")</li>
                             <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>

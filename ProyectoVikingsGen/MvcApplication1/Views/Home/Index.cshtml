@@ -1,46 +1,136 @@
-﻿@{
-    ViewBag.Title = "Home Page";
+﻿@{ var BatallaPVEs = ViewData["BatallaPVEs"] as IEnumerable<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.Batalla_PVEEN>;}
+@{ var jugadores = ViewData["jugadores"] as IEnumerable<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.JugadorEN>;}
+@{ var BatallaPVP = ViewData["BatallaPVP"] as IEnumerable<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.Batalla_PVPEN>;}
+@{
+    ViewBag.Title = "Página Principal";
 }
-@section featured {
-    <section class="featured">
-        <div class="content-wrapper">
-            <hgroup class="title">
-                <h1>@ViewBag.Title.</h1>
-                <h2>@ViewBag.Message</h2>
-            </hgroup>
-            <p>
-                SOI LLO
-                EL CHOCU
-                <a href="http://asp.net/mvc" title="ASP.NET MVC Website">http://asp.net/mvc</a>.
-                The page features <mark>videos, tadsfsfutorials, and samples</mark> to help you get the most from ASP.NET MVC.
-                If you have any questions about ASP.NET MVC visit
-                <a href="http://forums.asp.net/1146.aspx/1?MVC" title="ASP.NET MVC Forum">our forums</a>.
-            </p>
-        </div>
-    </section>
-}
-<h3>We suggest the following:</h3>
-<ol class="round">
-    <li class="one">
-        <h5>Getting Started</h5>
-        ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-        enables a clean separation of concerns and that gives you full control over markup
-        for enjoyable, agile development. ASP.NET MVC includes many features that enable
-        fast, TDD-friendly development for creating sophisticated applications that use
-        the latest web standards.
-        <a href="http://go.microsoft.com/fwlink/?LinkId=245151">Learn more…</a>
-    </li>
+<div class="row center-align">
+    <div class="col s12 m12 l12">
+        <ul class="tabs" id="tabla2">
+            <li class="tab col s4"><a href="#test2">Jugadores recientes</a></li>
+            <li class="tab col s4"><a class="active" href="#test1">BatallaPVEs recientes</a></li>
+            <li class="tab col s4"><a href="#test3">BatallaPVP recientes</a></li>
+        </ul>
+    </div>
+    <div id="test1" class="col s12 m12 l12">
+        @if (BatallaPVEs.Count() > 0)
+        {
+            foreach (var item in BatallaPVEs)
+            {
+                
+                <div class="col s12">
+                    <div class="card horizontal">
+                        <div class="card-stacked">
+                            <div class="card-content" style="text-align: left;">
+                                <h4 class="header">@Html.ActionLink( "BatallaPVE", "Details", "BatallaPVE", new { id = item.Id }, new { })</h4>
 
-    <li class="two">
-        <h5>Add NuGet packages and jump-start your coding</h5>
-        NuGet makes it easy to install and update free libraries and tools.
-        <a href="http://go.microsoft.com/fwlink/?LinkId=245153">Learn more…</a>
-    </li>
 
-    <li class="three">
-        <h5>Find Web Hosting</h5>
-        You can easily find a web hosting company that offers the right mix of features
-        and price for your applications.
-        <a href="http://go.microsoft.com/fwlink/?LinkId=245157">Learn more…</a>
-    </li>
-</ol>
+                
+                            </div>
+                            <div class="card-action" style="text-align: left;">
+                                <b>Recompensa:</b> @Html.DisplayFor(modelItem => item.Recompensa) -
+                                <b>Monstruo:</b> @Html.DisplayFor(modelItem => item.Monstruo.Nombre)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+        else
+        {
+            <div class="preloader-wrapper big active" style="margin-top: 20px;">
+                <div class="spinner-layer spinner-blue-only">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="gap-patch">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+    <div id="test2" class="col s12 m12 l12">
+        @if (jugadores.Count() > 0)
+        {
+            foreach (var item in jugadores)
+            {
+                <div class="col s12">
+                    <div class="card horizontal">
+                     
+                        <div class="card-stacked">
+                            <div class="card-content" style="text-align: left;">
+                                <h4 class="header">@Html.ActionLink(item.Nombre, "Details", "Jugador", new { id = item.Id }, new { })</h4>
+                               
+                            </div>
+                            <div class="card-action" style="text-align: left;">
+                                <b>Vida:</b> @Html.DisplayFor(modelItem => item.VidaAct) -
+                                <b>Vida Maxima:</b> @Html.DisplayFor(modelItem => item.Vidamax) 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+        else
+        {
+            <div class="preloader-wrapper big active" style="margin-top: 20px;">
+                <div class="spinner-layer spinner-blue-only">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="gap-patch">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+    <div id="test3" class="col s12 m12 l12">
+        @if (BatallaPVP.Count() > 0)
+        {
+            foreach (var item in BatallaPVP)
+            {
+                <div class="col s12">
+                    <div class="card horizontal">
+                        <div class="card-image">
+                            <img src="http://lorempixel.com/100/190/nature/6">
+                        </div>
+                        <div class="card-stacked">
+                            <div class="card-content" style="text-align: left;">
+                                <h4 class="header">@Html.ActionLink("BatallaPVP", "Details", "BatallaPVP", new { id = item.Id}, new { })</h4>
+                                
+                            </div>
+                            <div class="card-action" style="text-align: left;">
+                                <b>Jugador1:</b> @Html.DisplayFor(modelItem => item.Jugador) -
+                                <b>Jugador2:</b> @Html.DisplayFor(modelItem => item.Jugador_0)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+        else
+        {
+            <div class="preloader-wrapper big active" style="margin-top: 20px;">
+                <div class="spinner-layer spinner-blue-only">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="gap-patch">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

@@ -1,0 +1,39 @@
+﻿@model MvcApplication1.Models.Batalla_PVE
+
+@{
+    ViewBag.Title = "Detalles";
+}
+
+<h2>Detalles @Html.DisplayFor(model => model.id)</h2>
+
+<fieldset>
+    <legend>Batalla_PVE</legend>
+
+   
+    <div class="display-field">
+        @Html.DisplayFor(model => model.tipoGanador)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Recompensa)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Jugador.Nombre)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Monstruo)
+    </div>
+   
+
+</fieldset>
+
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Crear", "Create", new { id = Model.id }, "null") |
+    @Html.ActionLink("Ver Monstruo", "Details", "Monstruo", new { id = Model.id }, "null") |
+    @Html.ActionLink("Todos las Batallas PVE", "List") |
+    @Html.ActionLink("Ver Jugador", "Details", "Jugador", new { id = Model.id }, "null") |
+    @Html.ActionLink("Indice", "Index")
+    
+</p>

@@ -38,7 +38,7 @@ public IAdminCAD get_IAdminCAD ()
         return this._IAdminCAD;
 }
 
-public int New_ (string p_Nombre, string p_Email, Nullable<DateTime> p_Cumple, string p_Genero, int p_Vidamax, int p_VidaAct, int p_Ataque, int p_Defensa, int p_Oro, String p_Password)
+public int New_ (string p_Nombre, string p_Email, Nullable<DateTime> p_Cumple, string p_Genero, int p_Vidamax, int p_VidaAct, int p_Ataque, int p_Defensa, int p_Oro, String p_Password, string p_attribute)
 {
         AdminEN adminEN = null;
         int oid;
@@ -65,13 +65,15 @@ public int New_ (string p_Nombre, string p_Email, Nullable<DateTime> p_Cumple, s
 
         adminEN.Password = Utils.Util.GetEncondeMD5 (p_Password);
 
+        adminEN.Attribute = p_attribute;
+
         //Call to AdminCAD
 
         oid = _IAdminCAD.New_ (adminEN);
         return oid;
 }
 
-public void Modify (int p_Admin_OID, string p_Nombre, string p_Email, Nullable<DateTime> p_Cumple, string p_Genero, int p_Vidamax, int p_VidaAct, int p_Ataque, int p_Defensa, int p_Oro, String p_Password)
+public void Modify (int p_Admin_OID, string p_Nombre, string p_Email, Nullable<DateTime> p_Cumple, string p_Genero, int p_Vidamax, int p_VidaAct, int p_Ataque, int p_Defensa, int p_Oro, String p_Password, string p_attribute)
 {
         AdminEN adminEN = null;
 
@@ -88,6 +90,7 @@ public void Modify (int p_Admin_OID, string p_Nombre, string p_Email, Nullable<D
         adminEN.Defensa = p_Defensa;
         adminEN.Oro = p_Oro;
         adminEN.Password = Utils.Util.GetEncondeMD5 (p_Password);
+        adminEN.Attribute = p_attribute;
         //Call to AdminCAD
 
         _IAdminCAD.Modify (adminEN);

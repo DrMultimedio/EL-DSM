@@ -1,0 +1,44 @@
+﻿@model IEnumerable<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.Batalla_PVEEN>
+
+@{
+    ViewBag.Title = "BatallaPVEs";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>BatallaPVEs</h2>
+
+<p>
+    @Html.ActionLink("Nuevo BatallaPVE", "Create")
+</p>
+<p>
+    @Html.ActionLink("Mis BatallaPVEs", "List")
+</p>
+<table>
+    <tr>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.Jugador.Nombre)
+        </th>
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Jugador.Nombre)
+            </td>
+            
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Detalles", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Borrar", "Delete", new { id = item.Id }) |
+                @Html.ActionLink("Ver Jugador", "Details", "Jugador", new { id = item.Id }, "null") |
+                @Html.ActionLink("Ver Monstruo", "Details", "Monstruo", new { id = item.Id }, "null")
+
+            </td>
+
+        </tr>
+    }
+
+</table>
