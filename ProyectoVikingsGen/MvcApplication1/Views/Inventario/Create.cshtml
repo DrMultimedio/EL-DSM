@@ -1,0 +1,48 @@
+﻿@model MvcApplication1.Models.Inventario
+
+@{
+    ViewBag.Title = "Nuevo Inventario";
+}
+
+<h2>Nuevo Inventario</h2>
+
+@using (Html.BeginForm("Create", "Inventario", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    //id, InvMax
+    <fieldset>
+        <legend>Inventario</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.id)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.id)
+            @Html.ValidationMessageFor(model => model.id)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Jugador.Nombre)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Jugador.Nombre)
+            @Html.ValidationMessageFor(model => model.Jugador.Nombre)
+        </div>
+
+     
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+<!--h3>Mapa</h3>-->
+
+<div>
+    @Html.ActionLink("Volver a Inventarios", "Index")
+</div>
+
+@section Scripts {
+    <!--Scripts.Render("~/bundles/jqueryval")-->
+    <!--Scripts.Render("~/bundles/mapacreate")-->
+}

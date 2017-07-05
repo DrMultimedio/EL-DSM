@@ -211,7 +211,13 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BasicController.cs" />
     <Compile Include="Controllers\BatallaPVEController.cs" />
+    <Compile Include="Controllers\BatallaPVPController.cs" />
+    <Compile Include="Controllers\EquipadoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\InventarioController.cs" />
+    <Compile Include="Controllers\JugadorController.cs" />
+    <Compile Include="Controllers\MonstruoController.cs" />
+    <Compile Include="Controllers\ObjetoController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
@@ -234,11 +240,9 @@
     <Compile Include="Models\BatallaPVPModel.cs" />
     <Compile Include="Models\CalzadoModel.cs" />
     <Compile Include="Models\CascoModel.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\EquipoModel.cs" />
     <Compile Include="Models\InventarioModel.cs" />
     <Compile Include="Models\JugadorModel.cs" />
-    <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MonstruoModel.cs" />
     <Compile Include="Models\ObjetoModel.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
@@ -440,6 +444,9 @@
     <Content Include="Scripts\knockout-2.2.0.debug.js" />
     <Content Include="Scripts\knockout-2.2.0.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Views\BatallaPVE\Index.cshtml">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -482,13 +489,44 @@
     <Content Include="Views\Usuario\Index.cshtml" />
     <Content Include="Views\Usuario\Create.cshtml" />
     <Content Include="Views\Home\View1.cshtml" />
-    <Content Include="Views\Batalla_PVE\Create.cshtml" />
     <Content Include="Views\Shared\userLayout.cshtml" />
     <Content Include="Views\BatallaPVE\Create.cshtml" />
     <Content Include="Views\BatallaPVE\Delete.cshtml" />
     <Content Include="Views\BatallaPVE\Details.cshtml" />
-    <Content Include="Views\BatallaPVE\Index.cshtml" />
     <Content Include="Views\BatallaPVE\List.cshtml" />
+    <Content Include="Views\BatallaPVP\.DS_Store" />
+    <Content Include="Views\BatallaPVP\Create.cshtml" />
+    <Content Include="Views\BatallaPVP\Delete.cshtml" />
+    <Content Include="Views\BatallaPVP\Details.cshtml" />
+    <Content Include="Views\BatallaPVP\Index.cshtml" />
+    <Content Include="Views\BatallaPVP\List.cshtml" />
+    <Content Include="Views\Equipo\.DS_Store" />
+    <Content Include="Views\Equipo\Create.cshtml" />
+    <Content Include="Views\Equipo\Delete.cshtml" />
+    <Content Include="Views\Equipo\Details.cshtml" />
+    <Content Include="Views\Equipo\Index.cshtml" />
+    <Content Include="Views\Equipo\List.cshtml" />
+    <Content Include="Views\Inventario\.DS_Store" />
+    <Content Include="Views\Inventario\Create.cshtml" />
+    <Content Include="Views\Inventario\Delete.cshtml" />
+    <Content Include="Views\Inventario\Details.cshtml" />
+    <Content Include="Views\Inventario\Index.cshtml" />
+    <Content Include="Views\Inventario\List.cshtml" />
+    <Content Include="Views\Monstruo\.DS_Store" />
+    <Content Include="Views\Monstruo\Create.cshtml" />
+    <Content Include="Views\Monstruo\Delete.cshtml" />
+    <Content Include="Views\Monstruo\Details.cshtml" />
+    <Content Include="Views\Monstruo\Index.cshtml" />
+    <Content Include="Views\Monstruo\List.cshtml" />
+    <Content Include="Views\Objeto\.DS_Store" />
+    <Content Include="Views\Objeto\Create.cshtml" />
+    <Content Include="Views\Objeto\Delete.cshtml" />
+    <Content Include="Views\Objeto\Details.cshtml" />
+    <Content Include="Views\Objeto\Index.cshtml" />
+    <Content Include="Views\Objeto\List.cshtml" />
+    <Content Include="Views\Usuario\Delete.cshtml" />
+    <Content Include="Views\Usuario\Details.cshtml" />
+    <Content Include="Views\Usuario\List.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

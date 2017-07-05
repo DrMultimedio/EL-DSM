@@ -1,0 +1,44 @@
+﻿@model IEnumerable<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.MonstruoEN>
+
+@{
+    ViewBag.Title = "Monstruos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Monstruos</h2>
+
+<p>
+    @Html.ActionLink("Nuevo Monstruo", "Create")
+</p>
+<p>
+    @Html.ActionLink("Mis Monstruos", "List")
+</p>
+<table>
+    <tr>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.Batalla_PVE.Nombre)
+        </th>
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Batalla_PVE.Nombre)
+            </td>
+            
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Detalles", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Borrar", "Delete", new { id = item.Id }) |
+                @Html.ActionLink("Ver Batalla_PVE", "Details", "EqBatalla_PVEuipo", new { id = item.Id }, "null") |
+                @Html.ActionLink("Ver Monstruo", "Details", "Monstruo", new { id = item.Id }, "null")
+
+            </td>
+
+        </tr>
+    }
+
+</table>

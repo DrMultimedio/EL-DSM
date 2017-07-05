@@ -3,10 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
-using Microsoft.AspNet.Identity;
-using Microsoft.Owin.Security;
+
 using ProyectoVikingsGenNHibernate.EN.ProyectoVikings;
 
 namespace MvcApplication1.Models
@@ -21,7 +18,11 @@ namespace MvcApplication1.Models
             c.id = en.Id;
             c.Jugador = en.Jugador;
             c.Objetos = en.Objeto;
-            
+            c.GrebasEquipadas = en.GrebasEquipadas;
+            c.PecheraEquipada = en.PecheraEquipada;
+            c.ArmaEquipada = en.ArmaEquipada;
+            c.CascoEquipado = en.CascoEquipado;
+
 
             return c;
         }

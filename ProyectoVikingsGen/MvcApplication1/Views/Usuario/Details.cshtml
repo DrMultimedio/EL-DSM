@@ -1,0 +1,52 @@
+﻿@model MvcApplication1.Models.Jugador
+
+@{
+    ViewBag.Title = "Detalles";
+}
+
+<h2>Detalles @Html.DisplayFor(model => model.id)</h2>
+
+<fieldset>
+    <legend>Jugador</legend>
+
+   
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Nombre)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Nombre)
+    </div>
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.InventarioEq)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.InventarioEq)
+    </div>
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Fecha)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Fecha)
+    </div>
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Oro)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Oro)
+    </div>
+   
+   
+   
+   
+
+</fieldset>
+
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Crear", "Create", new { id = Model.id }, "null") |
+    @Html.ActionLink("Ver Admin", "Details", "Admin", new { id = Model.id }, "null") |
+    @Html.ActionLink("Todos los Jugadores", "List") |
+    @Html.ActionLink("Ver Equipo", "Details", "Equipo", new { id = Model.id }, "null") |
+    @Html.ActionLink("Indice", "Index")
+    
+</p>

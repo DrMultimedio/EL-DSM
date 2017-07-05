@@ -1,0 +1,73 @@
+﻿@model MvcApplication1.Models.Equipo
+
+@{
+    ViewBag.Title = "Nuevo Equipo";
+}
+
+<h2>Nuevo Equipo</h2>
+
+@using (Html.BeginForm("Create", "Equipo", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    //id, recompensa, tipoGanador
+    <fieldset>
+        <legend>Equipo</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.id)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.id)
+            @Html.ValidationMessageFor(model => model.id)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PecheraEquipada)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PecheraEquipada)
+            @Html.ValidationMessageFor(model => model.PecheraEquipada)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.GrebasEquipadas)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.GrebasEquipadas)
+            @Html.ValidationMessageFor(model => model.GrebasEquipadas)
+        </div>
+
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CascoEquipado)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CascoEquipado)
+            @Html.ValidationMessageFor(model => model.CascoEquipado)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ArmaEquipada)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ArmaEquipada)
+            @Html.ValidationMessageFor(model => model.ArmaEquipada)
+        </div>
+
+     
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+<!--h3>Mapa</h3>-->
+
+<div>
+    @Html.ActionLink("Volver a Equipos", "Index")
+</div>
+
+@section Scripts {
+    <!--Scripts.Render("~/bundles/jqueryval")-->
+    <!--Scripts.Render("~/bundles/mapacreate")-->
+}

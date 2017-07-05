@@ -1,0 +1,45 @@
+﻿@model MvcApplication1.Models.Monstruo
+
+@{
+    ViewBag.Title = "Detalles";
+}
+
+<h2>Detalles @Html.DisplayFor(model => model.id)</h2>
+
+<fieldset>
+    <legend>Monstruo</legend>
+
+   
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Nombre)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Vida)
+    </div>
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Ataque)
+    </div>
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Defensa)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Batalla_PVE.Nombre)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Monstruo)
+    </div>
+   
+
+</fieldset>
+
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Crear", "Create", new { id = Model.id }, "null") |
+    @Html.ActionLink("Ver Monstruo", "Details", "Monstruo", new { id = Model.id }, "null") |
+    @Html.ActionLink("Todos las Batallas PVE", "List") |
+    @Html.ActionLink("Ver Batalla_PVE", "Details", "Batalla_PVE", new { id = Model.id }, "null") |
+    @Html.ActionLink("Indice", "Index")
+    
+</p>

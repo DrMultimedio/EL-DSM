@@ -7,10 +7,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
-using Microsoft.AspNet.Identity;
-using Microsoft.Owin.Security;
+
 using System;
 using ProyectoVikingsGenNHibernate.EN.ProyectoVikings;
 
@@ -25,8 +22,8 @@ namespace MvcApplication1.Models
         [Display(Prompt = "cantidad del inventario", Description = "cantidad del inventario", Name = "cantidad")]
         [Required(ErrorMessage = "Debe indicar una cantidadmax para el inventario")]
         [DataType(DataType.Currency, ErrorMessage = "La cantidadmax debe ser un valor numérico")]
-        
 
+        public int invMax;
         [Display(Prompt = "Jugador del  inventario", Description = "Jugador en el inventario", Name = "Jugador")]
         public JugadorEN Jugador { get; set; }
 

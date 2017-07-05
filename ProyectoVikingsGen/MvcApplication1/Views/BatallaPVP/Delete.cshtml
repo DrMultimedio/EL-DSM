@@ -1,0 +1,57 @@
+﻿@model MvcApplication1.Models.BatallaPVP
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Seguro que quiere Eliminar esto?</h3>
+<fieldset>
+    <legend>Evento</legend>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.IdGanador)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IdGanador
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Jugador1)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Jugador1.Nombre)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Fecha)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Fecha)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Precio)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Precio)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Creador)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Creador)
+    </div>
+
+</fieldset>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Volver a todas Batallas ", "List")
+    </p>
+}

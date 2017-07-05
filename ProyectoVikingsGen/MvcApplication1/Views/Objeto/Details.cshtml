@@ -1,0 +1,48 @@
+﻿@model MvcApplication1.Models.Objeto
+
+@{
+    ViewBag.Title = "Detalles";
+}
+
+<h2>Detalles @Html.DisplayFor(model => model.id)</h2>
+
+<fieldset>
+    <legend>Objeto</legend>
+
+   
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Nombre)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Precio)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Tipo)
+    </div>
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Ataque)
+    </div>
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Defensa)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Equipo.Nombre)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Inventario)
+    </div>
+   
+
+</fieldset>
+
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Crear", "Create", new { id = Model.id }, "null") |
+    @Html.ActionLink("Ver Inventario", "Details", "Inventario", new { id = Model.id }, "null") |
+    @Html.ActionLink("Todos las Batallas PVE", "List") |
+    @Html.ActionLink("Ver Equipo", "Details", "Equipo", new { id = Model.id }, "null") |
+    @Html.ActionLink("Indice", "Index")
+    
+</p>

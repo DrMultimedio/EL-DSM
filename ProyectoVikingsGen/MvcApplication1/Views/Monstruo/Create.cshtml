@@ -1,0 +1,73 @@
+﻿@model MvcApplication1.Models.Monstruo
+
+@{
+    ViewBag.Title = "Nuevo Monstruo";
+}
+
+<h2>Nuevo Monstruo</h2>
+
+@using (Html.BeginForm("Create", "Monstruo", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    //id, recompensa, tipoGanador
+    <fieldset>
+        <legend>Monstruo</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.id)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.id)
+            @Html.ValidationMessageFor(model => model.id)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Vida)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Vida)
+            @Html.ValidationMessageFor(model => model.Vida)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Ataque)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Ataque)
+            @Html.ValidationMessageFor(model => model.Ataque)
+        </div>
+
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Defensa)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Defensa)
+            @Html.ValidationMessageFor(model => model.Defensa)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Nombre)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Nombre)
+            @Html.ValidationMessageFor(model => model.Nombre)
+        </div>
+
+     
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+<!--h3>Mapa</h3>-->
+
+<div>
+    @Html.ActionLink("Volver a Monstruos", "Index")
+</div>
+
+@section Scripts {
+    <!--Scripts.Render("~/bundles/jqueryval")-->
+    <!--Scripts.Render("~/bundles/mapacreate")-->
+}

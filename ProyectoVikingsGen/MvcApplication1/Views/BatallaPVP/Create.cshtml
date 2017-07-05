@@ -1,0 +1,56 @@
+﻿@model MvcApplication1.Models.Batalla_PVP
+
+@{
+    ViewBag.Title = "Nuevo BatallaPVP";
+}
+
+<h2>Nuevo BatallaPVP</h2>
+
+@using (Html.BeginForm("Create", "BatallaPVP", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    //id, recompensa, tipoGanador
+    <fieldset>
+        <legend>BatallaPVP</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.id)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.id)
+            @Html.ValidationMessageFor(model => model.id)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Recompensa)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Recompensa)
+            @Html.ValidationMessageFor(model => model.Recompensa)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IdGanador)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IdGanador)
+            @Html.ValidationMessageFor(model => model.IdGanador)
+        </div>
+
+     
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+<!--h3>Mapa</h3>-->
+
+<div>
+    @Html.ActionLink("Volver a BatallaPVPs", "Index")
+</div>
+
+@section Scripts {
+    <!--Scripts.Render("~/bundles/jqueryval")-->
+    <!--Scripts.Render("~/bundles/mapacreate")-->
+}

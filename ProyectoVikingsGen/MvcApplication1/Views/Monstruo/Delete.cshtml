@@ -1,0 +1,57 @@
+﻿@model MvcApplication1.Models.Monstruo
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Seguro que quiere Eliminar esto?</h3>
+<fieldset>
+    <legend>Evento</legend>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Nombre)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Nombre)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Batalla_PVE)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Batalla_PVE.Nombre)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Fecha)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Fecha)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Precio)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Precio)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Creador)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Creador)
+    </div>
+
+</fieldset>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Volver a todos los Monstruos ", "List")
+    </p>
+}

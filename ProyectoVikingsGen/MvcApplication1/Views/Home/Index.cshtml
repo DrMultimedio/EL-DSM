@@ -1,6 +1,6 @@
 ﻿@{ var BatallaPVEs = ViewData["BatallaPVEs"] as IEnumerable<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.Batalla_PVEEN>;}
 @{ var jugadores = ViewData["jugadores"] as IEnumerable<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.JugadorEN>;}
-@{ var BatallaPVP = ViewData["BatallaPVP"] as IEnumerable<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.Batalla_PVPEN>;}
+@{ var BatallaPVP = ViewData["BatallaPVPs"] as IEnumerable<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.Batalla_PVPEN>;}
 @{
     ViewBag.Title = "Página Principal";
 }
@@ -13,7 +13,7 @@
         </ul>
     </div>
     <div id="test1" class="col s12 m12 l12">
-        @if (BatallaPVEs.Count() > 0)
+        @if (BatallaPVP!=null && BatallaPVEs.Count() > 0)
         {
             foreach (var item in BatallaPVEs)
             {
@@ -28,8 +28,7 @@
                 
                             </div>
                             <div class="card-action" style="text-align: left;">
-                                <b>Recompensa:</b> @Html.DisplayFor(modelItem => item.Recompensa) -
-                                <b>Monstruo:</b> @Html.DisplayFor(modelItem => item.Monstruo.Nombre)
+                                
                             </div>
                         </div>
                     </div>
@@ -63,7 +62,7 @@
                      
                         <div class="card-stacked">
                             <div class="card-content" style="text-align: left;">
-                                <h4 class="header">@Html.ActionLink(item.Nombre, "Details", "Jugador", new { id = item.Id }, new { })</h4>
+                                <h4 class="header">@Html.ActionLink(item.Nombre, "Index", "Usuario", new { id = item.Id }, new { })</h4>
                                
                             </div>
                             <div class="card-action" style="text-align: left;">
@@ -93,7 +92,7 @@
         }
     </div>
     <div id="test3" class="col s12 m12 l12">
-        @if (BatallaPVP.Count() > 0)
+        @if (BatallaPVP!=null  && BatallaPVP.Count() > 0)
         {
             foreach (var item in BatallaPVP)
             {

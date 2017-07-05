@@ -13,17 +13,17 @@ using ProyectoVikingsGenNHibernate.EN.ProyectoVikings;
 
 namespace MvcApplication1.Controllers
 {
-    [Authorize(Roles = "Jugador")]
+    [Authorize(Roles = "usuario")]
     public class BatallaPVEController : BasicController
     {
         //
         // GET: /BatallaPVE/
-
+       
         public ActionResult Index()
         {
             SessionInitialize();
             Batalla_PVECAD cad = new Batalla_PVECAD(session);
-            var aux = cad.ReadAll(0, 0);
+            var aux = cad.ReadAllDefault(0, 0);
 
             SessionClose();
 
@@ -73,7 +73,7 @@ namespace MvcApplication1.Controllers
                 even.Recompensa = ev.Recompensa;
                 even.TipoGanador = ev.tipoGanador;
 
-                even.Jugador = cad.dameJugadorPorNombre(User.Identity.Name);
+                even.Jugador = cad.DameJugadorPorNombre(User.Identity.Name);
                 cen.New_(even.Monstruo.Id, even.Jugador.Id, ev.Recompensa, ev.tipoGanador);
 
                 return RedirectToAction("List");
@@ -95,7 +95,7 @@ namespace MvcApplication1.Controllers
         Batalla_PVEEN even = new Batalla_PVECAD(session).ReadOIDDefault(id);
         ev = new AssemblerBatallaPVE().ConvertEnToModelUI(even);
         JugadorEN usu = ev.Jugador;
-        if (User.Identity.Name != usu.Nombre && !Roles.IsUserInRole("admin"))
+        if (User.Identity.Name != usu.Nombre && !Roles.IsUserInRole("admin"))                
         {
             return RedirectToAction("Details", new { id = id });
         }
@@ -170,8 +170,8 @@ namespace MvcApplication1.Controllers
             SessionInitialize();
             Batalla_PVECAD cad = new Batalla_PVECAD(session);
             JugadorCAD usucad = new JugadorCAD(session);
-            JugadorEN usuen = usucad.dameJugadorPorNombre(User.Identity.Name);
-            var aux = cad.FiltrarBatalla_PVEPorJugador(usuen.ID);
+            JugadorEN usuen = usucad.DameJugadorPorNombre(User.Identity.Name);
+            var aux = cad.ReadAll(0, 0);
 
             SessionClose();
 

@@ -1,0 +1,35 @@
+﻿@model MvcApplication1.Models.Inventario
+
+@{
+    ViewBag.Title = "Detalles";
+}
+
+<h2>Detalles @Html.DisplayFor(model => model.id)</h2>
+
+<fieldset>
+    <legend>Inventario</legend>
+
+   
+    <div class="display-field">
+        @Html.DisplayFor(model => model.invMax)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Jugador.Nombre)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Objetos)
+    </div>
+   
+
+</fieldset>
+
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Crear", "Create", new { id = Model.id }, "null") |
+    @Html.ActionLink("Ver Objeto", "Details", "Objeto", new { id = Model.id }, "null") |
+    @Html.ActionLink("Todos los Inventarios", "List") |
+    @Html.ActionLink("Ver Jugador", "Details", "Jugador", new { id = Model.id }, "null") |
+    @Html.ActionLink("Indice", "Index")
+    
+</p>

@@ -1,0 +1,72 @@
+﻿@model IEnumerable<ProyectoVikingsGenNHibernate.EN.ProyectoVikings.ObjetoEN>
+
+@{
+    ViewBag.Title = "Mis Objetos";
+}
+
+<h2>Mis Objetos</h2>
+
+<p>
+    @Html.ActionLink("Nuevo Objeto", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Precio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tipo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ataque)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Defensa)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Precio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tipo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ataque)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Defensa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Equipo.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Inventario.Nombre)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Detalles", "Details", new { id = item.Id}) |
+                @Html.ActionLink("Borrar", "Delete", new { id = item.Id }) |
+                @Html.ActionLink("Ver Equipo", "Details", "Equipo", new { id = item.Id }, "null") |
+                @Html.ActionLink("Ver Inventario", "Details", "Inventario", new { id = item.Id }, "null")
+
+
+
+            </td>
+        </tr>
+    }
+
+</table>
+<div>
+    @Html.ActionLink("Volver a Objetos", "Index")
+</div>

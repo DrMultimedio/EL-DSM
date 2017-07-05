@@ -43,7 +43,7 @@ namespace MvcApplication1.Controllers
             {
                 JugadorCEN usucen = new JugadorCEN();
                 int usuid = usucen.DameJugadorPorNombre(model.UserName).Id;
-                if (usucen.Login(usuid, model.Password)) 
+                if (usucen.Login(usuid, model.Password))
                 {
                     return RedirectToLocal(returnUrl);
                 }
@@ -70,6 +70,19 @@ namespace MvcApplication1.Controllers
         // GET: /Account/Register
 
         [AllowAnonymous]
+        public ActionResult Register()
+        {
+
+            return View();
+
+        }
+
+        //
+        // POST: /Account/Register
+
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
         public ActionResult Register(RegisterModel model)
         {
             WebSecurity.CreateUserAndAccount(model.UserName, model.Password);
@@ -84,48 +97,21 @@ namespace MvcApplication1.Controllers
             if (ModelState.IsValid)
             {
 
-             
+
 
                 try
                 {
                     JugadorCEN usu = new JugadorCEN();
                     JugadorEN usuen = new JugadorEN();
                     usuen.Password = model.Password;
-                    usuen.Nombre= model.UserName;
+                    usuen.Nombre = model.UserName;
                     usuen.Email = model.Email;
-                  
-                    usuen.Genero= model.Genero;
+
+                    usuen.Genero = model.Genero;
                     Roles.AddUserToRole(model.UserName, "usuario");
                     WebSecurity.Login(model.UserName, model.Password);
 
 
-                    return RedirectToAction("Index", "Home");
-                }
-                catch (MembershipCreateUserException e)
-                {
-                    ModelState.AddModelError("", ErrorCodeToString(e.StatusCode));
-                }
-            }
-
-            // Si llegamos a este punto, es que se ha producido un error y volvemos a mostrar el formulario
-            return View(model);
-        }
-
-        //
-        // POST: /Account/Register
-
-        [HttpPost]
-        [AllowAnonymous]
-        [ValidateAntiForgeryToken]
-        public ActionResult Register(RegisterModel model)
-        {
-            if (ModelState.IsValid)
-            {
-                // Intento de registrar al usuario
-                try
-                {
-                    WebSecurity.CreateUserAndAccount(model.UserName, model.Password);
-                    WebSecurity.Login(model.UserName, model.Password);
                     return RedirectToAction("Index", "Home");
                 }
                 catch (MembershipCreateUserException e)
