@@ -14,23 +14,26 @@ namespace MvcApplication1.Models
         public Jugador ConvertEnToModelUI(JugadorEN en)
         {
             Jugador c = new Jugador();
-            c.id = en.Id;
-            c.Ataque = en.Ataque;
-            c.Contrasena = en.Password;
-            c.Defensa = en.Defensa;
-            c.Email = en.Email;
-            c.Fecha = en.Cumple;
-            c.Genero = en.Genero;
-            c.Nombre = en.Nombre;
-            c.Oro = en.Oro;
-            c.VidaAct = en.VidaAct;
-            c.Vidamax = en.Vidamax;
-            c.Batallas1 = en.Batalla_PVP;
-            c.Batallas2 = en.Batalla_PVP_0;
-            c.BatallasPVE = en.Batalla_PVE;
-            c.InventarioEq = en.Equipo;
-            c.Inventario = en.Inventario;
 
+            if (en != null)
+            {
+                c.id = en.Id;
+                c.Ataque = en.Ataque;
+                c.Contrasena = en.Password;
+                c.Defensa = en.Defensa;
+                c.Email = en.Email;
+                c.Fecha = en.Cumple;
+                c.Genero = en.Genero;
+                c.Nombre = en.Nombre;
+                c.Oro = en.Oro;
+                c.VidaAct = en.VidaAct;
+                c.Vidamax = en.Vidamax;
+                c.Batallas1 = en.Batalla_PVP;
+                c.Batallas2 = en.Batalla_PVP_0;
+                c.BatallasPVE = en.Batalla_PVE;
+                c.InventarioEq = en.Equipo;
+                c.Inventario = en.Inventario;
+            }
 
 
 

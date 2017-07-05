@@ -113,9 +113,9 @@ public static void InitializeData ()
 
 
                 // Jugadores
-                int jugador1 = jugadorCEN.New_ ("Paco", "paco@gmail.com", new DateTime (1997, 11, 19), "Pato", 20, 20, 3, 1, 300, "Paco1");
-                int jugador2 = jugadorCEN.New_ ("Jose", "jose@gmail.com", new DateTime (1957, 12, 19), Util.GetEncondeMD5 ("Pato"), 20, 20, 3, 1, 0, "Jose1");
-                int jugador3 = jugadorCEN.New_ ("ThorTilla", "jose@gmail.com", new DateTime (1957, 12, 19), Util.GetEncondeMD5 ("Pato"), 50, 40, 5, 1, 0, "Jose1");
+                int jugador1 = jugadorCEN.New_ ("Paco", "paco@gmail.com", new DateTime (1997, 11, 19), "Pato22", 20, 20, 3, 1, 300, "Paco1");
+                int jugador2 = jugadorCEN.New_ ("Jose", "jose@gmail.com", new DateTime (1957, 12, 19), Util.GetEncondeMD5 ("Pato22"), 20, 20, 3, 1, 0, "Jose1");
+                int jugador3 = jugadorCEN.New_ ("ThorTilla", "jose@gmail.com", new DateTime (1957, 12, 19), Util.GetEncondeMD5 ("Pato22"), 50, 40, 5, 1, 0, "Jose1");
                 //inventario
                 int inventario1 = inventarioCEN.New_ (10, jugador1);
                 int inventario2 = inventarioCEN.New_ (10, jugador2);

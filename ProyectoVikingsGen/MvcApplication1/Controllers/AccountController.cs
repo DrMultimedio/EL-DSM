@@ -42,10 +42,14 @@ namespace MvcApplication1.Controllers
             if (ModelState.IsValid && WebSecurity.Login(model.UserName, model.Password, persistCookie: model.RememberMe))
             {
                 JugadorCEN usucen = new JugadorCEN();
+
+
+                return RedirectToLocal(returnUrl);
+
+
                 int usuid = usucen.DameJugadorPorNombre(model.UserName).Id;
                 if (usucen.Login(usuid, model.Password))
                 {
-                    return RedirectToLocal(returnUrl);
                 }
             }
 
